@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './features/about/about.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { GamesComponent } from './features/games/games.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { LaddersComponent } from './features/ladders/ladders.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
@@ -94,7 +95,8 @@ export const mainComponents = [
 export const components = [
     UnityWorkflowComponent,
     LaddersComponent,
-    BlogComponent
+    BlogComponent,
+    GamesComponent
 ];
 
 export const materialComponents = [

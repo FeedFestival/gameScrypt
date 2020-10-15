@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './features/about/about.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { GamesComponent } from './features/games/games.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { LaddersComponent } from './features/ladders/ladders.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
@@ -17,6 +18,7 @@ import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow
 const routes: Routes = [
     { path: '', component: HomePageComponent },
     //
+    { path: 'games', component: GamesComponent },
     { path: 'unity-workflow', component: UnityWorkflowComponent },
     { path: 'ladders', component: LaddersComponent },
     { path: 'blog', component: BlogComponent },

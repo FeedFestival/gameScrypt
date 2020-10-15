@@ -106,6 +106,10 @@ export class HeaderComponent implements OnInit {
         this.router.navigateByUrl('/' + route);
     }
 
+    goToWriteTool() {
+        window.location.href = 'https://gamescrypt.com';
+    }
+
     openPage(pageOption) {
 
         const newArgs = {};
