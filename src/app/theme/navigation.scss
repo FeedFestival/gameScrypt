@@ -1,0 +1,12 @@
+@import "./overrides/scss/_variables";
+
+app-navigation {
+    display: block;
+    float: left;
+}
+
+.menu-item {
+    display: block;
+    width: auto;
+    float: left;
+}

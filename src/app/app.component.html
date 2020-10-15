@@ -1,0 +1,21 @@
+<app-header [scrollClass]="scrollClass"></app-header>
+
+<div class="page-map" *ngIf="canShowPageMap">
+    <app-page-map></app-page-map>
+</div>
+
+<ng-scrollbar #NgScrollbar class="scroll-area" [ngClass]="scrollClass">
+
+    <div class="container-fluid p-0">
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
+</ng-scrollbar>
+
+<app-on-resize class="width-teller"></app-on-resize>
+
+<div [hidden]="scrollClass !== 'min'" class="back-to-top-button">
+    <button mat-button (click)="showMenu()">
+        <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+</div>

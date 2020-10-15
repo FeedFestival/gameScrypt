@@ -1,0 +1,18 @@
+<div class="row no-gutters page-min-width p-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span style="height: 0px; position: relative;">
+        {{bp}}
+    </span>
+
+    <div class="page">
+
+        <div *ngFor="let element of elements; let i = index" [id]="'element' + element.id"
+            [ngClass]="{ 'active': element.underCarret, 'editing': element.isEditing }">
+
+            <app-element [element]="element" [i]="i" [underCarret]="element.underCarret" (onBlur)="onBlur($event)"
+                (onEdit)="onEdit($event)" (click)="setUnderCarret(null, i)" (onBookmark)="onBookmark()" (editCharacter)="onEditCharacter($event)">
+            </app-element>
+        </div>
+    </div>
+
+</div>
