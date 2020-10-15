@@ -31,11 +31,12 @@ export class HomePageComponent implements OnInit, OnDestroy {
         private metaService: Meta,
         private onResizeService: OnResizeService
     ) {
-        onResizeService.getResizeEvent()
+        this.onResizeService.getResizeEvent()
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe((bp) => {
                 this.bp = bp;
             });
+        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnInit() {

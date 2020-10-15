@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 export class OnResizeService {
 
     resizeEvent: EventEmitter<string> = new EventEmitter<string>();
+    scrollClassEvent: EventEmitter<string> = new EventEmitter<string>();
     savedResize: string;
 
     getResizeEvent() {
@@ -18,6 +19,16 @@ export class OnResizeService {
         setTimeout(() => {
             this.savedResize = bp;
             this.resizeEvent.emit(this.savedResize);
+        });
+    }
+
+    getScrollClassEvent() {
+        return this.scrollClassEvent;
+    }
+
+    emitScrollClassEvent(scrollClass) {
+        setTimeout(() => {
+            this.scrollClassEvent.emit(scrollClass);
         });
     }
 }

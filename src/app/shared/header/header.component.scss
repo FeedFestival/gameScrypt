@@ -6,8 +6,9 @@
 }
 
 .header {
-    background-color: $dark;
+    background-color: rgba(0, 0, 0, 0.4);
     transition: all 0.5s;
+    color: #dc6018;
 
     .logo {
         height: 88px;

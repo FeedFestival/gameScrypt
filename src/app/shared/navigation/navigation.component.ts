@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { NavigationService } from './navigation.service';
-import { MainAvailableKeys, EditState, TextAvailableKeys, NewAvailableKeys } from 'src/app/app.constants';
+import { Subscription } from 'rxjs';
+import { EditState, MainAvailableKeys, TextAvailableKeys } from 'src/app/app.constants';
 import { OnResizeService } from '../on-resize/on-resize.service';
-import { INITIAL_CONFIG } from '@angular/platform-server';
+import { NavigationService } from './navigation.service';
 
 @Component({
     selector: 'app-navigation',

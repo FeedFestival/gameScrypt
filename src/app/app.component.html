@@ -1,9 +1,16 @@
-<app-header [scrollClass]="scrollClass"></app-header>
+<ng-scrollbar #NgScrollbar class="scroll-area back-wall" [ngClass]="scrollClass">
 
-<ng-scrollbar #NgScrollbar class="scroll-area" [ngClass]="scrollClass">
+    <app-header class="header-container" [scrollClass]="scrollClass"></app-header>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" style="background: rgba(0,0,0,0.33);">
         <router-outlet></router-outlet>
+
+        <div class="col-12 p-0 header-container website-bottom-space">
+            <div class="col-12">
+                <h3>game<span style="color: #ff6328;">S</span>crypt</h3>
+            </div>
+        </div>
+
         <app-footer></app-footer>
     </div>
 </ng-scrollbar>

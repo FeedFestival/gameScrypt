@@ -28,7 +28,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     scrollClass = 'max';
     bp: string;
     scrollBreakpoint: any = ScrollBreakpoints.sm;
-    canShowPageMap = false;
 
     // keep refs to subscriptions to be able to unsubscribe later
     private popupOpenSubscription: Subscription;
@@ -56,7 +55,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
             filter(_ => !!this.scrollRef),
             tap((event: NavigationEnd) => {
                 // console.log(event.urlAfterRedirects);
-                this.canShowPageMap = event.urlAfterRedirects === '/';
                 this.scrollToTop();
                 gtag('config', 'UA-154145362-1',
                     {
@@ -85,6 +83,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
                 } else {
                     this.scrollBreakpoint = ScrollBreakpoints.sm;
                 }
+            });
+
+        onResizeService.getScrollClassEvent()
+            .subscribe((scrollClass) => {
+                this.scrollClass = scrollClass;
             });
     }
 
@@ -133,24 +136,24 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit() {
-        this.scrollSubscription = this.scrollRef.verticalScrolled.pipe(
-            map((e: any) => {
+        // this.scrollSubscription = this.scrollRef.verticalScrolled.pipe(
+        //     map((e: any) => {
 
-                // console.log('TCL: AppComponent -> ngAfterViewInit -> e.target.scrollTop', e.target.scrollTop);
-                if (e.target.scrollTop < this.scrollBreakpoint.max) {
-                    return 'max';
-                } else if (e.target.scrollTop > this.scrollBreakpoint.max && e.target.scrollTop < this.scrollBreakpoint.min) {
-                    return 'med';
-                } else if (e.target.scrollTop > this.scrollBreakpoint.min) {
-                    return 'min';
-                }
-            }),
-            tap((scrollClass: string) => this.ngZone.run(
-                () => {
-                    this.scrollClass = scrollClass;
-                })
-            )
-        ).subscribe();
+        //         // console.log('TCL: AppComponent -> ngAfterViewInit -> e.target.scrollTop', e.target.scrollTop);
+        //         if (e.target.scrollTop < this.scrollBreakpoint.max) {
+        //             return 'max';
+        //         } else if (e.target.scrollTop > this.scrollBreakpoint.max && e.target.scrollTop < this.scrollBreakpoint.min) {
+        //             return 'med';
+        //         } else if (e.target.scrollTop > this.scrollBreakpoint.min) {
+        //             return 'min';
+        //         }
+        //     }),
+        //     tap((scrollClass: string) => this.ngZone.run(
+        //         () => {
+        //             this.scrollClass = scrollClass;
+        //         })
+        //     )
+        // ).subscribe();
     }
 
     scrollToTop() {

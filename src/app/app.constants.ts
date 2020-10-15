@@ -136,11 +136,11 @@ export const NewAvailableKeys = [
 
 export const ScrollBreakpoints = {
     xs: {
-        max: 50,
-        min: 150
+        max: 20,
+        min: 50
     },
     sm: {
         max: 150,
         min: 333
     }
-}
+};

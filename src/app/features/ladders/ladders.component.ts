@@ -19,6 +19,8 @@ export class LaddersComponent implements OnInit {
             .subscribe((bp) => {
                 this.bp = bp;
             });
+
+        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnInit() {

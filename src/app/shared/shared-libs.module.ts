@@ -5,6 +5,7 @@ import {
     MatDialogModule,
     MatDividerModule, MatExpansionModule,
     MatInputModule, MatMenuModule,
+    MatPaginatorModule,
     MatSelectModule,
     MatTooltipModule,
     MAT_DIALOG_DEFAULT_OPTIONS
@@ -49,7 +50,8 @@ export const matModules = [
     MatDialogModule,
     MatSelectModule,
     MatExpansionModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule
 ];
 
 export const externalAngularLibraries = [

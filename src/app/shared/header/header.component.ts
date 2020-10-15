@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { faCoffee, faEnvelope, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ import { HeaderService } from './header.service';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
 
     @Input() scrollClass = '';
 
@@ -85,6 +85,16 @@ export class HeaderComponent implements OnInit {
                     });
             });
         }
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        // if (changes) {
+        //     if (changes.scrollClass && changes.scrollClass.currentValue) {
+        //         if (this.scrollClass === 'drop') {
+
+        //         }
+        //     }
+        // }
     }
 
     login() {

@@ -1,31 +1,66 @@
-<div class="row no-gutters page-min-width p-3 the-tool" [ngClass]="{ 'container': bp === 'lg' || bp === 'xl' }">
-
+<div class="row no-gutters page-min-height unity-page-min-width p-3 the-tool"
+    [ngClass]="{ 'container': bp === 'lg' || bp === 'xl' }">
     <span class="bp">
         {{bp}}
     </span>
 
-    <div class="col-12">
-
-        <div class="col-12">
-            <div class="col-12">
-                <h5>Project Starter</h5>
+    <div class="col-12 mb-3">
+        <mat-card class="py-0">
+            <mat-form-field class="col-7 mt-3">
+                <input type="text" matInput pInputText [placeholder]="'Search...'" [(ngModel)]="searchText"
+                    (change)="filterSnippets()" (input)="filterSnippets()" autocomplete="off" />
+            </mat-form-field>
+            <div class="d-inline-flex col-5 p-0">
+                <mat-paginator [length]="paging.length" [pageSize]="paging.pageSize"
+                    [pageSizeOptions]="paging.pageSizeOptions" [showFirstLastButtons]="true"
+                    (page)="onPageChange($event)">
+                </mat-paginator>
             </div>
-            <div class="col-12">
-                Description
-            </div>
-
-            <div class="col-12 p-1 code-block-container">
-                <div class="col-12 code-block-options">
-
-                </div>
-                <div class="col-12 code-block">
-                    <pre><code>
-                        {{codeText}}
-                    </code></pre>
-                </div>
-            </div>
-        </div>
-
+        </mat-card>
     </div>
 
+    <div class="col-12" *ngFor="let snippet of currentSnippets, let i=index;"
+        [ngClass]="{ 'expanded': snippet.expanded === true, 'not-expanded': snippet.expanded === false }">
+
+        <mat-expansion-panel [expanded]="snippet.expanded" (opened)="snippet.expanded = true"
+            (closed)="snippet.expanded = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{snippet.name}}
+                </mat-panel-title>
+                <!-- <mat-panel-description>
+                    {{snippet.description}}
+                </mat-panel-description> -->
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+
+                <div class="col-12">
+                    <!-- <div class="col-12">
+                        <h5>Project Starter</h5>
+                    </div>
+                    <div class="col-12">
+                        Description
+                    </div> -->
+
+                    <div class="col-12 p-1 code-block-container">
+                        <div class="col-12 code-block-options">
+
+                        </div>
+                        <div class="col-12 code-block">
+                            <pre><code>
+                                {{snippet.code}}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </mat-expansion-panel>
+    </div>
+
+    <div class="col-12">
+        <mat-paginator [length]="paging.length" [pageSize]="paging.pageSize" [pageSizeOptions]="paging.pageSizeOptions"
+            [showFirstLastButtons]="true" (page)="onPageChange($event)">
+        </mat-paginator>
+    </div>
 </div>
