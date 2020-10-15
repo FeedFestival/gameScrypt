@@ -112,7 +112,7 @@ b {
 }
 
 .scroll-area.max {
-    max-height: calc(100vh - 100px) !important;
+    max-height: calc(100vh - 150px) !important;
 }
 
 .fade-in-text {
@@ -371,4 +371,10 @@ a.red {
 
 .tooltip-red {
     background: #b71c1c;
+}
+
+.bp {
+    height: 0px;
+    position: absolute;
+    color: rgba(0,0,0,0.2);
 }

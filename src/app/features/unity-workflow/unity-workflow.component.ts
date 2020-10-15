@@ -11,6 +11,8 @@ export class UnityWorkflowComponent implements OnInit {
 
     bp: string;
 
+    codeText: string;
+
     constructor(
         private router: Router,
         private onResizeService: OnResizeService
@@ -22,6 +24,22 @@ export class UnityWorkflowComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.codeText = `
+using UnityEngine;
+using System.Collections;
 
+public class MainPlayer : MonoBehaviour {
+
+    // Use this for initialization
+    void Start () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+}
+        `;
     }
 }

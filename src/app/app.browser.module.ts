@@ -5,7 +5,6 @@ import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, Mat
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,7 +38,6 @@ export function provideConfig() {
         MatCheckboxModule,
         MatDialogModule,
         FormsModule,
-        FontAwesomeModule,
         NgScrollbarModule,
         AppModule,
         BrowserTransferStateModule

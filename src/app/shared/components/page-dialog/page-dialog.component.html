@@ -5,10 +5,8 @@
     </div>
 
     <ng-scrollbar #NgScrollbar class="basic-dimensions fade-in-text" [ngClass]="{'show': show}">
-
         <app-legal-documents *ngIf="page.showPrivacy"></app-legal-documents>
         <app-contact *ngIf="page.showContact"></app-contact>
         <app-about *ngIf="page.showAbout"></app-about>
-
     </ng-scrollbar>
 </div>

@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatInputModule, MatMenuModule, MatSelectModule, MatTooltipModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
+import { AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
-import { NgxFileDropModule } from 'ngx-file-drop';
-import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,11 +25,8 @@ import { SnsComponent } from './features/policy/sns/sns.component';
 import { TermsComponent } from './features/policy/terms/terms.component';
 import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
-import { UploadDialogComponent } from './shared/components/upload-dialog/upload-dialog.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { NavigationComponent } from './shared/navigation/navigation.component';
 import { OnResizeComponent } from './shared/on-resize/on-resize.component';
+import { SharedModule } from './shared/shared.module';
 
 const config = new AuthServiceConfig([
     {
@@ -88,28 +79,12 @@ export function provideConfig() {
 
 export const mainComponents = [
     HomePageComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavigationComponent,
 ];
 export const components = [
     UnityWorkflowComponent,
     LaddersComponent,
     BlogComponent,
     GamesComponent
-];
-
-export const materialComponents = [
-    MatMenuModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatDialogModule,
-    MatSelectModule,
-    MatExpansionModule,
-    MatTooltipModule
 ];
 
 @NgModule({
@@ -126,40 +101,22 @@ export const materialComponents = [
         CookiesComponent,
         SnsComponent,
         GdprComponent,
-        OnResizeComponent,
-        UploadDialogComponent
+        OnResizeComponent
     ],
     imports: [
         NgcCookieConsentModule.forRoot(cookieConfig),
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
-        NgxWebstorageModule.forRoot(),
-        SocialLoginModule,
         CKEditorModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
-        ...materialComponents,
-        FormsModule,
-        FontAwesomeModule,
-        NgScrollbarModule,
-        CommonModule,
         TransferHttpCacheModule,
         HttpClientModule,
         NgtUniversalModule,
-        NgxFileDropModule,
-        ReactiveFormsModule,
-    ],
-    exports: [
-        MatButtonModule,
-        MatMenuModule,
-        MatCardModule,
-        MatDividerModule,
-        MatInputModule,
-        MatCheckboxModule,
-        FormsModule
+        NgxWebstorageModule.forRoot(),
+        SharedModule.forRoot(),
+        AppRoutingModule
     ],
     entryComponents: [
-        PageDialogComponent,
-        UploadDialogComponent
+        PageDialogComponent
     ],
     providers: [
         CookieService,

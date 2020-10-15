@@ -1,11 +1,31 @@
-<div class="row no-gutters page-min-width p-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+<div class="row no-gutters page-min-width p-3 the-tool" [ngClass]="{ 'container': bp === 'lg' || bp === 'xl' }">
 
-    <span style="height: 0px; position: relative;">
+    <span class="bp">
         {{bp}}
     </span>
 
     <div class="col-12">
-        WORK IN PROGRESS.
+
+        <div class="col-12">
+            <div class="col-12">
+                <h5>Project Starter</h5>
+            </div>
+            <div class="col-12">
+                Description
+            </div>
+
+            <div class="col-12 p-1 code-block-container">
+                <div class="col-12 code-block-options">
+
+                </div>
+                <div class="col-12 code-block">
+                    <pre><code>
+                        {{codeText}}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>
