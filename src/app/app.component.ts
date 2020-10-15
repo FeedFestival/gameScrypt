@@ -7,9 +7,9 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { Subscription } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { ScrollBreakpoints } from './app.constants';
-import { ElementsService } from './features/home-page/element/elements.service';
 import { OnResizeService } from './shared/on-resize/on-resize.service';
 
+// tslint:disable-next-line: ban-types
 declare let gtag: Function;
 
 @Component({
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     scrollBreakpoint: any = ScrollBreakpoints.sm;
     canShowPageMap = false;
 
-    //keep refs to subscriptions to be able to unsubscribe later
+    // keep refs to subscriptions to be able to unsubscribe later
     private popupOpenSubscription: Subscription;
     private popupCloseSubscription: Subscription;
     private initializeSubscription: Subscription;
@@ -47,21 +47,20 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(
         private ngZone: NgZone,
         private ccService: NgcCookieConsentService,
-        private elementsService: ElementsService,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
         router: Router
     ) {
         router.events.pipe(
             filter(event => event instanceof NavigationEnd),
-            filter(() => !!this.scrollRef),
+            filter(_ => !!this.scrollRef),
             tap((event: NavigationEnd) => {
                 // console.log(event.urlAfterRedirects);
                 this.canShowPageMap = event.urlAfterRedirects === '/';
                 this.scrollToTop();
                 gtag('config', 'UA-154145362-1',
                     {
-                        'page_path': event.urlAfterRedirects
+                        page_path: event.urlAfterRedirects
                     }
                 );
             })
@@ -77,11 +76,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         //         );
         //     }
         // });
-
-        elementsService.getScrollToElementEmitter()
-            .subscribe((element) => {
-                this.scrollRef.scrollToElement(element, { duration: 500, top: -((document.documentElement.clientHeight / 2) - 100) });
-            });
 
         onResizeService.getResizeEvent()
             .subscribe((bp) => {

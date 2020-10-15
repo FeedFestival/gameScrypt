@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+// tslint:disable-next-line: max-line-length
 import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatInputModule, MatMenuModule } from '@angular/material';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -9,17 +10,8 @@ import { AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'ang
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CursorComponent } from './features/home-page/cursor/cursor.component';
-import { ElementComponent } from './features/home-page/element/element.component';
-import { HomePageComponent } from './features/home-page/home-page.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { NavigationComponent } from './shared/navigation/navigation.component';
-import { LegalDocsComponent } from './features/policy/legal-documents.component';
-import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
-import { ContactComponent } from './features/contact/contact.component';
-import { AboutComponent } from './features/about/about.component';
 import { AppModule } from './app.module';
+import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
 
 const config = new AuthServiceConfig([
     {
@@ -34,7 +26,7 @@ export function provideConfig() {
 
 @NgModule({
     imports: [
-        
+
         SocialLoginModule,
         CKEditorModule,
         AppRoutingModule,

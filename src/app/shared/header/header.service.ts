@@ -1,12 +1,7 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { WriteToolUtils } from 'src/app/features/home-page/story.utils';
-
-type Options = {
-    element: any;
-    keys: string;
-}
+import { EventEmitter, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GameScryptUtils } from 'src/app/features/home-page/story.utils';
 
 @Injectable({ providedIn: 'root' })
 export class HeaderService {
@@ -19,29 +14,13 @@ export class HeaderService {
     ) {
     }
 
-    emitSaveEvent() {
-        this.saveEventEmitter.emit();
-    }
-
-    getSaveEvent(): EventEmitter<any> {
-        return this.saveEventEmitter;
-    }
-
-    emitCanSaveEvent(canSave: boolean = true) {
-        this.canSaveEventEmitter.emit(canSave);
-    }
-
-    getCanSaveEvent(): EventEmitter<boolean> {
-        return this.canSaveEventEmitter;
-    }
-
     saveUser(user): Observable<any> {
-        const requestOptions: Object = {
+        const requestOptions: any = {
             ...HttpDefaultOptions,
             responseType: 'text'
         }
         return this.http.post<any>(
-            WriteToolUtils.baseRequestUrl() + 'UserService/Register.php?a=' + WriteToolUtils.getAnotate(true),
+            GameScryptUtils.baseRequestUrl() + 'UserService/Register.php?a=' + GameScryptUtils.getAnotate(true),
             user,
             requestOptions
         );

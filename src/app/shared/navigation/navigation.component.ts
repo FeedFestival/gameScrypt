@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { NavigationService } from './navigation.service';
-import { ElementsService } from 'src/app/features/home-page/element/elements.service';
 import { MainAvailableKeys, EditState, TextAvailableKeys, NewAvailableKeys } from 'src/app/app.constants';
 import { OnResizeService } from '../on-resize/on-resize.service';
 import { INITIAL_CONFIG } from '@angular/platform-server';
@@ -25,7 +24,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     constructor(
         private router: Router,
         private navigationService: NavigationService,
-        private elementsService: ElementsService,
         private onResizeService: OnResizeService
         // private stateStorageService: StateStorageService,
         // private accountService: AccountService
@@ -59,13 +57,13 @@ export class NavigationComponent implements OnInit, OnDestroy {
         switch (this.currentState) {
             case EditState.NEW:
                 setTimeout(() => {
-                    const newAvailableKeys = JSON.parse(JSON.stringify(NewAvailableKeys));
-                    const allowedElements = this.elementsService.getAllowedElements();
-                    this.availableKeys = newAvailableKeys.filter((nAK) => {
-                        if (allowedElements.includes(nAK.id)) {
-                            return nAK;
-                        }
-                    });
+                    // const newAvailableKeys = JSON.parse(JSON.stringify(NewAvailableKeys));
+                    // const allowedElements = this.elementsService.getAllowedElements();
+                    // this.availableKeys = newAvailableKeys.filter((nAK) => {
+                    //     if (allowedElements.includes(nAK.id)) {
+                    //         return nAK;
+                    //     }
+                    // });
                 });
                 break;
             case EditState.TEXT:

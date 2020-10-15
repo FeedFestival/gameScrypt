@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'WriteTool'`, () => {
+  it(`should have as title 'gameScrypt'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('WriteTool');
+    expect(app.title).toEqual('gameScrypt');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('WriteTool app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('gameScrypt app is running!');
   });
 });

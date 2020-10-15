@@ -4,7 +4,6 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ElementType } from 'src/app/app.constants';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
-import { ElementComponent } from './element/element.component';
 import { SeoService } from './seo.service';
 
 @Component({
@@ -23,8 +22,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
     editState: string;
 
     bp: string;
-
-    @ViewChildren(ElementComponent) elementsRef: QueryList<any>;
 
     private unsubscribe$ = new Subject<void>();
 

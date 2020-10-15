@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatInputModule, MatMenuModule, MatSelectModule, MatExpansionModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatInputModule, MatMenuModule, MatSelectModule, MatTooltipModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -18,27 +18,23 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './features/about/about.component';
+import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
-import { CursorComponent } from './features/home-page/cursor/cursor.component';
-import { ElementComponent } from './features/home-page/element/element.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
+import { LaddersComponent } from './features/ladders/ladders.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
 import { GdprComponent } from './features/policy/gdpr/gdpr.component';
 import { LegalDocsComponent } from './features/policy/legal-documents.component';
 import { PrivacyComponent } from './features/policy/privacy/privacy.component';
 import { SnsComponent } from './features/policy/sns/sns.component';
 import { TermsComponent } from './features/policy/terms/terms.component';
+import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
+import { UploadDialogComponent } from './shared/components/upload-dialog/upload-dialog.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
-import { BookmarkComponent } from './features/home-page/element/bookmark/bookmark.component';
-import { PageMapComponent } from './features/home-page/page-map/page-map.component';
 import { OnResizeComponent } from './shared/on-resize/on-resize.component';
-import { StoryDialogComponent } from './features/home-page/story-dialog/story-dialog.component';
-import { CharacterDialogComponent } from './features/home-page/character-dialog/character-dialog.component';
-import { CharacterComponent } from './features/home-page/character-dialog/character/character.component';
-import { UploadDialogComponent } from './shared/components/upload-dialog/upload-dialog.component';
 
 const config = new AuthServiceConfig([
     {
@@ -89,15 +85,36 @@ export function provideConfig() {
     return config;
 }
 
+export const mainComponents = [
+    HomePageComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavigationComponent,
+];
+export const components = [
+    UnityWorkflowComponent,
+    LaddersComponent,
+    BlogComponent
+];
+
+export const materialComponents = [
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatTooltipModule
+];
+
 @NgModule({
     declarations: [
         AppComponent,
-        HomePageComponent,
-        HeaderComponent,
-        FooterComponent,
-        NavigationComponent,
-        ElementComponent,
-        CursorComponent,
+        ...mainComponents,
+        ...components,
         PageDialogComponent,
         LegalDocsComponent,
         ContactComponent,
@@ -107,12 +124,7 @@ export function provideConfig() {
         CookiesComponent,
         SnsComponent,
         GdprComponent,
-        BookmarkComponent,
-        PageMapComponent,
         OnResizeComponent,
-        StoryDialogComponent,
-        CharacterDialogComponent,
-        CharacterComponent,
         UploadDialogComponent
     ],
     imports: [
@@ -123,13 +135,7 @@ export function provideConfig() {
         CKEditorModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatCardModule,
-        MatDividerModule,
-        MatInputModule,
-        MatCheckboxModule,
-        MatDialogModule,
+        ...materialComponents,
         FormsModule,
         FontAwesomeModule,
         NgScrollbarModule,
@@ -138,10 +144,7 @@ export function provideConfig() {
         HttpClientModule,
         NgtUniversalModule,
         NgxFileDropModule,
-        MatSelectModule,
         ReactiveFormsModule,
-        MatExpansionModule,
-        MatTooltipModule
     ],
     exports: [
         MatButtonModule,
@@ -154,8 +157,6 @@ export function provideConfig() {
     ],
     entryComponents: [
         PageDialogComponent,
-        StoryDialogComponent,
-        CharacterDialogComponent,
         UploadDialogComponent
     ],
     providers: [

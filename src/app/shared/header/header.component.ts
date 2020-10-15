@@ -4,17 +4,11 @@ import { Router } from '@angular/router';
 import { faCoffee, faEnvelope, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 import { LocalStorageService } from 'ngx-webstorage';
-import { EditState } from 'src/app/app.constants';
-import { ElementsService } from 'src/app/features/home-page/element/elements.service';
-import { StoryDialogComponent } from 'src/app/features/home-page/story-dialog/story-dialog.component';
-import { StoryService } from 'src/app/features/home-page/story.service';
+import { HomeService } from 'src/app/features/home-page/home.service';
 import { PageDialogComponent } from 'src/app/shared/components/page-dialog/page-dialog.component';
-import { UploadDialogComponent } from '../components/upload-dialog/upload-dialog.component';
 import { NavigationService } from '../navigation/navigation.service';
 import { OnResizeService } from '../on-resize/on-resize.service';
 import { HeaderService } from './header.service';
-import { WriteToolUtils } from 'src/app/features/home-page/story.utils';
-import { tap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-header',
@@ -35,43 +29,32 @@ export class HeaderComponent implements OnInit {
 
     bp: string;
 
-    /*
-    the tool file options
-    */
-    saveClass: string;
-    storyName: string;
-
     constructor(
         private router: Router,
         private authService: AuthService,
         private matDialog: MatDialog,
         private headerService: HeaderService,
-        private elementsService: ElementsService,
         private navigationService: NavigationService,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
-        private storyService: StoryService
+        private storyService: HomeService
     ) {
         onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
             });
-
-        this.elementsService.getStoryNameEventEvent()
-            .subscribe((storyName) => {
-                this.storyName = storyName;
-            });
     }
 
     ngOnInit() {
 
-        const user = this.localStorage.retrieve("user");
+        const user = this.localStorage.retrieve('user');
         if (user !== null) {
 
             this.user = user;
             this.storyService.isLoggedIn = this.loggedIn = true;
             this.storyService.loggedIn(this.user.id);
 
+            // tslint:disable-next-line: max-line-length
             // config.providers.get('FACEBOOK').signIn({ auth_type: 'reauthenticate', client_id: user.facebook_id, fetch_basic_profile: true })
             //     .then(user => {
             //         this.user = user;
@@ -98,15 +81,10 @@ export class HeaderComponent implements OnInit {
                             facebook_id: this.user.id
                         };
                         ourUser.id = userId;
-                        this.localStorage.store("user", ourUser);
+                        this.localStorage.store('user', ourUser);
                     });
             });
         }
-
-        this.headerService.getCanSaveEvent()
-            .subscribe((canSave) => {
-                this.saveClass = canSave ? 'can-save' : '';
-            });
     }
 
     login() {
@@ -124,6 +102,10 @@ export class HeaderComponent implements OnInit {
         this.router.navigateByUrl('/acasa');
     }
 
+    goTo(route) {
+        this.router.navigateByUrl('/' + route);
+    }
+
     openPage(pageOption) {
 
         const newArgs = {};
@@ -134,65 +116,5 @@ export class HeaderComponent implements OnInit {
                 args: newArgs
             }
         });
-    }
-
-    editStory() {
-
-        this.navigationService.emitEditStateEvent(EditState.DEFAULT);
-
-        const dialogRef = this.matDialog.open(StoryDialogComponent);
-        dialogRef.afterClosed()
-            .subscribe((story) => {
-                this.elementsService.emitStoryChange(story);
-                this.navigationService.emitEditStateEvent(EditState.MAIN);
-            });
-    }
-
-    downLoadJson() {
-        const story = this.elementsService.getStory();
-        if (!story) {
-            return;
-        }
-        this.elementsService.getElements(story.id)
-            .subscribe(elements => {
-                this.download(story.name, elements.json);
-            });
-    }
-
-    download(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
-
-        element.style.display = 'none';
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
-    }
-
-    upLoadJson() {
-        this.matDialog.open(UploadDialogComponent)
-            .afterClosed()
-            .subscribe((data) => {
-                let storyName = data.name + ' (Uploaded) ';
-                const elements = JSON.parse(data.storyString).value;
-                let story = {
-                    name: storyName,
-                    guid: WriteToolUtils.guid(),
-                    description: ''
-                };
-                this.storyService.saveStory(story)
-                    .subscribe(storyId => {
-                        this.elementsService.save(elements, storyId)
-                            .subscribe(_ => { });
-                    });
-            });
-    }
-
-    save() {
-        this.headerService.emitSaveEvent();
-        this.saveClass = '';
     }
 }

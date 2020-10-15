@@ -1,183 +1,195 @@
 @import "../../theme/overrides/scss/_variables";
 
 .logo {
-  height: 88px;
-  cursor: pointer;
+    height: 88px;
+    cursor: pointer;
 }
 
 .header {
-  background-color: $dark;
-  transition: all 0.5s;
-
-  .logo {
-    height: 88px;
+    background-color: $dark;
     transition: all 0.5s;
-  }
+
+    .logo {
+        height: 88px;
+        transition: all 0.5s;
+    }
 }
 
 .header.min {
-  height: 0px;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-
-  .logo {
     height: 0px;
-  }
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    .logo {
+        height: 0px;
+    }
 }
 
 .header.med {
-  height: 50px;
-  padding-top: 0;
-  padding-bottom: 0;
-
-  .logo {
-    height: 52px;
-  }
-}
-
-.header.max {
-  @media (min-width: $xs-breakpoint) {
     height: 50px;
     padding-top: 0;
     padding-bottom: 0;
-  }
-  @media (min-width: $sm-breakpoint) {
-    height: 100px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.25rem;
-  }
 
-  .logo {
+    .logo {
+        height: 52px;
+    }
+}
+
+.header.max {
     @media (min-width: $xs-breakpoint) {
-      height: 52px;
+        height: 50px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     @media (min-width: $sm-breakpoint) {
-      height: 88px;
+        height: 100px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.25rem;
     }
-  }
+
+    .logo {
+        @media (min-width: $xs-breakpoint) {
+            height: 52px;
+        }
+        @media (min-width: $sm-breakpoint) {
+            height: 88px;
+        }
+    }
 }
 
 .account-buttons {
-  @media (min-width: $xs-breakpoint) {
-    padding-right: 15px;
-  }
-  @media (min-width: $sm-breakpoint) {
-    padding-right: 0;
-  }
-
-  .ac-but {
     @media (min-width: $xs-breakpoint) {
-      width: 30px;
-      margin-right: 10px;
+        padding-right: 15px;
     }
     @media (min-width: $sm-breakpoint) {
-      width: 60px;
-      margin-right: 40px;
+        padding-right: 0;
     }
 
-    margin-top: 15px;
-    display: inline-flex;
-    float: right;
-    font-size: 25px;
-    padding: 0;
-    min-width: 0;
-    transition: all 0.5s;
-
-    .notification-number {
-      position: absolute;
-      background-color: red;
-      border-radius: 50%;
-      width: 17px;
-      height: 17px;
-      top: -4px;
-      right: 40%;
-      font-size: 14px;
-      line-height: 19px;
-    }
-
-    .ac-img {
-      @media (min-width: $xs-breakpoint) {
-        width: 30px;
-      }
-      @media (min-width: $sm-breakpoint) {
-        width: 60px;
-      }
-
-      transition: all 0.5s;
-    }
-
-    .ac-img.ac-but-save {
-      opacity: 0.2;
-      width: 28px;
-      @media (min-width: $xs-breakpoint) {
-        margin-top: 0px;
-      }
-      @media (min-width: $sm-breakpoint) {
-        margin-top: 14px;
-      }
-    }
-  }
-
-  .ac-but.can-save {
-    .ac-img.ac-but-save {
-      opacity: 1;
-      width: 30px;
-      @media (min-width: $xs-breakpoint) {
-        margin-top: 0px;
-      }
-      @media (min-width: $sm-breakpoint) {
-        margin-top: 15px;
-      }
-    }
-  }
-
-  &.min {
     .ac-but {
-      //   @media (min-width: $xs-breakpoint) {
-      //   }
-      @media (min-width: $sm-breakpoint) {
-        margin-top: 0px;
-      }
-    }
-  }
-  &.med {
-    .ac-but {
-      @media (min-width: $xs-breakpoint) {
-        margin-top: 5px;
-      }
-      @media (min-width: $sm-breakpoint) {
-        margin-top: 2px;
-      }
-
-      .ac-img {
         @media (min-width: $xs-breakpoint) {
-          width: 30px;
+            width: 30px;
+            margin-right: 10px;
         }
         @media (min-width: $sm-breakpoint) {
-          width: 52px;
+            width: 33px;
+            margin-right: 15px;
         }
-      }
 
-      .ac-img.ac-but-save {
-        @media (min-width: $xs-breakpoint) {
-          width: 28px;
-          margin-top: 0px;
+        display: inline-flex;
+        float: right;
+        font-size: 25px;
+        padding: 0;
+        min-width: 0;
+        transition: all 0.5s;
+
+        .notification-number {
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+            width: 17px;
+            height: 17px;
+            top: -4px;
+            right: 40%;
+            font-size: 14px;
+            line-height: 19px;
         }
-        @media (min-width: $sm-breakpoint) {
-          width: 28px;
-          margin-top: 7px;
+
+        .ac-img {
+            @media (min-width: $xs-breakpoint) {
+                width: 30px;
+            }
+            @media (min-width: $sm-breakpoint) {
+                width: 33px;
+            }
+
+            transition: all 0.5s;
         }
-      }
+
+        .ac-img.ac-but-save {
+            opacity: 0.2;
+            width: 28px;
+            @media (min-width: $xs-breakpoint) {
+                margin-top: 0px;
+            }
+            @media (min-width: $sm-breakpoint) {
+                margin-top: 14px;
+            }
+        }
     }
-  }
-  &.max {
-    .ac-but {
-      @media (min-width: $xs-breakpoint) {
-        margin-top: 5px;
-      }
-      @media (min-width: $sm-breakpoint) {
-        margin-top: 15px;
-      }
+
+    .ac-but.can-save {
+        .ac-img.ac-but-save {
+            opacity: 1;
+            width: 30px;
+            @media (min-width: $xs-breakpoint) {
+                margin-top: 0px;
+            }
+            @media (min-width: $sm-breakpoint) {
+                margin-top: 15px;
+            }
+        }
     }
-  }
+
+    &.min {
+        .ac-but {
+            //   @media (min-width: $xs-breakpoint) {
+            //   }
+            @media (min-width: $sm-breakpoint) {
+                margin-top: 0px;
+            }
+        }
+    }
+    &.med {
+        .ac-but {
+            @media (min-width: $xs-breakpoint) {
+                margin-top: -5px;
+            }
+            @media (min-width: $sm-breakpoint) {
+                margin-top: 2px;
+            }
+
+            .ac-img {
+                @media (min-width: $xs-breakpoint) {
+                    width: 30px;
+                }
+                @media (min-width: $sm-breakpoint) {
+                    width: 30px;
+                }
+            }
+
+            .ac-img.ac-but-save {
+                @media (min-width: $xs-breakpoint) {
+                    width: 28px;
+                    margin-top: 0px;
+                }
+                @media (min-width: $sm-breakpoint) {
+                    width: 28px;
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+    &.max {
+        .ac-but {
+            @media (min-width: $xs-breakpoint) {
+                margin-top: -5px;
+            }
+            @media (min-width: $sm-breakpoint) {
+                // margin-top: 15px;
+            }
+        }
+    }
+}
+
+.ac-but {
+    .svg-but {
+        height: 55px;
+        color: white;
+        margin-bottom: -15px;
+        font-size: 27px;
+    }
+}
+
+.nav-button {
+    color: whitesmoke;
 }

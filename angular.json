@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "WriteTool": {
+        "gameScrypt": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -75,18 +75,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "WriteTool:build"
+                        "browserTarget": "gameScrypt:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "WriteTool:build:production"
+                            "browserTarget": "gameScrypt:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "WriteTool:build"
+                        "browserTarget": "gameScrypt:build"
                     }
                 },
                 "test": {
@@ -126,11 +126,11 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "WriteTool:serve"
+                        "devServerTarget": "gameScrypt:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "WriteTool:serve:production"
+                            "devServerTarget": "gameScrypt:serve:production"
                         }
                     }
                 },
@@ -160,5 +160,5 @@
             }
         }
     },
-    "defaultProject": "WriteTool"
+    "defaultProject": "gameScrypt"
 }

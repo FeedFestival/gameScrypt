@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
 
-type Options = {
-    element: any;
-    keys: string;
-}
-
 @Injectable({ providedIn: 'root' })
 export class SeoService {
 
@@ -19,13 +14,13 @@ export class SeoService {
 
         switch (page) {
             case 'home':
-                theTitleUsed = 'Write TooL • FREE ↙ Alternative Writing | Just Write @ gamescrypt.com';
+                theTitleUsed = 'gameScrypt • FREE ↙ Official Website | play @ gamescrypt.com';
                 break;
             case 'about':
-                theTitleUsed = 'About • The WRite TooL ↙ Alternative Writing | Just Write @ gamescrypt.com';
+                theTitleUsed = 'About • gameScrypt ↙ Official Website | play @ gamescrypt.com';
                 break;
             default:
-                theTitleUsed = 'WriteTool ↙ gamescrypt.com';
+                theTitleUsed = 'gameScrypt ↙ gamescrypt.com';
                 break;
         }
 
@@ -40,7 +35,7 @@ export class SeoService {
 
         const robots = 'index, follow, noarchive, notranslate';
         const author = 'Daniel Simionescu';
-        const applicationName = 'WriteTooL';
+        const applicationName = 'gameScrypt';
         const language = 'English';
         const revisitAfter = '5 days';
         const copyright = 'Copyright © 2019 by ' + author;
@@ -94,15 +89,15 @@ export class SeoService {
 
     private getKeywords(page): any {
 
-        let returnObj: any = {
+        const returnObj: any = {
             name: 'keywords',
         };
         switch (page) {
             case 'home':
-                returnObj.content = 'Alternative, Writing, Tool, Online';
+                returnObj.content = 'FREE Games, gameScrypt, Programming, Online';
                 break;
             case 'about':
-                returnObj.content = 'About, Online Tool, Alternative Writing';
+                returnObj.content = 'About, gameScrypt, FREE Games';
                 break;
             case 'contact':
                 returnObj.content = 'Daniel, Simionescu';
@@ -132,18 +127,19 @@ export class SeoService {
 
     private getDescription(page): any {
 
-        let returnObj: any = {
+        const returnObj: any = {
             name: 'description',
         };
         switch (page) {
             case 'home':
-                returnObj.content = 'The application is designed to facilitate creating movie scripts, short stories, video game dialog or comic book scripts with the details that matter.';
+                // tslint:disable-next-line: max-line-length
+                returnObj.content = 'The website is designed for showcasing Games, online competitions, Unity Utils Class and Oppinions featured in Blog.';
                 break;
             case 'about':
-                returnObj.content = 'Have you ever wanted to add Pictures, Videos or Sounds to you movie scripts?';
+                returnObj.content = 'Have you ever wanted to play games that improve your brain power?';
                 break;
             case 'contact':
-                returnObj.content = `I'm Daniel Simionescu and I own this place. Come create a Motion Comic script.`;
+                returnObj.content = `I'm Daniel Simionescu and I own this place. Come see what the website has to offer.`;
                 break;
             case 'legal':
             case 'terms':
@@ -152,6 +148,7 @@ export class SeoService {
             case 'sns':
             case 'gdpr':
                 returnObj.content = '';
+            // tslint:disable-next-line: no-switch-case-fall-through
             default:
                 break;
         }
@@ -173,8 +170,9 @@ export class SeoService {
             const url = 'http://www.gamescrypt.com';
             const siteName = 'http://www.gamescrypt.com';
             const type = 'website';
-            const title = 'Maybe Alternative Writing Is For You | WriteTooL App';
-            const description = 'The application is designed for creating movie scripts, short stories, video game dialog or comic book scripts with the details that matter.';
+            const title = 'Maybe our games are for YOU | gameScrypt Website';
+            // tslint:disable-next-line: max-line-length
+            const description = 'The website is designed for showcasing Games, online competitions, Unity Utils Class and Oppinions featured in Blog.';
             const image = '';
 
             return [
@@ -193,8 +191,9 @@ export class SeoService {
 
         if (page === 'home') {
             const card = 'http://www.gamescrypt.com';
-            const title = 'Maybe Alternative Writing Is For You | WriteTooL App';
-            const description = 'The application is designed for creating movie scripts, short stories, video game dialog or comic book scripts with the details that matter.';
+            const title = 'Play games that improve you | gameScrypt.com';
+            // tslint:disable-next-line: max-line-length
+            const description = 'The website is designed for gameScrypt games exhibitions.';
             const image = '';
 
             return [

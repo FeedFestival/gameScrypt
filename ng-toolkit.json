@@ -1,6 +1,6 @@
 {
   "universal": {
-    "clientProject": "WriteTool",
+    "clientProject": "gameScrypt",
     "directory": ".",
     "skipInstall": false,
     "http": true,
