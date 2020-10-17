@@ -125,10 +125,12 @@ export class HeaderComponent implements OnInit, OnChanges {
         const newArgs = {};
         newArgs[pageOption] = true;
 
-        const dialogRef = this.matDialog.open(PageDialogComponent, {
+        this.matDialog.open(PageDialogComponent, {
             data: {
                 args: newArgs
-            }
+            },
+            disableClose: false,
+            hasBackdrop: true
         });
     }
 }

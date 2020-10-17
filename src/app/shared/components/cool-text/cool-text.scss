@@ -1,0 +1,19 @@
+@import '../../../theme/overrides/scss/variables';
+
+.pre {
+    color: $orange;
+    font-size: 18px;
+    margin-right: -3px;
+}
+.word {
+}
+.suffix {
+    color: #c5c5c5;
+}
+
+.s-h3, .s-h3 > .pre {
+    font-size: 30px !important;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}

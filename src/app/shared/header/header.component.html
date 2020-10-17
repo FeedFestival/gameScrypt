@@ -4,34 +4,37 @@
     </div>
     <div class="col-6 col-sm-7 d-flex">
         <button mat-button class="nav-button float-right" (click)="goHome()">
-            <span>NEWS</span>
+            <cool-text pre="N" word="EWS"></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goTo('games')">
-            <span>GAMES</span>
+            <cool-text pre="G" word="AMES"></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goTo('unity-workflow')">
-            <span>UNITY WORKFLOW</span>
+            <cool-text pre="U" word="NITY " suffix="WORKFLOW"></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goTo('ladders')">
-            <span>ESPORTS</span>
+            <cool-text pre="E" word="SPORTS" ></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goTo('blog')">
-            <span>BLOG</span>
+            <cool-text pre="B" word="LOG" ></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goToWriteTool()">
-            <span>WRITE TOOL</span>
+            <cool-text pre="W" word="RITE " suffix="TOOL"></cool-text>
         </button>
     </div>
     <div class="col-6 col-sm-4 d-flex justify-content-center">
         <div class="col-8 account-buttons" [ngClass]="scrollClass">
             <button mat-button class="ac-but" (click)="openPage('showContact')">
-                <img class="ac-img" src="assets/images/Contact.png" />
+                <icon-contact-us></icon-contact-us>
+                <span class="sm-f">Contact</span>
             </button>
             <button mat-button class="ac-but" (click)="openPage('showPrivacy')">
-                <img class="ac-img" src="assets/images/Policy.png" />
+                <icon-policy></icon-policy>
+                <span class="sm-f">Policy</span>
             </button>
             <button mat-button class="ac-but" (click)="openPage('showAbout')">
-                <img class="ac-img" src="assets/images/AboutUs.png" />
+                <icon-about-us></icon-about-us>
+                <span class="sm-f">About Us</span>
             </button>
         </div>
 
@@ -52,7 +55,8 @@
                 </div>
 
                 <div *ngIf="loggedIn === false">
-                    <span>Login</span>
+                    <cool-text pre="L" word="ogin"></cool-text>
+                    <!-- <span>Login</span> -->
                     <icon-facebook></icon-facebook>
                 </div>
             </button>

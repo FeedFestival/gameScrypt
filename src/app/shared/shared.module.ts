@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { CoolText } from './components/cool-text/cool-text';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -12,7 +13,8 @@ export const sharedEntryComponents = [
 export const sharedComponents = [
     HeaderComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    CoolText
 ];
 
 @NgModule({

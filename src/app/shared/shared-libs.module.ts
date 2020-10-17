@@ -13,7 +13,9 @@ import {
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { IconAboutUs } from './components/icons/icon-about-us';
 import { IconContact } from './components/icons/icon-contact';
+import { IconContactUs } from './components/icons/icon-contact-us';
 import { IconCopyright } from './components/icons/icon-copyright';
 import { IconFacebook } from './components/icons/icon-facebook';
 import { IconFacebookSquare } from './components/icons/icon-facebook-square';
@@ -21,6 +23,7 @@ import { IconInfo } from './components/icons/icon-info';
 import { IconInstagram } from './components/icons/icon-instagram';
 import { IconMobile } from './components/icons/icon-mobile';
 import { IconPaperPlane } from './components/icons/icon-paper-plane';
+import { IconPolicy } from './components/icons/icon-policy';
 import { IconQuestion } from './components/icons/icon-question';
 import { IconSmallWarning } from './components/icons/icon-small-warning';
 import { IconTwiter } from './components/icons/icon-twiter';
@@ -73,7 +76,10 @@ export const appIcons = [
     IconTwiter,
     IconFacebookSquare,
     IconInstagram,
-    IconFacebook
+    IconFacebook,
+    IconContactUs,
+    IconPolicy,
+    IconAboutUs
 ];
 
 @NgModule({

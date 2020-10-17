@@ -183,11 +183,18 @@
 }
 
 .ac-but {
+    line-height: 20px;
+    width: auto !important;
+
     .svg-but {
         height: 55px;
         color: white;
         margin-bottom: -15px;
         font-size: 27px;
+    }
+    .sm-f {
+        font-size: 11px;
+        color: darkgrey;
     }
 }
 
