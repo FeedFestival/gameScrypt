@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app-routing.module';
+import { AppRoutingModule } from '../routes/app-routing.module';
 import { CoolText } from './components/cool-text/cool-text';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';

@@ -1,3 +1,5 @@
+@import './theme/overrides/scss/variables';
+
 ::ng-deep {
     $orange: #e46315;
     $grey: #b6c8cd;
@@ -778,7 +780,7 @@
     .website-bottom-space {
         height: 150px; text-align: center;
         padding-top: 100px !important;
-        background: linear-gradient(0deg, rgba(0,0,0,0.44) 0%, rgba(253,187,45,0) 100%) !important;
+        background: linear-gradient(0deg, $dark-transparent 0%, rgba(253,187,45,0) 100%) !important;
         box-shadow: 26px 33px 33px rgba(0,0,0,0.5) !important;
     }
 }

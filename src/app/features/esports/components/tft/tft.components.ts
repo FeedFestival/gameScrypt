@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 
 @Component({
-    selector: 'app-ladders',
-    templateUrl: './ladders.component.html',
-    styleUrls: ['./ladders.component.scss']
+    selector: 'app-tft',
+    templateUrl: './tft.component.html',
+    // styleUrls: ['./esports.component.scss']
 })
-export class LaddersComponent implements OnInit {
+export class TftComponent implements OnInit {
 
     bp: string;
 

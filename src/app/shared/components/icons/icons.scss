@@ -1,3 +1,5 @@
+@import '../../../theme/overrides/scss/variables';
+
 ::ng-deep {
     icon-contact {
         > svg {
@@ -81,6 +83,26 @@
             margin-right: 5px;
             margin-top: -5px;
             color: whitesmoke;
+        }
+    }
+
+    icon-navigate {
+        > svg {
+            width: 15px;
+            margin-left: 1px;
+            margin-right: 5px;
+            margin-top: 3px;
+            color: whitesmoke;
+        }
+    }
+
+    icon-more {
+        > svg {
+            width: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 0px;
+            color: $orange;
         }
     }
 }

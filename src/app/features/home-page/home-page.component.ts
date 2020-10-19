@@ -3,6 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ElementType } from 'src/app/app.constants';
+import { MAIN_ROUTE } from 'src/app/routes/main/main.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from './seo.service';
 
@@ -40,12 +41,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        const page = 'home';
-        this.titleService.setTitle(this.seoService.getTitle(page));
+        this.titleService.setTitle(this.seoService.getTitle(MAIN_ROUTE.base));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
-        this.metaService.addTags(this.seoService.getMetaTags(page));
+        this.metaService.addTags(this.seoService.getMetaTags(MAIN_ROUTE.base));
     }
 
     ngOnDestroy() {

@@ -37,6 +37,12 @@ b {
     );
 }
 
+.page-min-height-330 {
+    min-height: calc(
+        100vh - ((#{$header-height} + #{$submenu-height}) + 330px)
+    );
+}
+
 .main-menu {
     background-color: rgba(0,0,0,0.5);
     min-height: 50px;
@@ -385,16 +391,55 @@ a.orange {
     color: rgba(0,0,0,0.2);
 }
 
+.c-point {
+    cursor: pointer !important;
+}
+
+.mrn-5px {
+    margin-right: -5px !important;
+}
+.mrn-3p {
+    margin-right: -3px !important;
+}
+
+.f-10 {
+    font-size: 10px !important;
+    line-height: 11px !important;
+}
+
+.f-11 {
+    font-size: 11px !important;
+    line-height: 12px !important;
+}
+
+.more-button {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    height: 18px;
+    padding-left: 7px;
+
+    .pre {
+        font-size: 14px;
+    }
+
+    &:hover {
+        border-bottom: 1px solid whitesmoke;
+    }
+}
+
+
 /*
 MATERIAL
 */
 .mat-card {
     background-color: rgba(0,0,0,0.5);
+    color: $dark-grey;
 }
 
 .mat-paginator {
     background: transparent;
-    color: whitesmoke;
+    color: $dark-grey;
 
     .mat-paginator-container {
         color: whitesmoke;
@@ -406,7 +451,7 @@ MATERIAL
 }
 
 .mat-expansion-panel {
-    background-color: rgba(0,0,0,0.4);
+    background-color: $dark-transparent;
 }
 
 .mat-expansion-panel-header-title,
@@ -432,4 +477,21 @@ MATERIAL
 
 .mat-input-element {
     color: white !important;
+}
+
+.mat-tree {
+    background-color: $dark-transparent;
+    padding-bottom: 15px;
+
+    .mat-tree-node {
+        color: whitesmoke;
+    }
+
+    .mat-tree-node.node-sm-size {
+        min-height: 25px !important;
+        > .mat-icon-button {
+            height: 25px;
+            line-height: 20px;
+        }
+    }
 }

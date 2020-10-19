@@ -9,14 +9,16 @@ import { AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login'
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './features/about/about.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { GamesComponent } from './features/games/games.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
-import { LaddersComponent } from './features/ladders/ladders.component';
+import { PzComponent } from './features/esports/components/pz/pz.component';
+import { TftComponent } from './features/esports/components/tft/tft.components';
+import { EsportsComponent } from './features/esports/esports.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
 import { GdprComponent } from './features/policy/gdpr/gdpr.component';
 import { LegalDocsComponent } from './features/policy/legal-documents.component';
@@ -27,6 +29,7 @@ import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
 import { OnResizeComponent } from './shared/on-resize/on-resize.component';
 import { SharedModule } from './shared/shared.module';
+import { ArticleComponent } from './features/blog/articles/article.component';
 
 const config = new AuthServiceConfig([
     {
@@ -82,8 +85,11 @@ export const mainComponents = [
 ];
 export const components = [
     UnityWorkflowComponent,
-    LaddersComponent,
+    EsportsComponent,
+    TftComponent,
+    PzComponent,
     BlogComponent,
+    ArticleComponent,
     GamesComponent
 ];
 

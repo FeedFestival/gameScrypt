@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';

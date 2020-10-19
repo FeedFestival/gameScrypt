@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../home-page/seo.service';
 import { Title, Meta } from '@angular/platform-browser';
+import { TERMS_PRIVACY } from 'src/app/routes/termsAndPrivacy/termsAndPrivacy.seo';
 
 @Component({
     selector: 'app-sns',
@@ -15,11 +16,11 @@ export class SnsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const page = 'sns';
-        this.titleService.setTitle(this.seoService.getTitle(page));
+        this.titleService.setTitle(this.seoService.getTitle(TERMS_PRIVACY.SNS));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
+        this.metaService.addTags(this.seoService.getMetaTags(TERMS_PRIVACY.SNS));
     }
 
 }

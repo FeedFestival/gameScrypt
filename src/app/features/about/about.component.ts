@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { ABOUT_ROUTE } from 'src/app/routes/main/main.seo';
 import { SeoService } from '../home-page/seo.service';
 
 @Component({
@@ -16,13 +17,11 @@ export class AboutComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const page = 'about';
-
-        this.titleService.setTitle(this.seoService.getTitle(page));
+        this.titleService.setTitle(this.seoService.getTitle(ABOUT_ROUTE.base));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
-        this.metaService.addTags(this.seoService.getMetaTags(page));
+        this.metaService.addTags(this.seoService.getMetaTags(ABOUT_ROUTE.base));
     }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../home-page/seo.service';
 import { Title, Meta } from '@angular/platform-browser';
+import { TERMS_PRIVACY } from 'src/app/routes/termsAndPrivacy/termsAndPrivacy.seo';
 
 @Component({
     selector: 'app-gdpr',
@@ -16,11 +17,11 @@ export class GdprComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const page = 'gdpr';
-        this.titleService.setTitle(this.seoService.getTitle(page));
+        this.titleService.setTitle(this.seoService.getTitle(TERMS_PRIVACY.GDPR));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
+        this.metaService.addTags(this.seoService.getMetaTags(TERMS_PRIVACY.GDPR));
     }
 
 }

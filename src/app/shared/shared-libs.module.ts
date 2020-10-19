@@ -4,10 +4,12 @@ import {
     MatCardModule, MatCheckboxModule,
     MatDialogModule,
     MatDividerModule, MatExpansionModule,
+    MatIconModule,
     MatInputModule, MatMenuModule,
     MatPaginatorModule,
     MatSelectModule,
     MatTooltipModule,
+    MatTreeModule,
     MAT_DIALOG_DEFAULT_OPTIONS
 } from '@angular/material';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
@@ -22,6 +24,8 @@ import { IconFacebookSquare } from './components/icons/icon-facebook-square';
 import { IconInfo } from './components/icons/icon-info';
 import { IconInstagram } from './components/icons/icon-instagram';
 import { IconMobile } from './components/icons/icon-mobile';
+import { IconMore } from './components/icons/icon-more';
+import { IconNavigate } from './components/icons/icon-navigate';
 import { IconPaperPlane } from './components/icons/icon-paper-plane';
 import { IconPolicy } from './components/icons/icon-policy';
 import { IconQuestion } from './components/icons/icon-question';
@@ -54,7 +58,9 @@ export const matModules = [
     MatSelectModule,
     MatExpansionModule,
     MatTooltipModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTreeModule,
+    MatIconModule
 ];
 
 export const externalAngularLibraries = [
@@ -79,7 +85,9 @@ export const appIcons = [
     IconFacebook,
     IconContactUs,
     IconPolicy,
-    IconAboutUs
+    IconAboutUs,
+    IconNavigate,
+    IconMore
 ];
 
 @NgModule({

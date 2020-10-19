@@ -1,0 +1,15 @@
+.article-pic {
+    // margin-left: -16px;
+
+    > img {
+        width: calc(100% + 20%);
+    }
+}
+
+.article-pic.img-shadow {
+    > img {
+        border: 1px solid #ccc !important;
+        -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1 !important;
+        box-shadow: 0 4px 15px black !important;
+    }
+}

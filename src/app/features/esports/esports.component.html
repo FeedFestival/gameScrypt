@@ -1,0 +1,33 @@
+<div class="row no-gutters page-min-height-330 p-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span class="bp">
+        {{bp}}
+    </span>
+
+    <div class="row">
+        <div class="col-3 d-inline-flex game-competition c-point"
+            (click)="goToLadder('tft')">
+            <div class="pic-competition">
+                <img src="assets/images/tft.jpg" />
+            </div>
+            <div>
+                <div class="title-competition px-3">
+                    <cool-text pre="T" word="FT " suffix="Ladder"></cool-text>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3 mx-2 d-inline-flex game-competition c-point"
+            (click)="goToLadder('project-zomboid')">
+            <div class="pic-competition">
+                <img src="assets/images/pz.jpg" />
+            </div>
+            <div>
+                <div class="title-competition px-3">
+                    <cool-text pre="P" word="roject Zomboid" suffix="Ladder"></cool-text>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

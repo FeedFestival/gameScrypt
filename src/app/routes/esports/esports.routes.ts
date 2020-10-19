@@ -1,0 +1,11 @@
+import { Routes } from '@angular/router';
+import { PzComponent } from 'src/app/features/esports/components/pz/pz.component';
+import { TftComponent } from 'src/app/features/esports/components/tft/tft.components';
+import { EsportsComponent } from 'src/app/features/esports/esports.component';
+import { ESPORTS_ROUTE } from './esports.seo';
+
+export const esportsRoutes: Routes = [
+    { path: ESPORTS_ROUTE.base, component: EsportsComponent, },
+    { path: ESPORTS_ROUTE.base + '/tft', component: TftComponent },
+    { path: ESPORTS_ROUTE.base + '/project-zomboid', component: PzComponent },
+];

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { TERMS_PRIVACY } from 'src/app/routes/termsAndPrivacy/termsAndPrivacy.seo';
 import { SeoService } from '../../home-page/seo.service';
-import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-cookies',
@@ -15,11 +16,11 @@ export class CookiesComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const page = 'cookies';
-        this.titleService.setTitle(this.seoService.getTitle(page));
+        this.titleService.setTitle(this.seoService.getTitle(TERMS_PRIVACY.COOKIES));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
+        this.metaService.addTags(this.seoService.getMetaTags(TERMS_PRIVACY.COOKIES));
     }
 
 }
