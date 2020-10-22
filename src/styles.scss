@@ -428,6 +428,15 @@ a.orange {
     }
 }
 
+.btn-sm.download {
+    background: #adff2fc7;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.color-text {
+    color: #ccc;
+}
 
 /*
 MATERIAL
@@ -494,4 +503,12 @@ MATERIAL
             line-height: 20px;
         }
     }
+}
+
+.cdk-overlay-backdrop {
+    background-color: rgba(0,0,0,0.6) !important;
+}
+
+.mat-dialog-container {
+    background-color: rgb(16 16 16) !important;
 }

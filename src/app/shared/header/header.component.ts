@@ -117,7 +117,8 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     goToWriteTool() {
-        window.location.href = 'https://gamescrypt.com';
+        const userFacebookId = '';
+        window.location.href = 'http://writetool.gamescrypt.com/' + userFacebookId;
     }
 
     openPage(pageOption) {

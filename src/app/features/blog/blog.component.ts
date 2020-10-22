@@ -55,6 +55,7 @@ export class BlogComponent implements OnInit {
             this.metaService.removeTag(tag);
         });
         this.metaService.addTags(this.seoService.getMetaTags(BLOG_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('max');
 
         this.latestArticles = ArticleBank.LatestArticles;
         this.treeFlattener = new MatTreeFlattener(

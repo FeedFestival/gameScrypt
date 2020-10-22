@@ -1,6 +1,6 @@
 export const MAIN_ROUTE = {
     base: '',
-    websiteTitle: 'gameScrypt • FREE ↙ Official Website | play @ gamescrypt.com',
+    websiteTitle: 'gameScrypt ↙ gamescrypt.com',
     socialTitle: 'Play games that improve you | gameScrypt.com',
     keywords: 'FREE Games, gameScrypt, Programming, Online Competitions',
     // tslint:disable-next-line: max-line-length

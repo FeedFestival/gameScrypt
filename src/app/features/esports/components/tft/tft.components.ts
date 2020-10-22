@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from 'src/app/features/home-page/seo.service';
+import { TFT_ROUTE } from 'src/app/routes/esports/esports.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 
 @Component({
@@ -12,18 +14,23 @@ export class TftComponent implements OnInit {
     bp: string;
 
     constructor(
-        private router: Router,
+        private titleService: Title,
+        private metaService: Meta,
+        private seoService: SeoService,
         private onResizeService: OnResizeService
     ) {
         onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
             });
-
-        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnInit() {
-
+        this.titleService.setTitle(this.seoService.getTitle(TFT_ROUTE.base));
+        this.seoService.getAllTags().forEach(tag => {
+            this.metaService.removeTag(tag);
+        });
+        this.metaService.addTags(this.seoService.getMetaTags(TFT_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('med');
     }
 }

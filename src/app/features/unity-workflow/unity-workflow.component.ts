@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
-import { NewUnityFile, NewUnityFile1, NewUnityFile2 } from './snippet-bank/new-unity-file';
+import { NewUnityFile, percent_utils } from './snippet-bank/new-unity-file';
+import { UnitHeadStart } from './snippet-bank/unity-head-start';
+import { CREATE_FROM_PREFAB, GET_DIRECTION, GET_MID_POINT_OFFSET, GET_PONIT_HIT_AT_MOUSE_POSITION, SMOOTH_LOOK } from './snippet-bank/unity-world-functions';
 
 @Component({
     selector: 'app-unity-workflow',
@@ -40,21 +41,21 @@ export class UnityWorkflowComponent implements OnInit {
             .subscribe((bp) => {
                 this.bp = bp;
             });
-
-        this.onResizeService.emitScrollClassEvent('med');
     }
 
     ngOnInit() {
+
+        this.onResizeService.emitScrollClassEvent('max');
+
         this.snippetList.push(
             NewUnityFile,
-            NewUnityFile1,
-            NewUnityFile2,
-            NewUnityFile,
-            NewUnityFile1,
-            NewUnityFile2,
-            NewUnityFile,
-            NewUnityFile1,
-            NewUnityFile2
+            UnitHeadStart,
+            GET_PONIT_HIT_AT_MOUSE_POSITION,
+            GET_MID_POINT_OFFSET,
+            SMOOTH_LOOK,
+            GET_DIRECTION,
+            CREATE_FROM_PREFAB,
+            percent_utils
         );
 
         this.filterSnippets();

@@ -21,48 +21,26 @@ public class MainPlayer : MonoBehaviour {
     `
 };
 
-export const NewUnityFile1 = {
+export const percent_utils = {
     expanded: false,
-    name: 'New Unity File 1',
-    description: 'New file 1',
+    name: 'Percent Static Utils Class',
+    description: 'Find out the percentage using this operations that are human talk expression.',
     code: `
-using UnityEngine;
-using System.Collections;
-
-public class MainPlayer : MonoBehaviour {
-
-    // Use this for initialization
-    void Start () {
-
+public static class percent
+{
+    public static float Find(float _percent, float _of)
+    {
+        return (_of / 100f) * _percent;
     }
-
-    // Update is called once per frame
-    void Update () {
-
+    public static float What(float _is, float _of)
+    {
+        return (_is * 100f) / _of;
     }
 }
-    `
-};
-
-export const NewUnityFile2 = {
-    expanded: false,
-    name: 'New Unity File 2',
-    description: 'New file 2',
-    code: `
-using UnityEngine;
-using System.Collections;
-
-public class MainPlayer : MonoBehaviour {
-
-    // Use this for initialization
-    void Start () {
-
-    }
-
-    // Update is called once per frame
-    void Update () {
-
-    }
-}
-    `
+`,
+    useInfo: true,
+    useDescription: 'How to use:',
+    codeUse: `
+var p = percent.Find(_percent: 25, _of: 275);
+`
 };

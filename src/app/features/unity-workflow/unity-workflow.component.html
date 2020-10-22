@@ -36,12 +36,9 @@
             <ng-template matExpansionPanelContent>
 
                 <div class="col-12">
-                    <!-- <div class="col-12">
-                        <h5>Project Starter</h5>
+                    <div class="col-12 my-3 color-text">
+                        <span [innerHtml]="snippet.description"></span>
                     </div>
-                    <div class="col-12">
-                        Description
-                    </div> -->
 
                     <div class="col-12 p-1 code-block-container">
                         <div class="col-12 code-block-options">
@@ -50,6 +47,21 @@
                         <div class="col-12 code-block">
                             <pre><code>
                                 {{snippet.code}}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-12 my-3 color-text" *ngIf="snippet.useInfo">
+                        <span [innerHtml]="snippet.useDescription"></span>
+                    </div>
+
+                    <div class="col-12 p-1 code-block-container" *ngIf="snippet.useInfo">
+                        <div class="col-12 code-block-options">
+
+                        </div>
+                        <div class="col-12 code-block">
+                            <pre><code>
+                                {{snippet.codeUse}}
                             </code></pre>
                         </div>
                     </div>

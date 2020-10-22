@@ -36,7 +36,7 @@ export class ArticleComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        this.onResizeService.emitScrollClassEvent('med');
     }
 
     init() {

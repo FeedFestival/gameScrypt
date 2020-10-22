@@ -37,7 +37,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
             .subscribe((bp) => {
                 this.bp = bp;
             });
-        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnInit() {
@@ -46,6 +45,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
             this.metaService.removeTag(tag);
         });
         this.metaService.addTags(this.seoService.getMetaTags(MAIN_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnDestroy() {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { GAMES_ROUTE } from 'src/app/routes/games/games.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
+import { SeoService } from '../home-page/seo.service';
 
 @Component({
     selector: 'app-games',
@@ -12,7 +14,9 @@ export class GamesComponent implements OnInit {
     bp: string;
 
     constructor(
-        private router: Router,
+        private seoService: SeoService,
+        private titleService: Title,
+        private metaService: Meta,
         private onResizeService: OnResizeService
     ) {
         onResizeService.getResizeEvent()
@@ -22,6 +26,11 @@ export class GamesComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        this.titleService.setTitle(this.seoService.getTitle(GAMES_ROUTE.base));
+        this.seoService.getAllTags().forEach(tag => {
+            this.metaService.removeTag(tag);
+        });
+        this.metaService.addTags(this.seoService.getMetaTags(GAMES_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('max');
     }
 }

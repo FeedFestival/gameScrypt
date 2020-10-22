@@ -25,8 +25,6 @@ export class EsportsComponent implements OnInit {
             .subscribe((bp) => {
                 this.bp = bp;
             });
-
-        this.onResizeService.emitScrollClassEvent('max');
     }
 
     ngOnInit() {
@@ -35,6 +33,7 @@ export class EsportsComponent implements OnInit {
             this.metaService.removeTag(tag);
         });
         this.metaService.addTags(this.seoService.getMetaTags(ESPORTS_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('max');
     }
 
     goToLadder(route: string): void {

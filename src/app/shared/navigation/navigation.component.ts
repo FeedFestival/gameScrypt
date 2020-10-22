@@ -24,10 +24,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
         private router: Router,
         private navigationService: NavigationService,
         private onResizeService: OnResizeService
-        // private stateStorageService: StateStorageService,
-        // private accountService: AccountService
     ) {
-        onResizeService.getResizeEvent()
+        this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
                 this.init();
