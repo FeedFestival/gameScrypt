@@ -5,7 +5,7 @@ import { NgcCookieConsentService, NgcInitializeEvent, NgcNoCookieLawEvent, NgcSt
 import { NgScrollbar } from 'ngx-scrollbar';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Subscription } from 'rxjs';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { ScrollBreakpoints } from './app.constants';
 import { OnResizeService } from './shared/on-resize/on-resize.service';
 
@@ -19,15 +19,14 @@ declare let gtag: Function;
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    title = 'asl-pls';
-
     faArrowCircleUp = faArrowCircleUp;
     faBars = faBars;
 
-    // Stream that will update title font size on scroll down
     scrollClass = 'max';
+    showWall = false;
     bp: string;
     scrollBreakpoint: any = ScrollBreakpoints.sm;
+    private backgroundInterval: any;
 
     // keep refs to subscriptions to be able to unsubscribe later
     private popupOpenSubscription: Subscription;
@@ -75,7 +74,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         //     }
         // });
 
-        onResizeService.getResizeEvent()
+        this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
                 if (this.bp === 'xs') {
@@ -87,11 +86,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
         onResizeService.getScrollClassEvent()
             .subscribe((scrollClass) => {
-                this.scrollClass = scrollClass;
+                this.setScrollClass(scrollClass);
             });
     }
 
     ngOnInit() {
+
+        this.setScrollClass(this.scrollClass);
 
         const isCookieAccepted = this.localStorage.retrieve('isCookieAccepted');
 
@@ -136,6 +137,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit() {
+
+        this.animateBackground(4000);
+
         // this.scrollSubscription = this.scrollRef.verticalScrolled.pipe(
         //     map((e: any) => {
 
@@ -150,7 +154,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         //     }),
         //     tap((scrollClass: string) => this.ngZone.run(
         //         () => {
-        //             this.scrollClass = scrollClass;
+        //              this.setScrollClass(scrollClass);
         //         })
         //     )
         // ).subscribe();
@@ -162,8 +166,39 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         });
     }
 
-    showMenu() {
-        this.scrollClass = 'med';
+    setScrollClass(scrollClass: string) {
+        this.scrollClass = scrollClass;
+    }
+
+    animateBackground(totalTime: number, every: number = 100) {
+        const totalTimes = totalTime / every;
+        let times = 0;
+        const maxRgba = 99;
+        const rgbaDecrease = maxRgba / totalTimes;
+        const rgbaIncrease = 100 / totalTimes;
+        let rgbaPercent = maxRgba;
+        let gradientPercent = 0;
+        this.backgroundInterval = setInterval(_ => {
+
+            const rgba = 'rgba(45, 58, 60, 0.' + this.pad(rgbaPercent, 2) + ')';
+            const el = (document.querySelector('body') as HTMLElement);
+            const valueOfBackground = 'linear-gradient(transparent, ' + rgba + ' ' + gradientPercent + '%)';
+            el.style.background = valueOfBackground;
+
+            gradientPercent = gradientPercent + rgbaIncrease;
+            rgbaPercent = Math.ceil(rgbaPercent - Math.ceil(rgbaDecrease));
+            times++;
+            if (times > totalTimes) {
+                el.style.background = 'unset';
+                clearInterval(this.backgroundInterval);
+            }
+        }, every);
+    }
+
+    private pad(n, width, z?) {
+        z = z || '0';
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
     }
 
     ngOnDestroy() {

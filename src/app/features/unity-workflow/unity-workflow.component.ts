@@ -45,7 +45,7 @@ export class UnityWorkflowComponent implements OnInit {
 
     ngOnInit() {
 
-        this.onResizeService.emitScrollClassEvent('max');
+        this.onResizeService.emitScrollClassEvent('med');
 
         this.snippetList.push(
             NewUnityFile,
