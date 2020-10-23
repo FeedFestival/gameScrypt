@@ -4,28 +4,13 @@
 
 <app-cookies></app-cookies>
 
-<div class="row no-gutters container m-auto p-3">
-    <div class="container-fluid pt-5 justify-content-center">
+<app-gdpr></app-gdpr>
 
-        <div class="col-12 m-auto">
-            <h3>
-                Advertising
-            </h3>
-        </div>
-        <div class="col-11 m-auto">
-            <p>
-                <b>gameScrypt.com</b> might show AdSense ads.
-            </p>
-            <h4>
-                IMPORTANT!
-            </h4>
-        </div>
-        <div class="col-10 m-auto">
-            <p>
-                <b>Please stop using the website if you disagree with any of the terms above.</b>
-            </p>
-        </div>
+<app-sns></app-sns>
+
+<div class="row no-gutters container m-auto p-3">
+    <div class="container-fluid pt-5 justify-content-center privacy-text" [innerHTML]="LEGAL_DOCUMENTS_ADVERTISING">
     </div>
 </div>
 
-<app-sns></app-sns>
+<!--    revised: 22/10/2020     -->

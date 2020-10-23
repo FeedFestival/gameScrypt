@@ -2,29 +2,11 @@
     <div class="container-fluid pt-5 justify-content-center">
         <div class="col-12">
             <h3>
-                Terms of Service
+                {{ PRIVACY_POLICY_TERMS.TITLE }}
             </h3>
         </div>
 
-        <div class="col-11 m-auto">
-            <p>
-                These gamescrypt.com Analytics Terms of Service (this "<b>Agreement</b>") are entered into by
-                gamescrypt.com
-                and the entity executing this Agreement ("<b>You</b>"). This Agreement governs Your use
-                of this website (the "<b>Service</b>"). BY STAYING ON THIS WEBSITE, AND USING THE SERVICE, YOU
-                ACKNOWLEDGE
-                THAT YOU HAVE REVIEWED AND ACCEPT THIS AGREEMENT AND ARE AUTHORIZED TO ACT ON BEHALF OF, AND BIND TO
-                THIS AGREEMENT. In consideration of the foregoing, the parties agree as specified below.
-
-                We may amend this Agreement at any time by posting the amended terms on our Website. We may or may
-                not post notices on the homepage of our Website when such changes occur.
-
-                We refer to this Agreement, our Privacy Policy accessible below, and any other terms, rules, or
-                guidelines on our Website collectively as our "Legal Terms." You explicitly and implicitly agree to
-                be bound by our Legal Terms each time you access our Website. If you do not wish to be so bound,
-                please do not use or access our Website.
-            </p>
-        </div>
+        <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.TERMS_OF_SERVICE_AGREEMENT"></div>
 
         <div class="col-11 m-auto">
             <h4>
@@ -191,7 +173,6 @@
         </div>
 
         <div class="col-10 m-auto">
-
             <p>
                 You agree to defend, indemnify and hold our Service harmless from and against any and all claims,
                 damages,

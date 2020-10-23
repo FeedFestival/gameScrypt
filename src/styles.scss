@@ -439,6 +439,24 @@ a.orange {
     color: #ccc;
 }
 
+a.hyperlink {
+    transition: all 1s;
+    color: white;
+    &:hover {
+        color: $orange;
+
+        .pre {
+            color: white !important;
+        }
+    }
+}
+
+.privacy-text {
+    p {
+        color: #ccc;
+    }
+}
+
 /*
 MATERIAL
 */

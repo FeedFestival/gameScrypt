@@ -16,7 +16,7 @@ export class SeoService {
     getTitle(page): string {
         const theTitleUsed = SEO_BANK.getTitle(page);
         if (theTitleUsed.length > 70) {
-            console.error('title meta tag too long: ' + theTitleUsed.length);
+            console.error('title meta tag too long: ' + theTitleUsed.length + ' title: ' + theTitleUsed);
         }
         return theTitleUsed;
     }
