@@ -1,3 +1,5 @@
+@import '../../theme/overrides/scss/variables';
+
 .code-block-container {
     background-color: #5d5e6e26;
     border-radius: 15px;
@@ -20,7 +22,7 @@
     margin-top: -15px;
 
     > pre {
-        color: whitesmoke;
+        color: $Smoke;
         margin-bottom: 0px;
 
         > code {

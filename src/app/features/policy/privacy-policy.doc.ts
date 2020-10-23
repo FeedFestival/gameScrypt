@@ -10,9 +10,7 @@ export class PrivacyPolicy {
     };
     LEGAL_DOCUMENTS_ADVERTISING?: string;
 
-    constructor(private sanitized?: DomSanitizer) {
-
-    }
+    constructor(private sanitized?: DomSanitizer) { }
 
     _(): IPrivacyPolicy {
         return {

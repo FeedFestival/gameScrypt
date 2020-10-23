@@ -12,7 +12,7 @@
         // transition: all;
 
         .article-title {
-            color: whitesmoke !important;
+            color: $Smoke !important;
         }
 
         .article-pic {
@@ -38,7 +38,7 @@
 
     &:hover {
         .title-timeline {
-            border-bottom: 1px solid rgba($color: whitesmoke, $alpha: 0.4);
+            border-bottom: 1px solid rgba($color: $Smoke, $alpha: 0.4);
         }
     }
 }

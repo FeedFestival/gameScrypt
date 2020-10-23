@@ -7,6 +7,7 @@ import {
     MatIconModule,
     MatInputModule, MatMenuModule,
     MatPaginatorModule,
+    MatRadioModule,
     MatSelectModule,
     MatTooltipModule,
     MatTreeModule,
@@ -33,10 +34,6 @@ import { IconSmallWarning } from './components/icons/icon-small-warning';
 import { IconTwiter } from './components/icons/icon-twiter';
 import { IconWarning } from './components/icons/icon-warning';
 import { IconWhatsapp } from './components/icons/icon-whatsapp';
-// import { IconInfo } from './components/icons/icon-info';
-// import { IconQuestion } from './components/icons/icon-question';
-// import { IconSmallWarning } from './components/icons/icon-small-warning';
-// import { IconWarning } from './components/icons/icon-warning';
 
 // export const primeNgModule = [
 //     ButtonModule,
@@ -60,7 +57,8 @@ export const matModules = [
     MatTooltipModule,
     MatPaginatorModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
 ];
 
 export const externalAngularLibraries = [
@@ -111,7 +109,8 @@ export const appIcons = [
                 disableClose: true,
                 hasBackdrop: true,
                 closeOnNavigation: true,
-                direction: 'ltr'
+                direction: 'ltr',
+                panelClass: 'dialog-class'
             }
         }
     ]

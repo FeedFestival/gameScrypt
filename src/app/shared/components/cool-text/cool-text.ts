@@ -16,6 +16,7 @@ export class CoolText implements OnChanges {
     @Input() full: 'gameScrypt';
 
     @Input() size: 'normal' | 'h3' = 'normal';
+    @Input() fontForce: 'default' | 'roboto' = 'default';
 
     hasFull = false;
     fullPre: string;

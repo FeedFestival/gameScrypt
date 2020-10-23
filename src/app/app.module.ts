@@ -9,16 +9,16 @@ import { AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login'
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './features/about/about.component';
+import { ArticleComponent } from './features/blog/articles/article.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
-import { GamesComponent } from './features/games/games.component';
-import { HomePageComponent } from './features/home-page/home-page.component';
 import { PzComponent } from './features/esports/components/pz/pz.component';
 import { TftComponent } from './features/esports/components/tft/tft.components';
 import { EsportsComponent } from './features/esports/esports.component';
+import { GamesComponent } from './features/games/games.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
 import { GdprComponent } from './features/policy/gdpr/gdpr.component';
 import { LegalDocsComponent } from './features/policy/legal-documents.component';
@@ -26,10 +26,11 @@ import { PrivacyComponent } from './features/policy/privacy/privacy.component';
 import { SnsComponent } from './features/policy/sns/sns.component';
 import { TermsComponent } from './features/policy/terms/terms.component';
 import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
+import { AppRoutingModule } from './routes/app-routing.module';
+import { ConfirmDialogComponent } from './shared/components/confirm/confirm-dialog.component';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
 import { OnResizeComponent } from './shared/on-resize/on-resize.component';
 import { SharedModule } from './shared/shared.module';
-import { ArticleComponent } from './features/blog/articles/article.component';
 
 const config = new AuthServiceConfig([
     {
@@ -92,13 +93,17 @@ export const components = [
     ArticleComponent,
     GamesComponent
 ];
+export const entryDialogComponents = [
+    PageDialogComponent,
+    ConfirmDialogComponent
+];
 
 @NgModule({
     declarations: [
         AppComponent,
         ...mainComponents,
         ...components,
-        PageDialogComponent,
+        ...entryDialogComponents,
         LegalDocsComponent,
         ContactComponent,
         AboutComponent,
@@ -122,7 +127,7 @@ export const components = [
         AppRoutingModule
     ],
     entryComponents: [
-        PageDialogComponent
+        ...entryDialogComponents
     ],
     providers: [
         CookieService,

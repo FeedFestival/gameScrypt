@@ -1,12 +1,10 @@
 @import './theme/overrides/scss/variables';
 
-$wallUrl: '../assets/images/wall.png';
-
 ::ng-deep {
 
     html {
         background-color: $background-color;
-        background-image: url($wallUrl);
+        background-image: url('../assets/images/wall.png');
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;

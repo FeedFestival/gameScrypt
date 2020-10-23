@@ -1,0 +1,61 @@
+<div class="dialog-background">
+    <div class="dialog-background-shadow">
+        <div class="col-12  black-dialog-title">
+            <h2 mat-dialog-title class="col-12 text-center p0">
+                {{dialogText.title}}
+            </h2>
+        </div>
+
+        <mat-dialog-content layout-align="center center" class="mat-dialog-content">
+
+            <div class="ml-2 mr-2">
+                <div class="confirm-dialog-question text-wrap">
+                    {{dialogText.question}}
+                </div>
+
+                <div *ngIf="dialogText.hasOptions" class="mt-3 mb-2">
+                    <mat-radio-group [(ngModel)]="optionChecked" class="smallRadio">
+                        <mat-radio-button *ngFor="let optionData of dialogText.optionsData;" class="d-block pl-5"
+                            [value]="optionData.id">
+                            {{optionData.option}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div [ngClass]="(dialogText.question && !dialogText.hasOptions) ? 'confirm-dialog-message' : 'confirm-dialog-question'"
+                    [ngStyle]="dialogText.messageStyle" [class.has-option-style]="dialogText.hasOptions"
+                    class="text-wrap mt-2" [innerHTML]="dialogText.message">
+                </div>
+                <mat-dialog-content *ngIf="dialogText.hasCommentSection" class="mat-dialog-content textarea-comment">
+                    <span>Comment</span>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12" layout-align="center center">
+                            <mat-form-field class="w-100">
+                                <textarea matInput [(ngModel)]="rejectedReasonComment" maxlength="500"
+                                    cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"
+                                    cdkAutosizeMaxRows="6"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-dialog-content>
+                <div *ngIf="dialogText.hasCommentSection" class="text-center">
+                    Maximum of 500 characters description ({{rejectedReasonComment.length}}/500)
+                </div>
+            </div>
+        </mat-dialog-content>
+        <hr />
+        <mat-dialog-actions class="dialog-buttons-container">
+            <div class="w-100 text-center">
+                <div class="mt-2 mb-2">
+                    <button *ngIf="!dialogText.onlyConfirmButton" class="mat-raised-button dialog-cancel-button"
+                        color="accent" (click)="cancel()">
+                        {{dialogText.cancel}}
+                    </button>
+                    <button class="ml-4 mat-raised-button mat-primary dialog-confirm-button" color="primary"
+                        (click)="confirm()">
+                        {{dialogText?.confirm}}
+                    </button>
+                </div>
+            </div>
+        </mat-dialog-actions>
+    </div>
+</div>

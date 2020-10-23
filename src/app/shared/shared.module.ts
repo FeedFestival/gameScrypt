@@ -8,8 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SharedLibsModule } from './shared-libs.module';
 
-export const sharedEntryComponents = [
-];
 export const sharedComponents = [
     HeaderComponent,
     FooterComponent,
@@ -26,17 +24,13 @@ export const sharedComponents = [
         SharedLibsModule,
     ],
     declarations: [
-        ...sharedComponents,
-        ...sharedEntryComponents
-    ],
-    entryComponents: [
-        ...sharedEntryComponents
+        ...sharedComponents
     ],
     exports: [
         FormsModule,
         ReactiveFormsModule,
         SharedLibsModule,
-        ...sharedComponents,
+        ...sharedComponents
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

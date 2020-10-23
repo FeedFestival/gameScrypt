@@ -1,0 +1,103 @@
+@import './scss/variables';
+
+.mat-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $dark-grey;
+}
+
+.mat-paginator {
+    background: transparent;
+    color: $dark-grey;
+
+    .mat-paginator-container {
+        color: $Smoke;
+    }
+
+    .mat-paginator-icon {
+        color: $Smoke;
+    }
+}
+
+.mat-expansion-panel {
+    background-color: $dark-transparent;
+}
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+    color: $Smoke;
+}
+
+.mat-select-value {
+    color: $Smoke;
+}
+
+.mat-select-arrow {
+    color: $Smoke;
+}
+
+.mat-expansion-indicator::after {
+    color: $Smoke;
+}
+
+.mat-form-field-label {
+    color: $Smoke !important;
+}
+
+.mat-input-element {
+    color: white !important;
+}
+
+.mat-tree {
+    background-color: $dark-transparent;
+    padding-bottom: 15px;
+
+    .mat-tree-node {
+        color: $Smoke;
+    }
+
+    .mat-tree-node.node-sm-size {
+        min-height: 25px !important;
+        > .mat-icon-button {
+            height: 25px;
+            line-height: 20px;
+        }
+    }
+}
+
+.cdk-overlay-backdrop {
+    background-color: rgb(26 33 28 / 79%) !important;
+}
+
+.mat-expansion-panel-content,
+.mat-expansion-panel-header-title {
+    font-family: graphikRegular !important;
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+    background-color: $orange;
+}
+
+.mat-primary {
+    .mat-button-focus-overlay,
+    .mat-button-ripple.mat-ripple {
+        border-bottom: 2px solid $orange;
+    }
+}
+
+.mat-primary[disabled] {
+    .mat-button-focus-overlay,
+    .mat-button-ripple.mat-ripple {
+        border-bottom: 2px solid $dark-grey;
+    }
+}
+
+.mat-raised-button.mat-primary[disabled],
+mat-raised-button[disabled][disabled] {
+    color: $dark-grey;
+    font-weight: 600;
+    font-size: 11px;
+    background-color: $grey;
+}

@@ -6,6 +6,8 @@ import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-
 import { LocalStorageService } from 'ngx-webstorage';
 import { HomeService } from 'src/app/features/home-page/home.service';
 import { PageDialogComponent } from 'src/app/shared/components/page-dialog/page-dialog.component';
+import { ConfirmDialogText } from '../components/confirm/confirm-dialog-text';
+import { ConfirmDialogComponent } from '../components/confirm/confirm-dialog.component';
 import { NavigationService } from '../navigation/navigation.service';
 import { OnResizeService } from '../on-resize/on-resize.service';
 import { HeaderService } from './header.service';
@@ -32,14 +34,14 @@ export class HeaderComponent implements OnInit, OnChanges {
     constructor(
         private router: Router,
         private authService: AuthService,
-        private matDialog: MatDialog,
         private headerService: HeaderService,
+        private matDialog: MatDialog,
         private navigationService: NavigationService,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
         private storyService: HomeService
     ) {
-        onResizeService.getResizeEvent()
+        this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
             });
@@ -117,8 +119,19 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     goToWriteTool() {
-        const userFacebookId = '';
-        window.location.href = 'http://writetool.gamescrypt.com/' + userFacebookId;
+        const confirmData: ConfirmDialogText = {
+            title: 'WriteTool Redirect',
+            question: 'You are about to get redirect to the WriteTool',
+            confirm: 'Go To WriteTool',
+            cancel: 'Stay here'
+        };
+        this.matDialog.open(ConfirmDialogComponent, { data: confirmData, panelClass: 'dialog-class', hasBackdrop: true })
+            .afterClosed().subscribe(isConfirmed => {
+                if (isConfirmed) {
+                    const userFacebookId = '';
+                    window.location.href = 'http://writetool.gamescrypt.com/' + userFacebookId;
+                }
+            });
     }
 
     openPage(pageOption) {
@@ -130,6 +143,7 @@ export class HeaderComponent implements OnInit, OnChanges {
             data: {
                 args: newArgs
             },
+            panelClass: 'dialog-class',
             disableClose: false,
             hasBackdrop: true
         });

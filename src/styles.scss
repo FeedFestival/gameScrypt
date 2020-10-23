@@ -2,6 +2,12 @@
 
 @import "app/theme/overrides/scss/_variables";
 
+// Override Material styles
+@import './app/theme/overrides/material';
+
+// Override PrimeNG styles
+// @import 'primeng-overrides';
+
 * {
     outline: none !important;
 }
@@ -15,8 +21,12 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    color: whitesmoke;
+    font-family: graphikRegular;
+    color: $Smoke;
+}
+
+.f-roboto {
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
 }
 
 p {
@@ -25,11 +35,11 @@ p {
 }
 
 li {
-    color: #254f79;
+    color: $orange;
 }
 
 b {
-    color: $black;
+    color: white;
 }
 
 .page-min-height {
@@ -45,7 +55,7 @@ b {
 }
 
 .main-menu {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     min-height: 50px;
 }
 
@@ -132,7 +142,7 @@ b {
 }
 
 .fade-in-text.show {
-    color: #444444;
+    color: $Smoke;
 
     a {
         color: #3f51b5;
@@ -146,7 +156,6 @@ b {
 }
 
 .facebook-button {
-
     float: right;
     margin-top: 20px !important;
 
@@ -389,7 +398,7 @@ a.orange {
 .bp {
     height: 0px;
     position: absolute;
-    color: rgba(0,0,0,0.2);
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .c-point {
@@ -425,7 +434,7 @@ a.orange {
     }
 
     &:hover {
-        border-bottom: 1px solid whitesmoke;
+        border-bottom: 1px solid $Smoke;
     }
 }
 
@@ -457,77 +466,76 @@ a.hyperlink {
     }
 }
 
-/*
-MATERIAL
-*/
-.mat-card {
-    background-color: rgba(0,0,0,0.5);
-    color: $dark-grey;
-}
+$gradiantBorderSidesWidth: 3px;
+$gradiantBorderWidth: 3px;
+$grdColor1: $orange;
+$grdColor2: $Smoke;
 
-.mat-paginator {
-    background: transparent;
-    color: $dark-grey;
+.dialog-class {
+    .mat-dialog-container {
+        color: $Smoke;
+        background-color: rgba(16, 24, 35, 0.83) !important;
+        //
+        overflow-y: hidden;
+        margin: 50px auto;
+        border-left: $gradiantBorderSidesWidth solid $grdColor1 !important;
+        border-right: $gradiantBorderSidesWidth solid $grdColor2 !important;
+        border-radius: 5px !important;
+        -webkit-box-sizing: border-box !important;
+        -moz-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        background-position: 0 0, 0 100% !important;
+        background-repeat: no-repeat !important;
+        -webkit-background-size: 100% $gradiantBorderWidth !important;
+        -moz-background-size: 100% $gradiantBorderWidth !important;
+        background-size: 100% $gradiantBorderWidth !important;
+        background-image: -webkit-linear-gradient(
+                left,
+                $grdColor1 0%,
+                $grdColor2 100%
+            ),
+            -webkit-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
+        background-image: -moz-linear-gradient(
+                left,
+                $grdColor1 0%,
+                $grdColor2 100%
+            ),
+            -moz-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
+        background-image: -o-linear-gradient(
+                left,
+                $grdColor1 0%,
+                $grdColor2 100%
+            ),
+            -o-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
+        background-image: linear-gradient(
+                to right,
+                $grdColor1 0%,
+                $grdColor2 100%
+            ),
+            linear-gradient(to right, $grdColor1 0%, $grdColor2 100%) !important;
 
-    .mat-paginator-container {
-        color: whitesmoke;
+            .dialog-background {
+                background-color: $background-color;
+                background-image: url('./assets/images/wall.png');
+                background-repeat: revert;
+                background-size: contain;
+                background-attachment: fixed;
+                border-radius: 15px;
+                //
+                // box-shadow: 0 4px 15px #0000008a;
+                -webkit-box-shadow: inset 3px 0px 88px 15px rgba(0,0,0,0.48);
+                -moz-box-shadow: inset 3px 0px 88px 15px rgba(0,0,0,0.48);
+                box-shadow: inset 3px 0px 88px 15px rgb(0 0 0 / 65%);
+
+                .ng-scrollbar-wrapper, .dialog-background-shadow {
+                    border-radius: 15px;
+                    background: rgb(16 24 35 / 83%);
+                }
+
+                .dialog-background-shadow {
+                    margin-bottom: 20px;
+                    padding: 15px 20px;
+                }
+            }
     }
-
-    .mat-paginator-icon {
-        color: whitesmoke;
-    }
-}
-
-.mat-expansion-panel {
-    background-color: $dark-transparent;
-}
-
-.mat-expansion-panel-header-title,
-.mat-expansion-panel-header-description {
-    color: whitesmoke;
-}
-
-.mat-select-value {
-    color: whitesmoke;
-}
-
-.mat-select-arrow {
-    color: whitesmoke;
-}
-
-.mat-expansion-indicator::after  {
-    color: whitesmoke;
-}
-
-.mat-form-field-label {
-    color: whitesmoke !important;
-}
-
-.mat-input-element {
-    color: white !important;
-}
-
-.mat-tree {
-    background-color: $dark-transparent;
-    padding-bottom: 15px;
-
-    .mat-tree-node {
-        color: whitesmoke;
-    }
-
-    .mat-tree-node.node-sm-size {
-        min-height: 25px !important;
-        > .mat-icon-button {
-            height: 25px;
-            line-height: 20px;
-        }
-    }
-}
-
-.cdk-overlay-backdrop {
-    background-color: rgba(0,0,0,0.6) !important;
-}
-
-.mat-dialog-container {
-    background-color: rgb(16 16 16) !important;
 }

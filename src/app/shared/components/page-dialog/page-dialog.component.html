@@ -1,10 +1,6 @@
 <div class="basic-dialog-dimensions">
 
-    <div class="col-3" (click)="leave()" style="cursor: pointer;">
-        <img style="height: 80px;" src="assets/images/Logo_1.png">
-    </div>
-
-    <ng-scrollbar #NgScrollbar class="basic-dimensions fade-in-text" [ngClass]="{'show': show}">
+    <ng-scrollbar #NgScrollbar class="basic-dimensions fade-in-text dialog-background" [ngClass]="{'show': show}">
         <app-legal-documents *ngIf="page.showPrivacy"></app-legal-documents>
         <app-contact *ngIf="page.showContact"></app-contact>
         <app-about *ngIf="page.showAbout"></app-about>
