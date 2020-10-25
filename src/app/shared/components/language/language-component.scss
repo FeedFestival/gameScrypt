@@ -1,0 +1,33 @@
+::ng-deep {
+    app-language {
+        position: absolute;
+        float: right;
+        right: 70px;
+        top: 155px;
+    }
+}
+
+.language-button {
+    width: 25px;
+    height: 25px;
+    padding-left: 3px;
+    line-height: 25px;
+    background: rgba(0, 0, 0, 0.33);
+    border-radius: 50%;
+
+    img {
+        height: 20px;
+    }
+}
+
+.language-button.ro {
+    padding-left: 4px;
+
+    img {
+        height: 18px;
+    }
+}
+
+.language-button.selected {
+    background: whitesmoke;
+}

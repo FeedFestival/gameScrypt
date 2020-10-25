@@ -1,67 +1,18 @@
+<div *ngIf="inDialog" class="row container m-auto p-3">
+    <a class="hyperlink" href="#" routerLink="/about" (click)="matDialogRef.close()">
+        <cool-text pre="S" word="ee" suffix=" Page"></cool-text>
+    </a>
+</div>
 <div class="row no-gutters container m-auto page-min-height p-3">
-
+    <app-language *ngIf="languageLogic" [lang]="lang" (languageChanged)="onLanguageChosen($event)"></app-language>
     <div class="col-12 pt-5 justify-content-center">
 
         <div class="col-10 m-auto">
-            <h5>This is the place to be awesome!</h5>
-
-            <p>
-                Welcome to the best Free Online Showcasing Website in the world. 😅 This website has a unique way of aproaching
-                Showcasing and Blogging therefore i call it: <b>gameScrypt</b>.
-            </p>
-
-            <p>
-                The gameScrypt website is designed for exhibiting <b>Games</b>, Online Competitions, Unity Utils Class and Oppinions featured in Blog.
-            </p>
-            <p>
-                It is very different from other text editors, has a unique workflow and is
-                guaranteed to give better results in the long run. So, how about giving it a chance?
-            </p>
-
-            <p>
-                What we offer (in development is marked with <span class="red">*</span>):
-            </p>
-
-            <ul>
-                <li>
-                    Script Map
-                </li>
-                <li>
-                    Scene Heading (integrated in map)
-                </li>
-                <li>
-                    Expandable Scene Description (for all those of you who like to give us mental pictures) <span
-                        class="red">*</span>
-                </li>
-                <li>
-                    Toggleable Scene Pictures <span class="red">*</span>
-                </li>
-                <li>
-                    Action (+Rich Text)
-                </li>
-                <li>
-                    Character (+Character Creation Sheet <span class="red">*</span>)
-                </li>
-                <li>
-                    Dialogue (😉)
-                </li>
-                <li>
-                    Comments and Bookmarks (integrated in map)
-                </li>
-                <li>
-                    Pictures
-                </li>
-                <li>
-                    Ambient Sounds and Sound Effects <span class="red">*</span>
-                    <!--   TODO: add a sound Icon and play a sound -->
-                </li>
-                <li>
-                    Youtube Videos <span class="red">*</span>
-                </li>
-                <li>
-                    Video Game Dialogue (Branching Dialogue<span class="red">*</span>) <span class="red">*</span>
-                </li>
-            </ul>
+            <h5>{{ ABOUT_POLICY.TITLE }}</h5>
         </div>
+
+        <br />
+
+        <div class="col-10 m-auto" [innerHTML]="ABOUT_POLICY.WHAT_WEBSITE_DOES"> </div>
     </div>
 </div>

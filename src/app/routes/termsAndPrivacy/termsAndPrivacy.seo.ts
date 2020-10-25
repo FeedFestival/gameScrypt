@@ -5,7 +5,7 @@ export const TERMS_PRIVACY = {
     COOKIES: 'cookies',
     SNS: 'sns',
     GDPR: 'gdpr',
-    websiteTitle: 'Terms of Use and Privacy • gameScrypt ↙ Official Website | gameScrypt.com',
+    websiteTitle: 'Terms of Use • gameScrypt ↙ Official Website | gameScrypt.com',
     keywords: 'legal, terms, conditions, cookies, privacy, policy, gdpr',
     shortDescription: 'Read the Terms of Use and Privacy Policies, Transparency is very important to us, stay informed.'
 };

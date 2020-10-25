@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ESPORTS_ROUTE } from 'src/app/routes/esports/esports.seo';
+import { AppEventManager } from 'src/app/shared/navigation/event-manager.service';
+import { EventContent } from 'src/app/shared/navigation/event-with-content.model';
+import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../home-page/seo.service';
 
@@ -15,7 +18,7 @@ export class EsportsComponent implements OnInit {
     bp: string;
 
     constructor(
-        private router: Router,
+        private appEventManager: AppEventManager,
         private onResizeService: OnResizeService,
         private titleService: Title,
         private metaService: Meta,
@@ -37,6 +40,8 @@ export class EsportsComponent implements OnInit {
     }
 
     goToLadder(route: string): void {
-        this.router.navigateByUrl('/esports/' + route);
+        this.appEventManager.broadcast(
+            new EventContent(EVENT.NAVIGATE, { goRoute: ESPORTS_ROUTE.base + '/' + route })
+        );
     }
 }

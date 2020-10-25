@@ -1,0 +1,10 @@
+<div class="row">
+    <a class="d-inline-block c-point language-button" [ngClass]="{ 'selected': isEnglishSelected }"
+        (click)="onLanguageChosen('en')">
+        <img src="assets/images/en_flag.png" />
+    </a>
+    <a class="d-inline-block c-point ml-2 language-button ro" [ngClass]="{ 'selected': isEnglishSelected === false }"
+        (click)="onLanguageChosen('ro')">
+        <img src="assets/images/ro_flag.png" />
+    </a>
+</div>

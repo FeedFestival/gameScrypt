@@ -16,7 +16,7 @@ export const ABOUT_ROUTE = {
 
 export const CONTACT_ROUTE = {
     base: 'contact',
-    websiteTitle: 'About • gameScrypt | Simionescu Daniel ↙ Official Website | simionescudani07@gmail.com',
+    websiteTitle: 'About • gameScrypt | Simionescu Daniel Mihaita ↙ Official Website',
     keywords: 'gameScrypt, Daniel, Mihaita, Simionescu, simionescudani07@gmail.com',
     shortDescription: 'I\'m Daniel Simionescu and I own this place. Come see what the website has to offer.'
 };

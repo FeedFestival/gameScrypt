@@ -7,5 +7,6 @@ import { ABOUT_ROUTE, CONTACT_ROUTE, MAIN_ROUTE } from './main.seo';
 export const mainRoutes: Routes = [
     { path: MAIN_ROUTE.base, component: HomePageComponent },
     { path: CONTACT_ROUTE.base, component: ContactComponent },
+    { path: ABOUT_ROUTE.base + '/ro', component: AboutComponent, data: { lang: 'ro' } },
     { path: ABOUT_ROUTE.base, component: AboutComponent },
 ];

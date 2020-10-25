@@ -4,10 +4,14 @@ import { Router } from '@angular/router';
 import { faCoffee, faEnvelope, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 import { LocalStorageService } from 'ngx-webstorage';
+import { STORAGE_KEY } from 'src/app/app.constants';
 import { HomeService } from 'src/app/features/home-page/home.service';
 import { PageDialogComponent } from 'src/app/shared/components/page-dialog/page-dialog.component';
 import { ConfirmDialogText } from '../components/confirm/confirm-dialog-text';
 import { ConfirmDialogComponent } from '../components/confirm/confirm-dialog.component';
+import { AppEventManager } from '../navigation/event-manager.service';
+import { EventContent } from '../navigation/event-with-content.model';
+import { EVENT } from '../navigation/events-manager.constants';
 import { NavigationService } from '../navigation/navigation.service';
 import { OnResizeService } from '../on-resize/on-resize.service';
 import { HeaderService } from './header.service';
@@ -32,11 +36,10 @@ export class HeaderComponent implements OnInit, OnChanges {
     bp: string;
 
     constructor(
-        private router: Router,
         private authService: AuthService,
         private headerService: HeaderService,
+        private appEventManager: AppEventManager,
         private matDialog: MatDialog,
-        private navigationService: NavigationService,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
         private storyService: HomeService
@@ -49,7 +52,7 @@ export class HeaderComponent implements OnInit, OnChanges {
 
     ngOnInit() {
 
-        const user = this.localStorage.retrieve('user');
+        const user = this.localStorage.retrieve(STORAGE_KEY.USER);
         if (user !== null) {
 
             this.user = user;
@@ -83,7 +86,7 @@ export class HeaderComponent implements OnInit, OnChanges {
                             facebook_id: this.user.id
                         };
                         ourUser.id = userId;
-                        this.localStorage.store('user', ourUser);
+                        this.localStorage.store(STORAGE_KEY.USER, ourUser);
                     });
             });
         }
@@ -111,11 +114,12 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     goHome() {
-        this.router.navigateByUrl('/acasa');
+        this.goTo('acasa');
     }
 
     goTo(route) {
-        this.router.navigateByUrl('/' + route);
+        const content = new EventContent(EVENT.NAVIGATE, { goRoute: route });
+        this.appEventManager.broadcast(content);
     }
 
     goToWriteTool() {

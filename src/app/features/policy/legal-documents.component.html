@@ -1,15 +1,20 @@
-<app-terms></app-terms>
+<div *ngIf="inDialog" class="row container m-auto p-3">
+    <a class="hyperlink" href="#" routerLink="/privacy-policy" (click)="matDialogRef.close()">
+        <cool-text pre="S" word="ee" suffix=" Page"></cool-text>
+    </a>
+</div>
 
-<app-privacy></app-privacy>
+<app-language [lang]="lang" (languageChanged)="onLanguageChosen($event)"></app-language>
 
-<app-cookies></app-cookies>
+<app-terms [languageLogic]="false" [lang]="lang"></app-terms>
 
-<app-gdpr></app-gdpr>
+<app-privacy [languageLogic]="false" [lang]="lang"></app-privacy>
 
-<app-sns></app-sns>
+<app-gdpr [languageLogic]="false" [lang]="lang"></app-gdpr>
 
 <div class="row no-gutters container m-auto p-3">
-    <div class="container-fluid pt-5 justify-content-center privacy-text" [innerHTML]="LEGAL_DOCUMENTS_ADVERTISING">
+    <div class="container-fluid pt-5 justify-content-center privacy-text"
+        [innerHTML]="PRIVACY_POLICY_LEGAL.LEGAL_DOCUMENTS_ADVERTISING">
     </div>
 </div>
 

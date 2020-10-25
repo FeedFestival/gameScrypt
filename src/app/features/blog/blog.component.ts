@@ -2,8 +2,10 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
+import { AppEventManager } from 'src/app/shared/navigation/event-manager.service';
+import { EventContent } from 'src/app/shared/navigation/event-with-content.model';
+import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../home-page/seo.service';
 import { TimelineNode } from './articles/article.interfaces';
@@ -37,7 +39,7 @@ export class BlogComponent implements OnInit {
     }
 
     constructor(
-        private router: Router,
+        private appEventManager: AppEventManager,
         private onResizeService: OnResizeService,
         private titleService: Title,
         private metaService: Meta,
@@ -63,13 +65,15 @@ export class BlogComponent implements OnInit {
             node => node.level,
             node => node.expandable,
             node => node.children
-            );
+        );
         this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
         this.dataSource.data = this.mapDataSource();
     }
 
     goToArticle(articleCode: string) {
-        this.router.navigateByUrl('/blog/' + articleCode);
+        this.appEventManager.broadcast(
+            new EventContent(EVENT.NAVIGATE, { goRoute: BLOG_ROUTE.base + '/' + articleCode })
+        );
     }
 
     private mapDataSource() {

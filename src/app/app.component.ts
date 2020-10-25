@@ -6,7 +6,9 @@ import { NgScrollbar } from 'ngx-scrollbar';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Subscription } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
-import { ScrollBreakpoints } from './app.constants';
+import { COUNTRIES, ScrollBreakpoints, STORAGE_KEY } from './app.constants';
+import { AppService } from './app.service';
+import { _isNilOrEmpty } from './shared/lodash-utils';
 import { OnResizeService } from './shared/on-resize/on-resize.service';
 
 // tslint:disable-next-line: ban-types
@@ -47,9 +49,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         private ccService: NgcCookieConsentService,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
-        router: Router
+        private appService: AppService,
+        private router: Router
     ) {
-        router.events.pipe(
+        this.router.events.pipe(
             filter(event => event instanceof NavigationEnd),
             filter(_ => !!this.scrollRef),
             tap((event: NavigationEnd) => {
@@ -94,8 +97,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
         this.setScrollClass(this.scrollClass);
 
-        const isCookieAccepted = this.localStorage.retrieve('isCookieAccepted');
+        this.figureOutLanguage();
 
+        const isCookieAccepted = this.localStorage.retrieve('isCookieAccepted');
         if (isCookieAccepted && isCookieAccepted === true) {
             setTimeout(() => {
                 this.ccService.close(false);
@@ -112,7 +116,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         this.popupCloseSubscription = this.ccService.popupClose$.subscribe(
             () => {
                 // you can use this.ccService.getConfig() to do stuff...
-                this.localStorage.store('isCookieAccepted', true);
+                this.localStorage.store(STORAGE_KEY.COOKIE_ACCEPTED, true);
             });
 
         this.initializeSubscription = this.ccService.initialize$.subscribe(
@@ -158,6 +162,29 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         //         })
         //     )
         // ).subscribe();
+    }
+
+    private figureOutLanguage() {
+        const country = this.appService.getLang();
+        if (_isNilOrEmpty(country) === false) {
+            if (COUNTRIES.ROMANIA.keys
+                .map(k => k.toLowerCase())
+                .includes(country.toLowerCase())) {
+                console.log('Country is: ', COUNTRIES.ROMANIA.lang);
+                this.appService.emitLangEvent();
+            }
+        } else {
+            this.appService.getIPAddress()
+                .subscribe((res: any) => {
+                    console.log('AppComponent -> ngOnInit -> res.ip', res.ip);
+                    this.appService.getLocation(res.ip)
+                        .subscribe((loc: any) => {
+                            console.log('AppComponent -> ngOnInit -> loc', loc);
+                            this.appService.setLang(loc.geoplugin_countryCode);
+                            this.figureOutLanguage();
+                        });
+                });
+        }
     }
 
     scrollToTop() {

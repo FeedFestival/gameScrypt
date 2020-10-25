@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/
 import { Meta, Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ElementType } from 'src/app/app.constants';
 import { MAIN_ROUTE } from 'src/app/routes/main/main.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from './seo.service';
@@ -13,8 +12,6 @@ import { SeoService } from './seo.service';
     styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-
-    ElementTypeRef = ElementType;
 
     story: any;
     elements: any[];

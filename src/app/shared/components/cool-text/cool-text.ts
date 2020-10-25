@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ɵangular_packages_platform_browser_platform_browser_j } from '@angular/platform-browser';
 import { _isNilOrEmpty } from '../../lodash-utils';
 /* tslint:disable */
 @Component({

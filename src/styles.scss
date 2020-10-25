@@ -3,7 +3,7 @@
 @import "app/theme/overrides/scss/_variables";
 
 // Override Material styles
-@import './app/theme/overrides/material';
+@import "./app/theme/overrides/material";
 
 // Override PrimeNG styles
 // @import 'primeng-overrides';
@@ -35,10 +35,14 @@ p {
 }
 
 li {
-    color: $orange;
+    color: #ccc;
 }
 
 b {
+    color: white;
+}
+
+a {
     color: white;
 }
 
@@ -139,6 +143,20 @@ b {
     a {
         color: transparent;
     }
+
+    b {
+        color: transparent;
+    }
+
+    .word,
+    .pre,
+    .suffix {
+        color: transparent;
+    }
+
+    li {
+        color: transparent;
+    }
 }
 
 .fade-in-text.show {
@@ -146,6 +164,34 @@ b {
 
     a {
         color: #3f51b5;
+    }
+
+    a.hyperlink {
+        color: unset;
+    }
+
+    b {
+        transition: color 1.5s !important;
+        color: white;
+    }
+
+    .word {
+        transition: color 1.5s !important;
+        color: white;
+    }
+
+    .pre {
+        transition: color 1.5s !important;
+        color: $orange;
+    }
+
+    .suffix {
+        transition: color 1.5s !important;
+        color: #c5c5c5;
+    }
+
+    li {
+        color: #ccc;
     }
 }
 
@@ -514,28 +560,29 @@ $grdColor2: $Smoke;
             ),
             linear-gradient(to right, $grdColor1 0%, $grdColor2 100%) !important;
 
-            .dialog-background {
-                background-color: $background-color;
-                background-image: url('./assets/images/wall.png');
-                background-repeat: revert;
-                background-size: contain;
-                background-attachment: fixed;
+        .dialog-background {
+            background-color: $background-color;
+            background-image: url("./assets/images/wall.png");
+            background-repeat: revert;
+            background-size: contain;
+            background-attachment: fixed;
+            border-radius: 15px;
+            //
+            // box-shadow: 0 4px 15px #0000008a;
+            -webkit-box-shadow: inset 3px 0px 88px 15px rgba(0, 0, 0, 0.48);
+            -moz-box-shadow: inset 3px 0px 88px 15px rgba(0, 0, 0, 0.48);
+            box-shadow: inset 3px 0px 88px 15px rgb(0 0 0 / 65%);
+
+            .ng-scrollbar-wrapper,
+            .dialog-background-shadow {
                 border-radius: 15px;
-                //
-                // box-shadow: 0 4px 15px #0000008a;
-                -webkit-box-shadow: inset 3px 0px 88px 15px rgba(0,0,0,0.48);
-                -moz-box-shadow: inset 3px 0px 88px 15px rgba(0,0,0,0.48);
-                box-shadow: inset 3px 0px 88px 15px rgb(0 0 0 / 65%);
-
-                .ng-scrollbar-wrapper, .dialog-background-shadow {
-                    border-radius: 15px;
-                    background: rgb(16 24 35 / 83%);
-                }
-
-                .dialog-background-shadow {
-                    margin-bottom: 20px;
-                    padding: 15px 20px;
-                }
+                background: rgb(16 24 35 / 83%);
             }
+
+            .dialog-background-shadow {
+                margin-bottom: 20px;
+                padding: 15px 20px;
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
 <div class="basic-dialog-dimensions">
 
     <ng-scrollbar #NgScrollbar class="basic-dimensions fade-in-text dialog-background" [ngClass]="{'show': show}">
-        <app-legal-documents *ngIf="page.showPrivacy"></app-legal-documents>
-        <app-contact *ngIf="page.showContact"></app-contact>
-        <app-about *ngIf="page.showAbout"></app-about>
+        <app-legal-documents *ngIf="page.showPrivacy" [inDialog]="true" [matDialogRef]="dialogRef"></app-legal-documents>
+        <app-contact *ngIf="page.showContact" [inDialog]="true" [matDialogRef]="dialogRef"></app-contact>
+        <app-about *ngIf="page.showAbout" [inDialog]="true" [matDialogRef]="dialogRef"></app-about>
     </ng-scrollbar>
 </div>

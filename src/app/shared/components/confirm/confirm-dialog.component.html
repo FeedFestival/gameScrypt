@@ -13,14 +13,14 @@
                     {{dialogText.question}}
                 </div>
 
-                <div *ngIf="dialogText.hasOptions" class="mt-3 mb-2">
+                <!-- <div *ngIf="dialogText.hasOptions" class="mt-3 mb-2">
                     <mat-radio-group [(ngModel)]="optionChecked" class="smallRadio">
                         <mat-radio-button *ngFor="let optionData of dialogText.optionsData;" class="d-block pl-5"
                             [value]="optionData.id">
                             {{optionData.option}}
                         </mat-radio-button>
                     </mat-radio-group>
-                </div>
+                </div> -->
                 <div [ngClass]="(dialogText.question && !dialogText.hasOptions) ? 'confirm-dialog-message' : 'confirm-dialog-question'"
                     [ngStyle]="dialogText.messageStyle" [class.has-option-style]="dialogText.hasOptions"
                     class="text-wrap mt-2" [innerHTML]="dialogText.message">
