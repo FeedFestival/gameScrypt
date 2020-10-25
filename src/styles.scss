@@ -278,17 +278,6 @@ fa-icon {
     -moz-box-sizing: border-box;
 }
 
-.page {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 20mm;
-    margin: 10mm auto;
-    border: 1px #d3d3d3 solid;
-    border-radius: 5px;
-    background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
 .subpage {
     padding: 1cm;
     border: 5px red solid;
@@ -306,17 +295,6 @@ fa-icon {
     body {
         width: 210mm;
         height: 297mm;
-    }
-
-    .page {
-        margin: 0;
-        border: initial;
-        border-radius: initial;
-        width: initial;
-        min-height: initial;
-        box-shadow: initial;
-        background: initial;
-        page-break-after: always;
     }
 }
 
@@ -595,4 +573,11 @@ $grdColor2: $Smoke;
 
 .placeholder-text {
     opacity: 0;
+}
+
+.img-shadow {
+    > img {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.44) !important;
+        -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1 !important;
+    }
 }

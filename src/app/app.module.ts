@@ -19,6 +19,7 @@ import { TftComponent } from './features/esports/components/tft/tft.components';
 import { EsportsComponent } from './features/esports/esports.component';
 import { GamesComponent } from './features/games/games.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
+import { NewsComponent } from './features/news/news.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
 import { GdprComponent } from './features/policy/gdpr/gdpr.component';
 import { LegalDocsComponent } from './features/policy/legal-documents.component';
@@ -85,6 +86,7 @@ export const mainComponents = [
     HomePageComponent,
 ];
 export const components = [
+    NewsComponent,
     UnityWorkflowComponent,
     EsportsComponent,
     TftComponent,

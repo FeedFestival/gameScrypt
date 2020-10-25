@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { UNITY_ROUTE } from 'src/app/routes/unity-workflow/unity.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
+import { SeoService } from '../home-page/seo.service';
 import { NewUnityFile, percent_utils } from './snippet-bank/new-unity-file';
 import { UnitHeadStart } from './snippet-bank/unity-head-start';
 import { CREATE_FROM_PREFAB, GET_DIRECTION, GET_MID_POINT_OFFSET, GET_PONIT_HIT_AT_MOUSE_POSITION, SMOOTH_LOOK } from './snippet-bank/unity-world-functions';
@@ -35,6 +38,9 @@ export class UnityWorkflowComponent implements OnInit {
     snippetList: any[] = [];
 
     constructor(
+        private seoService: SeoService,
+        private titleService: Title,
+        private metaService: Meta,
         private onResizeService: OnResizeService
     ) {
         this.onResizeService.getResizeEvent()
@@ -46,6 +52,13 @@ export class UnityWorkflowComponent implements OnInit {
     ngOnInit() {
 
         this.onResizeService.emitScrollClassEvent('med');
+
+        this.titleService.setTitle(this.seoService.getTitle(UNITY_ROUTE.base));
+        this.seoService.getAllTags().forEach(tag => {
+            this.metaService.removeTag(tag);
+        });
+        this.metaService.addTags(this.seoService.getMetaTags(UNITY_ROUTE.base));
+        this.onResizeService.emitScrollClassEvent('max');
 
         this.snippetList.push(
             NewUnityFile,

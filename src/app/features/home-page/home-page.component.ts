@@ -1,9 +1,11 @@
-import { Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MAIN_ROUTE } from 'src/app/routes/main/main.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
+import { ArticleBank } from '../blog/articles/articleData/article.bank';
+import { News } from '../news/news';
 import { SeoService } from './seo.service';
 
 @Component({
@@ -13,13 +15,9 @@ import { SeoService } from './seo.service';
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
-    story: any;
-    elements: any[];
-    currentElement: any;
-
-    editState: string;
-
     bp: string;
+    showcaseCompetition: boolean;
+    news: News[];
 
     private unsubscribe$ = new Subject<void>();
 
@@ -43,6 +41,22 @@ export class HomePageComponent implements OnInit, OnDestroy {
         });
         this.metaService.addTags(this.seoService.getMetaTags(MAIN_ROUTE.base));
         this.onResizeService.emitScrollClassEvent('max');
+
+        this.showcaseCompetition = false;
+        this.news = [
+            ...ArticleBank.LatestArticles.map(this.mapArticleToNews)
+        ];
+    }
+
+    private mapArticleToNews = (a): News => {
+        return {
+            pic: a.mainPic,
+            name: a.shortTitle,
+            shortDescription: a.shortDescription,
+            date: a.date,
+            redirect: a.base,
+            category: a.category
+        };
     }
 
     ngOnDestroy() {

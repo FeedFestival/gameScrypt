@@ -12,7 +12,7 @@ import { OnResizeService } from '../on-resize/on-resize.service';
 })
 export class FooterComponent implements OnInit {
 
-    learningArticles = ArticleBank.LearningArticles;
+    learningArticles: any[];
     ABOUT_POLICY = new PrivacyPolicy(this.sanitized)._().ABOUT.en;
     bp: string;
 

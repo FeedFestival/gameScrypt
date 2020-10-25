@@ -1,0 +1,28 @@
+<div class="col-12 p-0">
+    <div class="col-12 px-0 mb-1 news-pic img-shadow c-point"
+        (click)="goToRoute()">
+        <img *ngIf="newsArticle.pic" [src]="newsArticle.pic" />
+        <img *ngIf="!newsArticle.pic" src="assets/images/no-pic.jpg" />
+    </div>
+
+    <div class="col-12 px-0 mb-2 elips news-title c-point" (click)="goToNews()">
+        <span>{{ newsArticle.name }}</span>
+        <icon-more></icon-more>
+    </div>
+
+    <div class="col-12 px-0 mb-2 news-description">
+        {{ newsArticle.shortDescription }}
+    </div>
+
+    <div class="col-12 px-0 news-info">
+        <div class="news-category c-point" (click)="goToCategory()">
+            {{ newsArticle.category._.toLowerCase() }}
+        </div>
+        <div class="news-delimiter">
+
+        </div>
+        <div class="news-date">
+            {{ newsArticle.date }}
+        </div>
+    </div>
+</div>

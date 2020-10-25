@@ -1,3 +1,6 @@
+import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
+import { UNITY_ROUTE } from 'src/app/routes/unity-workflow/unity.seo';
+
 export interface TimelineMonth {
     month: string;
     articles: Article[];
@@ -7,15 +10,17 @@ export interface TimelineMonth {
 }
 
 export interface Article {
-    title?: string;
-    titleTimeline?: string;
+    base: string;
+    shortTitle: string;
+    title: string;
+    titleTimeline: string;
     shortDescription: string;
     websiteTitle: string;
     keywords: string;
     mainPic?: string;
-    base: string;
-    date?: string;
-    dateNr?: number;
+    category: ArticleCategory;
+    date: string;
+    dateNr: number;
 }
 
 export interface TimelineYear {
@@ -42,3 +47,19 @@ export const treeTransformer = (node: TimelineNode, levelNr: number) => {
         dateNr: node.dateNr
     };
 };
+
+export const ARTICLE_CATEGORY = {
+    BLOG: {
+        _: 'BLOG',
+        route: BLOG_ROUTE.base
+    },
+    UNITY: {
+        _: 'UNITY DEVELOPMENT',
+        route: UNITY_ROUTE.base
+    },
+};
+
+export interface ArticleCategory {
+    _: string;
+    route: string;
+}

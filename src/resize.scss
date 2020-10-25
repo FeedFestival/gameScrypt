@@ -1,19 +1,6 @@
 @import "app/theme/overrides/scss/_variables";
 
 @media (min-width: $xs-breakpoint) {
-    .page-map {
-        left: 2px;
-        .map {
-            width: 7vw;
-        }
-    }
-
-    .page {
-        margin: 5mm 0;
-        width: 100%;
-        padding: 5mm 7mm;
-    }
-
     .ng-scroll-content {
         width: 100%;
     }
@@ -58,35 +45,11 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: $sm-breakpoint) {
-    .page-map {
-        left: 5px;
-        .map {
-            width: 5vw;
-        }
-    }
 
-    .page {
-        margin: 5mm 0;
-        width: 100%;
-        padding: 10mm 10mm;
-    }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: $md-breakpoint) {
-    .page-map {
-        left: 5px;
-        .map {
-            width: 15vw;
-        }
-    }
-
-    .page {
-        width: 210mm;
-        padding: 20mm;
-        margin: 10mm auto;
-    }
-
     .cdk-overlay-pane {
         width: 85vw;
         max-width: 85vw !important;
@@ -124,18 +87,6 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: $lg-breakpoint) {
-    .page-map {
-        left: 5px;
-        .map {
-            width: 15vw;
-        }
-    }
-
-    .page {
-        width: 210mm;
-        padding: 20mm;
-        margin: 10mm auto;
-    }
 
     .cdk-overlay-pane {
         width: initial;
@@ -159,24 +110,11 @@
 
 // custom high
 @media (min-width: 1250px) {
-    .page-map {
-        left: 1vw;
 
-        .map {
-            width: 15vw;
-        }
-    }
 }
 
 // 1366px
 @media (min-width: $laptop-breakpoint) {
-    .page-map {
-        left: 2vw;
-
-        .map {
-            width: 18vw;
-        }
-    }
 
     .footer-link {
         a {
@@ -186,74 +124,10 @@
 }
 
 @media (min-width: $xxl-breakpoint) {
-    .page-map {
-        left: 3vw;
-
-        .map {
-            width: 20vw;
-        }
-    }
 
     .footer-link {
         a {
             font-size: 0.5em !important;
-        }
-    }
-}
-
-.page-map {
-    z-index: 9;
-    min-height: 300px;
-    position: absolute;
-    left: 250px;
-    width: 0px;
-    top: 200px;
-
-    .map {
-        width: 250px;
-        min-height: 300px;
-        border: 1px #d3d3d3 solid;
-        border-radius: 5px;
-        background: white;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        padding: 5px 0;
-
-        .map-title {
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .map-el {
-            display: inline-flex;
-            padding: 0 5px;
-            font-size: 13px;
-            width: 100%;
-            cursor: pointer;
-
-            &.secondary {
-                margin-left: 15%;
-                border-left: 1px solid black;
-                width: 85%;
-                line-height: 25px;
-            }
-
-            &.comment {
-                padding: 0;
-                color: #a3c5a3;
-                background: #dbf7db;
-            }
-
-            .el-icon {
-                width: 25%;
-                text-align: center;
-            }
-
-            .el-text {
-                width: 75%;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-            }
         }
     }
 }
