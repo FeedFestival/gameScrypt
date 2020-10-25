@@ -5,5 +5,6 @@ export const y2020: TimelineYear = {
     year: '2020',
     months: [
         oct2020
-    ]
+    ],
+    dateNr: 2020
 };

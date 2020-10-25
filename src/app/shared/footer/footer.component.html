@@ -31,29 +31,10 @@
                     </div>
                 </div>
                 <div class="col-12 text-right">
-                    <div class="col-12 p-0 footer-link">
-                        <a href="#" routerLink="/sns">
-                            PLACEHOLDER 1
-                        </a>
-                    </div>
-                    <div class="col-12 p-0 footer-link">
-                        <a href="#" routerLink="/terms">
-                            PLACEHOLDER 2
-                        </a>
-                    </div>
-                    <div class="col-12 p-0 footer-link">
-                        <a href="#" routerLink="/privacy">
-                            PLACEHOLDER 3
-                        </a>
-                    </div>
-                    <div class="col-12 p-0 footer-link">
-                        <a href="#" routerLink="/cookies">
-                            PLACEHOLDER 4
-                        </a>
-                    </div>
-                    <div class="col-12 p-0 footer-link">
-                        <a href="#" routerLink="/gdpr">
-                            PLACEHOLDER 5
+                    <div *ngFor="let article of learningArticles" class="col-12 p-0 footer-link elips">
+                        <a href="#" routerLink="/"
+                            [ngClass]="{ 'placeholder-text': article.isPlaceholder }">
+                            <span [innerHTML]="article.titleTimeline"></span>
                         </a>
                     </div>
                 </div>

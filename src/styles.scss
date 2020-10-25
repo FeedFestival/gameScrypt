@@ -195,6 +195,12 @@ a {
     }
 }
 
+.elips {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+
 .header.med {
     .facebook-button {
         margin-top: 5px !important;
@@ -585,4 +591,8 @@ $grdColor2: $Smoke;
             }
         }
     }
+}
+
+.placeholder-text {
+    opacity: 0;
 }

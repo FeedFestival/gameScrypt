@@ -7,6 +7,10 @@ export const ArticleBank = {
         ARTICLES.getArticle('site-is-up'),
         ARTICLES.getArticle('gamescrypt-plans-launch')
     ],
+    LearningArticles: [
+        ARTICLES.getArticle('site-is-up'),
+        ARTICLES.getArticle('gamescrypt-plans-launch')
+    ],
     TimeLine: [
         y2020
     ]

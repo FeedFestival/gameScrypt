@@ -8,7 +8,7 @@ export const aboutDoc = (sanitized: DomSanitizer): ABOUT_ML => {
     GameScrypt website is designed for showcasing Games, online competitions, Unity Utils Class and Oppinions featured in Blog.
 </p>
 <p>
-    It is very different from other websites that show case their games.
+    Glad you are here and part of this awesome comunity.
 </p>`),
             TITLE: 'This is the place to be awesome!',
             WHAT_WEBSITE_DOES: sanitized.bypassSecurityTrustHtml(`<p>
@@ -22,12 +22,6 @@ export const aboutDoc = (sanitized: DomSanitizer): ABOUT_ML => {
 </p>`)
         },
         ro: {
-            ABOUT: sanitized.bypassSecurityTrustHtml(`<p>
-    GameScrypt website is designed for showcasing Games, online competitions, Unity Utils Class and Oppinions featured in Blog.
-</p>
-<p>
-    Glad you are here and part of this awesome comunity.
-</p>`),
             TITLE: 'Este locul in care poți fi awesome!',
             WHAT_WEBSITE_DOES: sanitized.bypassSecurityTrustHtml(`<p>
     Este un site de jocuri care conține competiții online gratuite, scriere alternativă prin aplicația WriteTool,
@@ -49,7 +43,7 @@ export interface ABOUT_ML {
 }
 // tslint:disable-next-line: class-name
 export interface ABOUT_TERMS {
-    ABOUT: SafeHtml;
+    ABOUT?: SafeHtml;
     TITLE: SafeHtml;
     WHAT_WEBSITE_DOES: SafeHtml;
 }

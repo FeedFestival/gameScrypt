@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ArticleBank } from 'src/app/features/blog/articles/articleData/article.bank';
 // import { PRIVACY_POLICY } from 'src/app/features/policy/privacy-policy.doc';
 import { PrivacyPolicy } from 'src/app/features/policy/privacy-policy.doc';
 import { OnResizeService } from '../on-resize/on-resize.service';
@@ -11,6 +12,7 @@ import { OnResizeService } from '../on-resize/on-resize.service';
 })
 export class FooterComponent implements OnInit {
 
+    learningArticles = ArticleBank.LearningArticles;
     ABOUT_POLICY = new PrivacyPolicy(this.sanitized)._().ABOUT.en;
     bp: string;
 
@@ -25,6 +27,19 @@ export class FooterComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        this.learningArticles = ArticleBank.LearningArticles.map(a => ({
+            ...a,
+            isPlaceholder: false
+        }));
+        const countTillFull = 5 - this.learningArticles.length;
+        for (let i = 0; i < countTillFull; i++) {
+            this.learningArticles.push({
+                titleTimeline: 'PLACEHOLDER',
+                isPlaceholder: true
+            });
+        }
+
         this.onResizeService.emitScrollClassEvent('max');
     }
 

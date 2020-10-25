@@ -7,8 +7,9 @@ import { AppEventManager } from 'src/app/shared/navigation/event-manager.service
 import { EventContent } from 'src/app/shared/navigation/event-with-content.model';
 import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
+import { __getMonthName } from 'src/app/shared/utils';
 import { SeoService } from '../home-page/seo.service';
-import { TimelineNode } from './articles/article.interfaces';
+import { TimelineNode, treeTransformer } from './articles/article.interfaces';
 import { ArticleBank } from './articles/articleData/article.bank';
 
 @Component({
@@ -27,16 +28,6 @@ export class BlogComponent implements OnInit {
 
     treeFlattener: any;
     dataSource: any;
-
-    // tslint:disable-next-line: variable-name
-    private _transformer = (node: TimelineNode, levelNr: number) => {
-        return {
-            expandable: !!node.children && node.children.length > 0,
-            name: node.name,
-            level: levelNr,
-            base: node.base
-        };
-    }
 
     constructor(
         private appEventManager: AppEventManager,
@@ -61,13 +52,14 @@ export class BlogComponent implements OnInit {
 
         this.latestArticles = ArticleBank.LatestArticles;
         this.treeFlattener = new MatTreeFlattener(
-            this._transformer,
+            treeTransformer,
             node => node.level,
             node => node.expandable,
             node => node.children
         );
         this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
         this.dataSource.data = this.mapDataSource();
+        this.expandCurrentArticles();
     }
 
     goToArticle(articleCode: string) {
@@ -81,17 +73,20 @@ export class BlogComponent implements OnInit {
         ArticleBank.TimeLine.forEach(a => {
             const data = {
                 name: a.year,
-                children: []
+                children: [],
+                dateNr: a.dateNr
             };
             a.months.forEach(m => {
                 const monthData = {
                     name: m.month,
-                    children: []
+                    children: [],
+                    dateNr: m.dateNr
                 };
                 m.articles.forEach(mA => {
                     monthData.children.push({
                         name: mA.titleTimeline,
-                        base: mA.base
+                        base: mA.base,
+                        dateNr: mA.dateNr
                     });
                 });
                 data.children.push(monthData);
@@ -102,4 +97,36 @@ export class BlogComponent implements OnInit {
     }
 
     hasChild = (_: number, node: TimelineNode) => node.expandable;
+
+    private expandCurrentArticles() {
+        const date = new Date();
+        const month = __getMonthName(date.getMonth());
+        const yearIndex = this.treeControl.dataNodes.findIndex(dN => dN.name === date.getFullYear().toString());
+        const monthIndex = this.treeControl.dataNodes.findIndex(dN => dN.name === month);
+        this.tryExpandYear(yearIndex, monthIndex);
+    }
+
+    private tryExpandYear(yearIndex: number, monthIndex: number) {
+        if (yearIndex >= 0) {
+            this.treeControl.expand(this.treeControl.dataNodes[yearIndex]);
+            this.tryExpandMonth(monthIndex);
+        } else {
+            const year = Math.max(...this.treeControl.dataNodes.filter(dN => dN.level === 0).map(dN => dN.dateNr));
+            yearIndex = this.treeControl.dataNodes.findIndex(dN => dN.dateNr === year);
+            this.treeControl.expand(this.treeControl.dataNodes[yearIndex]);
+            this.tryExpandMonth();
+        }
+    }
+
+    private tryExpandMonth(monthIndex: number = -1) {
+        if (monthIndex >= 0) {
+            this.treeControl.expand(this.treeControl.dataNodes[monthIndex]);
+        } else {
+            const monthNr = Math.max(...this.treeControl.dataNodes.filter(dN => dN.level === 1).map(dN => dN.dateNr));
+            monthIndex = this.treeControl.dataNodes.findIndex(dN => dN.dateNr === monthNr);
+            if (monthIndex >= 0) {
+                this.treeControl.expand(this.treeControl.dataNodes[monthIndex]);
+            }
+        }
+    }
 }
