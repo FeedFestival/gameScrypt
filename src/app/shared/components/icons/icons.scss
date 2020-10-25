@@ -105,4 +105,38 @@
             color: $orange;
         }
     }
+
+    icon-game-script {
+        > svg {
+            height: 165px;
+            position: absolute;
+            margin-left: -5px;
+        }
+    }
+
+    icon-game-scrypt {
+        > svg {
+            height: 175px;
+            position: absolute;
+            margin-left: -10px;
+            margin-top: -5px;
+        }
+    }
+
+    icon-google-play {
+        > svg {
+            height: 33px;
+            width: 133px;
+        }
+    }
+
+    icon-free {
+        > svg {
+            height: 120px;
+            position: absolute;
+            top: -80px;
+            left: -35px;
+            transform: rotate(-45deg);
+        }
+    }
 }

@@ -17,6 +17,8 @@ import { ContactComponent } from './features/contact/contact.component';
 import { PzComponent } from './features/esports/components/pz/pz.component';
 import { TftComponent } from './features/esports/components/tft/tft.components';
 import { EsportsComponent } from './features/esports/esports.component';
+import { GameListComponent } from './features/games/components/game-list.component';
+import { GameComponent } from './features/games/components/game.component';
 import { GamesComponent } from './features/games/games.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { NewsComponent } from './features/news/news.component';
@@ -93,7 +95,9 @@ export const components = [
     PzComponent,
     BlogComponent,
     ArticleComponent,
-    GamesComponent
+    GamesComponent,
+    GameListComponent,
+    GameComponent
 ];
 export const entryDialogComponents = [
     PageDialogComponent,

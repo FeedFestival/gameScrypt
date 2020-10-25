@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { APP_VERSION } from 'src/app/app.constants';
 import { ArticleBank } from 'src/app/features/blog/articles/articleData/article.bank';
 // import { PRIVACY_POLICY } from 'src/app/features/policy/privacy-policy.doc';
 import { PrivacyPolicy } from 'src/app/features/policy/privacy-policy.doc';
@@ -12,6 +13,7 @@ import { OnResizeService } from '../on-resize/on-resize.service';
 })
 export class FooterComponent implements OnInit {
 
+    VERSION = APP_VERSION._;
     learningArticles: any[];
     ABOUT_POLICY = new PrivacyPolicy(this.sanitized)._().ABOUT.en;
     bp: string;
@@ -29,7 +31,8 @@ export class FooterComponent implements OnInit {
     ngOnInit() {
 
         this.learningArticles = ArticleBank.LearningArticles.map(a => ({
-            ...a,
+            titleTimeline: a.titleTimeline,
+            redirect: '/' + a.category.route + '/' + a.base,
             isPlaceholder: false
         }));
         const countTillFull = 5 - this.learningArticles.length;

@@ -20,6 +20,9 @@
                     </a>
                 </div>
                 <div class="col-12 p-0" [innerHtml]="ABOUT_POLICY.ABOUT"></div>
+                <div class="footer-version">
+                    v. {{ VERSION }}
+                </div>
             </div>
 
             <div class="col-12 col-sm-2" [ngClass]="{ 'footer-v-hr': bp !== 'xs' }">
@@ -32,7 +35,7 @@
                 </div>
                 <div class="col-12 text-right">
                     <div *ngFor="let article of learningArticles" class="col-12 p-0 footer-link elips">
-                        <a href="#" routerLink="/"
+                        <a href="#" [routerLink]="article.redirect"
                             [ngClass]="{ 'placeholder-text': article.isPlaceholder }">
                             <span [innerHTML]="article.titleTimeline"></span>
                         </a>

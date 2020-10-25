@@ -58,7 +58,6 @@ export class UnityWorkflowComponent implements OnInit {
             this.metaService.removeTag(tag);
         });
         this.metaService.addTags(this.seoService.getMetaTags(UNITY_ROUTE.base));
-        this.onResizeService.emitScrollClassEvent('max');
 
         this.snippetList.push(
             NewUnityFile,

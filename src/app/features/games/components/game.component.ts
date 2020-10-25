@@ -1,35 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../../home-page/seo.service';
-import { Article } from './article.interfaces';
-import { ARTICLES } from './articleData/articles';
+import { GAMES_DATA } from '../data/games.data';
+import { Game } from '../models/game';
 
 @Component({
-    selector: 'app-article',
-    templateUrl: './article.component.html',
-    styleUrls: ['./article.component.scss']
+    selector: 'app-game',
+    templateUrl: './game.component.html',
+    // styleUrls: ['./game.component.scss']
 })
-export class ArticleComponent implements OnInit {
+export class GameComponent implements OnInit {
 
     bp: string;
-    article: Article;
+    game: Game;
 
     constructor(
-        private activatedRoute: ActivatedRoute,
-        private onResizeService: OnResizeService,
+        private seoService: SeoService,
         private titleService: Title,
         private metaService: Meta,
-        private seoService: SeoService
+        private onResizeService: OnResizeService,
+        private activatedRoute: ActivatedRoute
     ) {
-        this.onResizeService.getResizeEvent()
+        onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
             });
-
         this.activatedRoute.data.subscribe(data => {
-            this.article = ARTICLES.getArticle(data.codeBase);
+            this.game = GAMES_DATA.find(g => g.base === data.codeBase);
             this.init();
         });
     }
@@ -39,10 +38,10 @@ export class ArticleComponent implements OnInit {
     }
 
     init() {
-        this.titleService.setTitle(this.seoService.getTitle(this.article.base));
+        this.titleService.setTitle(this.seoService.getTitle(this.game.base));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
-        this.metaService.addTags(this.seoService.getMetaTags(this.article.base));
+        this.metaService.addTags(this.seoService.getMetaTags(this.game.base));
     }
 }

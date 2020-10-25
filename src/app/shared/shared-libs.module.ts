@@ -16,12 +16,15 @@ import {
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { IconGameScript, IconGameScrypt } from './components/icons/gameScrypt';
 import { IconAboutUs } from './components/icons/icon-about-us';
 import { IconContact } from './components/icons/icon-contact';
 import { IconContactUs } from './components/icons/icon-contact-us';
 import { IconCopyright } from './components/icons/icon-copyright';
 import { IconFacebook } from './components/icons/icon-facebook';
 import { IconFacebookSquare } from './components/icons/icon-facebook-square';
+import { IconFree } from './components/icons/icon-free';
+import { IconGooglePlay } from './components/icons/icon-google-play';
 import { IconInfo } from './components/icons/icon-info';
 import { IconInstagram } from './components/icons/icon-instagram';
 import { IconMobile } from './components/icons/icon-mobile';
@@ -85,7 +88,11 @@ export const appIcons = [
     IconPolicy,
     IconAboutUs,
     IconNavigate,
-    IconMore
+    IconMore,
+    IconGameScript,
+    IconGameScrypt,
+    IconGooglePlay,
+    IconFree
 ];
 
 @NgModule({

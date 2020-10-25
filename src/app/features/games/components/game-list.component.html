@@ -1,0 +1,21 @@
+<div class="col-12 game p-0">
+    <div class="col-12 px-0 games-pic img-shadow">
+        <img *ngIf="game.pic" [src]="game.pic" [ngStyle]="game._picStyle"/>
+        <img *ngIf="!game.pic" src="assets/images/no-pic.jpg" />
+    </div>
+
+    <div class="col-12 mb-2 games-title elips">
+        <span>{{ game.name }}</span>
+    </div>
+
+    <div class="col-12 px-0 games-info">
+        <div class="row">
+            <div class="col-6 d-inline-block games-price">
+                <icon-free></icon-free>
+            </div>
+            <div class="col-6 d-inline-block">
+                <icon-google-play></icon-google-play>
+            </div>
+        </div>
+    </div>
+</div>

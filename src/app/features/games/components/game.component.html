@@ -1,0 +1,27 @@
+<div class="row no-gutters page-min-height p-3 the-tool"
+    [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span class="bp">
+        {{bp}}
+    </span>
+
+    <div class="col-5">
+        <div class="col-12">
+            <h1>{{ game.name }}</h1>
+        </div>
+
+        <div class="col-12 mt-5" [innerHtml]="game.introduction"></div>
+    </div>
+
+    <mat-card class="col-7" style="max-height: 444px; margin-top: 44px;">
+        <div class="col-7 d-inline-block">
+
+        </div>
+        <div class="col-5 d-inline-block p-0 games-content d-inline-block">
+            <app-game-list [game]="game"></app-game-list>
+        </div>
+    </mat-card>
+
+    <div class="col-12" style="margin-top: -66px;" [innerHtml]="game.description"></div>
+
+</div>
