@@ -1,0 +1,35 @@
+<div class="row no-gutters page-min-height unity-page-min-width p-3 the-tool"
+    [ngClass]="{ 'container': bp === 'lg' || bp === 'xl' }">
+    <span class="bp">
+        {{bp}}
+    </span>
+
+    <div class="col-12 mb-3">
+        <mat-card class="py-0">
+            <div class="d-inline-flex col-5 p-0">
+                <mat-paginator [length]="paging.length" [pageSize]="paging.pageSize"
+                    [pageSizeOptions]="paging.pageSizeOptions" [showFirstLastButtons]="true"
+                    (page)="onPageChange($event)">
+                </mat-paginator>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="col-12" *ngFor="let ruse of llac('users'), let i=index;">
+
+        <div class="col-3 d-inline-block">
+            {{ ruse.id }}
+        </div>
+
+        <div class="col-6 d-inline-block">
+            {{ ruse.name }}
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <mat-paginator [length]="paging.length" [pageSize]="paging.pageSize" [pageSizeOptions]="paging.pageSizeOptions"
+            [showFirstLastButtons]="true" (page)="onPageChange($event)">
+        </mat-paginator>
+    </div>
+</div>

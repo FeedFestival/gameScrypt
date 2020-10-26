@@ -22,10 +22,14 @@ export const HttpDefaultOptions = {
     // 'responseType': 'json'
 };
 
+export const MockRequestTime = 1000;
+
 export const STORAGE_KEY = {
     COOKIE_ACCEPTED: 'isCookieAccepted',
     TERMS_LANG: 'termsLanguage',
-    USER: 'user'
+    USER: 'user',
+    TOKEN: 'authenticationToken',
+    STORM: 'storm',
 };
 
 export const COUNTRIES: { ROMANIA: { keys: string[], lang: string }, OTHER: { keys: string[], lang: string } } = {
@@ -56,5 +60,7 @@ export const APP_VERSION = {
     TERMS_DATE: {
         POSTED: '22/10/2020',
         LAST_UPDATED: '25/10/2020'
-    }
+    },
+    // FACEBOOK_ID: '485626875687512',     // gamescrypt
+    FACEBOOK_ID: '2528185860808048',     // gamescrypt_local
 };

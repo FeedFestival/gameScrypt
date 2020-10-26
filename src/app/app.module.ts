@@ -5,11 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { AuthService, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+import { AuthService, AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AppComponent } from './app.component';
+import { APP_VERSION } from './app.constants';
+import { AdminComponent } from './auth/admin.component';
 import { AboutComponent } from './features/about/about.component';
 import { ArticleComponent } from './features/blog/articles/article.component';
 import { BlogComponent } from './features/blog/blog.component';
@@ -42,7 +44,7 @@ import { SharedModule } from './shared/shared.module';
 const config = new AuthServiceConfig([
     {
         id: FacebookLoginProvider.PROVIDER_ID,
-        provider: new FacebookLoginProvider('485626875687512')
+        provider: new FacebookLoginProvider(APP_VERSION.FACEBOOK_ID)
     }
 ]);
 
@@ -90,6 +92,7 @@ export function provideConfig() {
 
 export const mainComponents = [
     HomePageComponent,
+    AdminComponent
 ];
 export const components = [
     NewsComponent,
@@ -146,7 +149,8 @@ export const mockData: Provider[] = [
         NgtUniversalModule,
         NgxWebstorageModule.forRoot(),
         SharedModule.forRoot(),
-        AppRoutingModule
+        AppRoutingModule,
+        // SocialLoginModule
     ],
     entryComponents: [
         ...entryDialogComponents
@@ -157,7 +161,7 @@ export const mockData: Provider[] = [
             provide: AuthServiceConfig,
             useFactory: provideConfig
         },
-        ...mockData
+        // ...mockData
     ],
     bootstrap: [AppComponent]
 })

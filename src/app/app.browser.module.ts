@@ -11,11 +11,12 @@ import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
+import { APP_VERSION } from './app.constants';
 
 const config = new AuthServiceConfig([
     {
         id: FacebookLoginProvider.PROVIDER_ID,
-        provider: new FacebookLoginProvider('485626875687512')
+        provider: new FacebookLoginProvider(APP_VERSION.FACEBOOK_ID)
     }
 ]);
 

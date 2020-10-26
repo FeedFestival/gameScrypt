@@ -2,28 +2,61 @@
     <div class="dialog-background-shadow">
         <div class="col-12  black-dialog-title">
             <h2 mat-dialog-title class="col-12 text-center p0">
-                {{page.title}}
+                {{uiAccess.title}}
             </h2>
         </div>
 
-        <mat-dialog-content layout-align="center center" class="mat-dialog-content">
+        <mat-dialog-content layout-align="center center"
+            class="mat-dialog-content" style="min-width: 400px;">
 
-            <div class="ml-2 mr-2">
-
+            <div *ngIf="uiAccess.phase === LOGIN_PHASE.LOGIN_PHASE" class="col-12 mt-5 p-0">
+                <button *ngIf="uiAccess.loggedIn === false"
+                    class="mat-raised-button mat-primary" color="primary" (click)="login()">
+                    Login
+                </button>
             </div>
+
+            <div *ngIf="uiAccess.phase === LOGIN_PHASE.LOADING_PHASE" class="col-12 p-0">
+                <mat-dialog-content layout-align="center center" class="mat-dialog-content">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </mat-dialog-content>
+            </div>
+
+            <div *ngIf="uiAccess.phase === LOGIN_PHASE.LOGGED_IN_PHASE" class="col-12 mt-5 p-0">
+                <button class="mat-raised-button" color="accent" (click)="signOut()">
+                    Log Out
+                </button>
+
+                <!--
+                <button *ngIf="uiAccess.buttonDanishMow"
+                    class="mat-raised-button mat-primary float-right" color="primary" (click)="redirect(uiAccess.butRoute)">
+                    {{ uiAccess.butName }}
+                </button> -->
+            </div>
+
         </mat-dialog-content>
-        <hr />
-        <mat-dialog-actions class="dialog-buttons-container">
-            <div class="w-100 text-center">
-                <div class="mt-2 mb-2">
-                    <!-- <button *ngIf="!dialogText.onlyConfirmButton" class="mat-raised-button dialog-cancel-button"
-                        color="accent" (click)="cancel()">
-                        {{dialogText.cancel}}
+        <hr *ngIf="uiAccess.phase !== LOGIN_PHASE.LOADING_PHASE"/>
+        <mat-dialog-actions class="dialog-buttons-container" *ngIf="uiAccess.phase !== LOGIN_PHASE.LOADING_PHASE">
+            <div class="w-100">
+
+                <div *ngIf="uiAccess.phase === LOGIN_PHASE.LOGIN_PHASE" class="w-100 mt-2 mb-2 text-center">
+                    <button *ngIf="uiAccess.loggedIn === false"
+                        class="mat-raised-button" color="accent" (click)="leave()">
+                        Cancel
                     </button>
-                    <button class="ml-4 mat-raised-button mat-primary dialog-confirm-button" color="primary"
-                        (click)="confirm()">
-                        {{dialogText?.confirm}}
-                    </button> -->
+                </div>
+
+                <div *ngIf="uiAccess.phase === LOGIN_PHASE.LOGGED_IN_PHASE"
+                    class="w-100 mt-2 mb-2" [ngClass]="{ 'text-center' :uiAccess.buttonDanishMow === false }">
+
+                    <button class="mat-raised-button" color="accent" (click)="leave()">
+                        Cancel
+                    </button>
+
+                    <button *ngIf="uiAccess.buttonDanishMow"
+                        class="mat-raised-button mat-primary float-right" color="primary" (click)="redirect(uiAccess.butRoute)">
+                        {{ uiAccess.butName }}
+                    </button>
                 </div>
             </div>
         </mat-dialog-actions>

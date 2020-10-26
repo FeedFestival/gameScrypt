@@ -7,6 +7,7 @@ import {
     MatIconModule,
     MatInputModule, MatMenuModule,
     MatPaginatorModule,
+    MatProgressBarModule,
     MatRadioModule,
     MatSelectModule,
     MatTooltipModule,
@@ -61,7 +62,8 @@ export const matModules = [
     MatPaginatorModule,
     MatTreeModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressBarModule
 ];
 
 export const externalAngularLibraries = [

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NewsComponent } from '../features/news/news.component';
-import { UnityWorkflowComponent } from '../features/unity-workflow/unity-workflow.component';
+import { AdminComponent } from '../auth/admin.component';
+import { AuthGuardService } from '../auth/auth-guard.service';
+import { Guardian } from '../auth/guardian';
 import { blogRoutes } from './blog/blog.routes';
 import { esportsRoutes } from './esports/esports.routes';
 import { gamesRoutes } from './games/games.routes';
@@ -19,6 +20,10 @@ const routes: Routes = [
     ...blogRoutes,
     //
     ...termsAndPrivacyRoutes,
+    {
+        path: 'dramatis-pignorate', component: AdminComponent,
+        canActivate: [AuthGuardService, Guardian]
+    },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
