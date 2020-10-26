@@ -55,40 +55,9 @@ export class HeaderComponent implements OnInit, OnChanges {
 
     ngOnInit() {
 
-        this.getStoredUser();
-
-        this.authService.authState
-            .subscribe((loggedUser) => {
-
-                if (this.loggedIn) {
-                    if (_isNilOrEmpty(this.loginDialog) === false
-                        && this.loginDialog.componentInstance.uiAccess.loggingOut) {
-                        this.loginDialog.componentInstance.onLoggedIn(false, null);
-                    }
-                    return;
-                }
-
-                this.user = loggedUser;
-                this.loggedIn = this.homeService.loggedIn(this.user);
-
-                if (_isNilOrEmpty(this.loginDialog) === false) {
-                    this.loginDialog.componentInstance.onLoggedIn(this.loggedIn, this.user);
-                }
-
-                if (this.loggedIn === false) {
-                    return;
-                }
-
-                this.loginService.saveUser(this.user)
-                    .subscribe((response: any) => {
-                        this.syncUser(response);
-
-                        this.localStorage.store(STORAGE_KEY.USER, this.user);
-                        if (_isNilOrEmpty(this.loginDialog) === false) {
-                            this.loginDialog.componentInstance.onLoggedIn(this.loggedIn, this.user);
-                        }
-                    });
-            });
+        if (this.getStoredUser() === false) {
+            this.authService.authState.subscribe(this.onUserAuthenticated);
+        }
     }
 
     private getStoredUser() {
@@ -116,10 +85,43 @@ export class HeaderComponent implements OnInit, OnChanges {
                     this.authServiceConfig.providers.get('FACEBOOK')
                         .signIn(options)
                         .then(facebookUser => {
-                            this.user = facebookUser;
+                            this.user = (facebookUser as any);
                         });
                 });
         }
+        return this.loggedIn;
+    }
+
+    private onUserAuthenticated = (loggedUser) => {
+
+        if (this.loggedIn) {
+            if (_isNilOrEmpty(this.loginDialog) === false
+                && this.loginDialog.componentInstance.uiAccess.loggingOut) {
+                this.loginDialog.componentInstance.onLoggedIn(false, null);
+            }
+            return;
+        }
+
+        this.user = loggedUser;
+        this.loggedIn = this.homeService.loggedIn(this.user);
+
+        if (_isNilOrEmpty(this.loginDialog) === false) {
+            this.loginDialog.componentInstance.onLoggedIn(this.loggedIn, this.user);
+        }
+
+        if (this.loggedIn === false) {
+            return;
+        }
+
+        this.loginService.saveUser(this.user)
+            .subscribe((response: any) => {
+                this.syncUser(response);
+
+                this.localStorage.store(STORAGE_KEY.USER, this.user);
+                if (_isNilOrEmpty(this.loginDialog) === false) {
+                    this.loginDialog.componentInstance.onLoggedIn(this.loggedIn, this.user);
+                }
+            });
     }
 
     private syncUser(response) {
@@ -127,8 +129,8 @@ export class HeaderComponent implements OnInit, OnChanges {
             ...this.user,
             facebook_id: this.user.id
         };
-        this.user.id = response.ourUser.id;
-        this.user.roles = response.ourUser.roles;
+        this.user.id = response.body.id;
+        this.user.roles = response.body.roles;
         //
         this.loginService.setLoggedUser(this.user);
         //

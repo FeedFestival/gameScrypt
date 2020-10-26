@@ -89,6 +89,7 @@ export class LoginDialogComponent {
         this.uiAccess.phase = LOGIN_PHASE.LOADING_PHASE;
         this.uiAccess.title = 'Loging out...';
         this.uiAccess.loggingOut = true;
+        this.authService.signOut();
         setTimeout(() => {
             this.onLoggedIn(false, null);
         });

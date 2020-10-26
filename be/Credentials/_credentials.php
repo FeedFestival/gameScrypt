@@ -2,5 +2,5 @@
 $servername = "localhost";
 $username = "pmauser";
 $password = "parolae3u";
-$dbName = "writetool";
+$dbName = "gamescrypt";
 ?>

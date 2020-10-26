@@ -18,4 +18,24 @@
         ";
         return $r;
     }
+
+    function _user_getById($id_user) {
+        $r = "
+        SELECT id, name, email, photoUrl, authToken, facebook_id
+        FROM user
+        WHERE id = ".sqlNr($id_user).";
+        ";
+        return $r;
+    }
+
+    function _fillUser($row){
+		return array(
+				'id' => $row['id'],
+				'name' => $row['name'],
+				'email' => $row['email'],
+                'photoUrl' => $row['photoUrl'],
+                'authToken' => $row['authToken'],
+                'facebook_id' => $row['facebook_id'],
+			);
+    }
 ?>
