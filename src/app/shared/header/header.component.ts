@@ -1,20 +1,20 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Router } from '@angular/router';
 import { faCoffee, faEnvelope, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
+import { AuthService, AuthServiceConfig, LoginOpt, SocialUser } from 'angularx-social-login';
 import { LocalStorageService } from 'ngx-webstorage';
 import { STORAGE_KEY } from 'src/app/app.constants';
 import { HomeService } from 'src/app/features/home-page/home.service';
 import { PageDialogComponent } from 'src/app/shared/components/page-dialog/page-dialog.component';
 import { ConfirmDialogText } from '../components/confirm/confirm-dialog-text';
 import { ConfirmDialogComponent } from '../components/confirm/confirm-dialog.component';
+import { _isNilOrEmpty } from '../lodash-utils';
+import { LoginDialogComponent } from '../login/login-dialog.component';
 import { AppEventManager } from '../navigation/event-manager.service';
 import { EventContent } from '../navigation/event-with-content.model';
 import { EVENT } from '../navigation/events-manager.constants';
-import { NavigationService } from '../navigation/navigation.service';
 import { OnResizeService } from '../on-resize/on-resize.service';
-import { HeaderService } from './header.service';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'app-header',
@@ -37,12 +37,13 @@ export class HeaderComponent implements OnInit, OnChanges {
 
     constructor(
         private authService: AuthService,
-        private headerService: HeaderService,
+        private authServiceConfig: AuthServiceConfig,
+        private loginService: LoginService,
         private appEventManager: AppEventManager,
         private matDialog: MatDialog,
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
-        private storyService: HomeService
+        private homeService: HomeService
     ) {
         this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
@@ -51,44 +52,42 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
+        const storedUsed = this.localStorage.retrieve(STORAGE_KEY.USER);
+        if (_isNilOrEmpty(storedUsed) === false) {
+            this.user = storedUsed;
+            this.loggedIn = this.homeService.loggedIn(this.user);
 
-        const user = this.localStorage.retrieve(STORAGE_KEY.USER);
-        if (user !== null) {
-
-            this.user = user;
-            this.storyService.isLoggedIn = this.loggedIn = true;
-            this.storyService.loggedIn(this.user.id);
-
-            // tslint:disable-next-line: max-line-length
-            // config.providers.get('FACEBOOK').signIn({ auth_type: 'reauthenticate', client_id: user.facebook_id, fetch_basic_profile: true })
-            //     .then(user => {
-            //         this.user = user;
-            //     }, error => {
-            //         console.log("TCL: HeaderComponent -> ngOnInit -> error", error)
-            //     });
+            const options: LoginOpt = {
+                auth_type: 'reauthenticate',
+                client_id: storedUsed.facebook_id,
+                fetch_basic_profile: true
+            };
+            this.authServiceConfig.providers.get('FACEBOOK')
+                .signIn(options)
+                .then(facebookUser => {
+                    this.user = facebookUser;
+                });
         } else {
+            this.authService.authState
+                .subscribe((loggedUser) => {
+                    this.user = loggedUser;
+                    this.loggedIn = this.homeService.loggedIn(this.user);
+                    if (this.loggedIn === false) {
+                        return;
+                    }
 
-            this.authService.authState.subscribe((user) => {
-                this.user = user;
-                this.loggedIn = (user != null);
-                if (!this.user) {
-                    return;
-                }
-                this.storyService.loggedIn(this.user.id);
-                console.log(this.user);
-                if (!this.user) {
-                    return;
-                }
-                this.headerService.saveUser(this.user)
-                    .subscribe((userId) => {
-                        const ourUser = {
-                            ...this.user,
-                            facebook_id: this.user.id
-                        };
-                        ourUser.id = userId;
-                        this.localStorage.store(STORAGE_KEY.USER, ourUser);
-                    });
-            });
+                    console.log(this.user);
+
+                    this.loginService.saveUser(this.user)
+                        .subscribe((userId) => {
+                            const ourUser = {
+                                ...this.user,
+                                facebook_id: this.user.id
+                            };
+                            ourUser.id = userId;
+                            this.localStorage.store(STORAGE_KEY.USER, ourUser);
+                        });
+                });
         }
     }
 
@@ -103,14 +102,19 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     login() {
-        if (this.loggedIn) {
-            return;
-        }
-        this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    }
+        this.matDialog
+            .open(LoginDialogComponent, {
+                data: {
+                    loggedIn: this.loggedIn
+                },
+                panelClass: 'dialog-class',
+                hasBackdrop: true,
+                disableClose: false
+            })
+            .afterClosed()
+            .subscribe(isConfirmed => {
 
-    signOut(): void {
-        this.authService.signOut();
+            });
     }
 
     goHome() {
@@ -118,8 +122,9 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
 
     goTo(route) {
-        const content = new EventContent(EVENT.NAVIGATE, { goRoute: route });
-        this.appEventManager.broadcast(content);
+        this.appEventManager.broadcast(
+            new EventContent(EVENT.NAVIGATE, { goRoute: route })
+        );
     }
 
     goToWriteTool() {

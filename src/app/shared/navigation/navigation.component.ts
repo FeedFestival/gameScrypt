@@ -40,7 +40,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     }
 
     navigate = (routeData: any) => {
-        console.log('NavigationComponent -> navigateTo -> routeData', routeData);
         this.router.navigateByUrl('/' + routeData.content.goRoute);
     }
 

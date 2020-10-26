@@ -12,7 +12,8 @@ export const HttpDefaultHeaders = new HttpHeaders({
 });
 export const HttpDefaultOptions = {
     headers: HttpDefaultHeaders,
-    withCredentials: true,
+    withCredentials: false,
+    // withCredentials: true,
     // useXDomain: true,
     'cache': false,
     'Cache-Control': 'no-cache',

@@ -42,11 +42,8 @@
 
         <div class="col-4" style="transition: all 1s;"
             [style.maxWidth]="loggedIn ? '200px' : 'auto'">
-
             <button mat-button class="facebook-button" [ngClass]="{'p-0': loggedIn}" (click)="login()">
-
                 <div *ngIf="loggedIn && user" class="face-logged-in-info" [ngClass]="scrollClass">
-
                     <div>
                         <!--    facebook.picture.data.url    -->
                         <img [src]="user.photoUrl" />
@@ -58,7 +55,6 @@
 
                 <div *ngIf="loggedIn === false">
                     <cool-text pre="L" word="ogin"></cool-text>
-                    <!-- <span>Login</span> -->
                     <icon-facebook></icon-facebook>
                 </div>
             </button>

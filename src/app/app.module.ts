@@ -1,11 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+import { AuthService, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { NgxWebstorageModule } from 'ngx-webstorage';
@@ -32,6 +32,10 @@ import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow
 import { AppRoutingModule } from './routes/app-routing.module';
 import { ConfirmDialogComponent } from './shared/components/confirm/confirm-dialog.component';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
+import { AuthMockService } from './shared/header/auth.mock.service';
+import { LoginMockService } from './shared/header/login.mock.service';
+import { LoginService } from './shared/header/login.service';
+import { LoginDialogComponent } from './shared/login/login-dialog.component';
 import { OnResizeComponent } from './shared/on-resize/on-resize.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -101,7 +105,19 @@ export const components = [
 ];
 export const entryDialogComponents = [
     PageDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    LoginDialogComponent
+];
+
+export const mockData: Provider[] = [
+    {
+        provide: AuthService,
+        useClass: AuthMockService
+    },
+    {
+        provide: LoginService,
+        useClass: LoginMockService
+    }
 ];
 
 @NgModule({
@@ -140,7 +156,8 @@ export const entryDialogComponents = [
         {
             provide: AuthServiceConfig,
             useFactory: provideConfig
-        }
+        },
+        ...mockData
     ],
     bootstrap: [AppComponent]
 })

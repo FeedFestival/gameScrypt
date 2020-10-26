@@ -41,7 +41,6 @@ export class GamesComponent implements OnInit {
         this.onResizeService.emitScrollClassEvent('max');
 
         this.games = GAMES_DATA;
-        console.log('', this.games);
     }
 
     goToGame(gameRedirect: string) {

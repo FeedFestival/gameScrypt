@@ -56,7 +56,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
             filter(event => event instanceof NavigationEnd),
             filter(_ => !!this.scrollRef),
             tap((event: NavigationEnd) => {
-                // console.log(event.urlAfterRedirects);
                 this.scrollToTop();
                 gtag('config', 'UA-154145362-1',
                     {
@@ -65,17 +64,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
                 );
             })
         ).subscribe(_ => { });
-
-        // router.events.subscribe(event => {
-        //     if (event instanceof NavigationEnd) {
-        //         console.log(event.urlAfterRedirects);
-        //         gtag('config', 'UA-154145362-1',
-        //             {
-        //                 'page_path': event.urlAfterRedirects
-        //             }
-        //         );
-        //     }
-        // });
 
         this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
@@ -146,8 +134,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
         // this.scrollSubscription = this.scrollRef.verticalScrolled.pipe(
         //     map((e: any) => {
-
-        //         // console.log('TCL: AppComponent -> ngAfterViewInit -> e.target.scrollTop', e.target.scrollTop);
         //         if (e.target.scrollTop < this.scrollBreakpoint.max) {
         //             return 'max';
         //         } else if (e.target.scrollTop > this.scrollBreakpoint.max && e.target.scrollTop < this.scrollBreakpoint.min) {
@@ -170,16 +156,16 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
             if (COUNTRIES.ROMANIA.keys
                 .map(k => k.toLowerCase())
                 .includes(country.toLowerCase())) {
-                console.log('Country is: ', COUNTRIES.ROMANIA.lang);
+                console.log('LANG: ', COUNTRIES.ROMANIA.lang);
                 this.appService.emitLangEvent();
             }
         } else {
             this.appService.getIPAddress()
                 .subscribe((res: any) => {
-                    console.log('AppComponent -> ngOnInit -> res.ip', res.ip);
+                    console.log('ID: ', res.ip);
                     this.appService.getLocation(res.ip)
                         .subscribe((loc: any) => {
-                            console.log('AppComponent -> ngOnInit -> loc', loc);
+                            console.log('LOC: ', loc);
                             this.appService.setLang(loc.geoplugin_countryCode);
                             this.figureOutLanguage();
                         });

@@ -25,12 +25,11 @@ export class NewsComponent implements OnChanges, OnDestroy {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes) {
-            if (_isNilOrEmpty(changes.newsArticle) === false
-                && _isNilOrEmpty(changes.newsArticle.currentValue) === false) {
-                console.log('NewsComponent -> &&_isNilOrEmpty -> this.newsArticle', this.newsArticle);
-            }
-        }
+        // if (changes) {
+        //     if (_isNilOrEmpty(changes.newsArticle) === false
+        //         && _isNilOrEmpty(changes.newsArticle.currentValue) === false) {
+        //     }
+        // }
     }
 
     goToNews() {

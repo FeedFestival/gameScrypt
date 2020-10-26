@@ -1,27 +1,20 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from 'ngx-webstorage';
+import { SocialUser } from 'angularx-social-login/lib/entities/user';
+import { _isNilOrEmpty, _isNilOrZero, _isNumber, _isString } from 'src/app/shared/lodash-utils';
 
 @Injectable({ providedIn: 'root' })
 export class HomeService {
 
-    isLoggedIn = false;
-    userId = '';
+    userId: string | number;
 
-    constructor(
-        private http: HttpClient,
-        private localStorage: LocalStorageService
-    ) { }
+    constructor() { }
 
-    loggedIn(userId) {
-        this.userId = userId;
-        this.isLoggedIn = true;
-    }
-
-    comparer() {
-        if (this.isLoggedIn) {
-            return 'id';
+    loggedIn(user: SocialUser) {
+        if (_isNilOrEmpty(user)) {
+            this.userId = null;
+            return false;
         }
-        return 'guid';
+        this.userId = user.id;
+        return true;
     }
 }

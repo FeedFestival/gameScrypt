@@ -26,8 +26,6 @@ export class OnResizeComponent implements AfterViewInit {
     ) { }
 
     ngAfterViewInit() {
-        // console.log("TCL: OnResizeComponent -> ngAfterViewInit -> this.baseElement", this.baseElement)
-        // console.log("TCL: OnResizeComponent -> ngAfterViewInit -> this.baseElement.nativeElement.innerWidth", this.baseElement.nativeElement.clientWidth)
         this.onResize({ target: { innerWidth: this.baseElement.nativeElement.clientWidth } });
     }
 
