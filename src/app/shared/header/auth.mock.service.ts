@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { LoginOpt, SocialUser } from 'angularx-social-login';
 import { Observable, of, Subject } from 'rxjs';
 import { MockRequestTime } from 'src/app/app.constants';
 import { _isNilOrEmpty } from '../lodash-utils';
+import { OurUser } from './login.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthMockService {
 
-    authSubject = new Subject<SocialUser | any>();
+    authSubject = new Subject<OurUser | any>();
     // tslint:disable-next-line: variable-name
     _logItIn = false;
 
-    get authState(): Observable<SocialUser | any> {
+    get authState(): Observable<OurUser | any> {
         setTimeout(_ => {
             if (this._logItIn === false) {
                 this.authSubject.next(null);
@@ -24,7 +24,7 @@ export class AuthMockService {
 
     constructor() { }
 
-    signIn(providerId: string, opt?: LoginOpt): Promise<SocialUser | any> {
+    signIn(providerId: string, opt?: any): Promise<OurUser | any> {
         if (_isNilOrEmpty(providerId)) {
             console.error('No providerId');
             return of(null).toPromise();

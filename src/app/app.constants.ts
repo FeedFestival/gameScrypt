@@ -61,6 +61,10 @@ export const APP_VERSION = {
         POSTED: '22/10/2020',
         LAST_UPDATED: '25/10/2020'
     },
+    // 
+    // URL: 'https://gamescrypt.com/be/';
     // FACEBOOK_ID: '485626875687512',     // gamescrypt
     FACEBOOK_ID: '2528185860808048',     // gamescrypt_local
+    URL: 'https://localhost/gameScrypt/be/',
+    SECRET: 'gameScrypt'
 };

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SocialUser } from 'angularx-social-login';
-// import { SocialUser } from 'angularx-social-login/lib/entities/user';
+import { OurUser } from 'src/app/shared/header/login.service';
 import { _isNilOrEmpty, _isNilOrZero, _isNumber, _isString } from 'src/app/shared/lodash-utils';
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +9,7 @@ export class HomeService {
 
     constructor() { }
 
-    loggedIn(user: SocialUser) {
+    loggedIn(user: OurUser) {
         if (_isNilOrEmpty(user)) {
             this.userId = null;
             return false;

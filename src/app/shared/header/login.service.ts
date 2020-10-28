@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SocialUser } from 'angularx-social-login';
 // import * as jwt_decode from 'jwt-decode';
 import jwt_decode from 'jwt-decode';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Observable, of } from 'rxjs';
-import { HttpDefaultOptions, STORAGE_KEY } from 'src/app/app.constants';
+import { APP_VERSION, HttpDefaultOptions, STORAGE_KEY } from 'src/app/app.constants';
 import { GameScryptUtils } from 'src/app/features/home-page/gamescrypt.utils';
 
 @Injectable({ providedIn: 'root' })
@@ -19,23 +18,26 @@ export class LoginService {
     ) { }
 
     saveUser(user): Observable<any> {
-        const requestOptions: any = {
-            ...HttpDefaultOptions,
-            observe: 'response'
-        };
+        const url = APP_VERSION.URL + 'UserService/Register.php' + '?a=' + APP_VERSION.SECRET;
         return this.http.post<any>(
-            GameScryptUtils.baseRequestUrl() + 'UserService/Register.php?a=' + GameScryptUtils.getAnotate(true),
+            url,
             user,
-            requestOptions
+            {
+                ...HttpDefaultOptions,
+                observe: 'response'
+            }
         );
     }
 
     getUser(userId): Observable<any> {
-        const requestOptions: any = {
-            ...HttpDefaultOptions,
-            observe: 'response'
-        };
-        return of();
+        const url = APP_VERSION.URL + 'UserService/GetUser.php' + '?a=' + APP_VERSION.SECRET + '&userId=' + userId;
+        return this.http.get<any>(
+            url,
+            {
+                ...HttpDefaultOptions,
+                observe: 'response'
+            }
+        );
     }
 
     call(rq: string, extras?: any): Observable<any> {
@@ -83,7 +85,16 @@ export class LoginService {
     }
 }
 
-export interface OurUser extends SocialUser {
+export interface OurUser {
+    authToken: string;
+    email: string;
+    facebook: any;
+    firstName: string;
+    lastName: string;
+    photoUrl: string;
+    provider: string;
+    id: string;
+    name: string;
     facebook_id?: string;
     roles?: string[];
 }
