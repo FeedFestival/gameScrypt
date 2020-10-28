@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { GAMES_ROUTE } from 'src/app/routes/games/games.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../../home-page/seo.service';
 import { GAMES_DATA } from '../data/games.data';
@@ -8,11 +9,11 @@ import { Game } from '../models/game';
 
 @Component({
     selector: 'app-game',
-    templateUrl: './game.component.html',
-    // styleUrls: ['./game.component.scss']
+    templateUrl: './game.component.html'
 })
 export class GameComponent implements OnInit {
 
+    backUrl = GAMES_ROUTE.base;
     bp: string;
     game: Game;
 

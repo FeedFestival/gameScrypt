@@ -1,0 +1,411 @@
+@import "../overrides/scss/variables";
+
+.basic-table {
+
+    .ui-table.ui-widget {
+        -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+        box-shadow: 0 4px 15px black;
+    }
+
+    .bulk-action-button {
+        font-size: 14px !important;
+        display: block;
+        font-weight: 400 !important;
+        position: absolute;
+        right: 0px;
+        top: 12px;
+        z-index: 1;
+
+        &:disabled {
+            font-weight: 400 !important;
+        }
+
+        > button {
+            height: 30px;
+
+            > .mat-button-wrapper {
+                line-height: 30px;
+                vertical-align: text-bottom;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .bulk-action-button.r-15 {
+        right: 15px;
+    }
+
+    .selection-checkbox {
+        text-align: center !important;
+        padding: 0.25em 0.5em !important;
+    }
+
+    .ui-selectable-row {
+        a {
+            padding-left: 0px !important;
+
+            i.material-icons {
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .ui-table-tbody {
+        .t-center {
+            text-align: center !important;
+        }
+
+        .t-right {
+            text-align: right !important;
+        }
+
+        .t-left {
+            text-align: left !important;
+        }
+
+        > tr {
+            height: 40px;
+
+            > td {
+                border: 1px solid $table-border-color !important;
+            }
+        }
+
+        > tr.ui-state-highlight:not(.row-checked):not(.row-with-warning):not(.row-with-error):not(.row-unselect) {
+            background-color: $table-row-highlight-color !important;
+            // color: $black !important;
+            font-weight: 600;
+        }
+
+        .row-unselect:nth-child(odd) {
+            // color: black;
+            background-color: white;
+        }
+
+        .row-unselect:nth-child(even) {
+            // color: black !important;
+            background-color: red !important;
+        }
+
+        .ui-chkbox {
+            .ui-chkbox-box.ui-state-active {
+                border-color: $black;
+                background-color: $orange;
+            }
+
+            .ui-chkbox-box {
+                width: 15px !important;
+                height: 15px !important;
+            }
+
+            .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+                background-color: $red-dark;
+
+                span {
+                    color: white !important;
+                }
+            }
+
+            &.ui-state-active {
+                border-color: $black;
+                background-color: $black;
+            }
+
+            .ui-chkbox-icon {
+                font-size: 22px;
+
+                // display: inline-block;
+                float: left;
+                top: -1px;
+                left: -2px;
+                color: $orange;
+                width: 20px;
+                height: 15px;
+                line-height: 15px;
+            }
+
+            &.ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+                background-color: $red-dark;
+
+                span {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    .ui-table-tbody > tr > td {
+        font-size: 12px !important;
+    }
+
+    .ui-table-scrollable-header-box {
+        height: 40px;
+
+        > .ui-table-scrollable-header-table {
+            height: 40px;
+
+            > .ui-table-thead {
+                height: 40px;
+
+                > tr {
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    .table-with-filters {
+        .ui-table-scrollable-header-box {
+            height: 90px;
+
+            > .ui-table-scrollable-header-table {
+                height: 90px;
+
+                > .ui-table-thead {
+                    height: 90px;
+
+                    > tr {
+                        height: 45px;
+                    }
+                }
+            }
+        }
+
+        &.dashboard-filters {
+            .ui-table-scrollable-header-box {
+                height: 100px;
+
+                > .ui-table-scrollable-header-table {
+                    height: 100px;
+
+                    > .ui-table-thead {
+                        height: 100px;
+
+                        > tr:nth-child(2) {
+                            height: 55px;
+
+                            > th {
+                                padding-top: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-table {
+        .ui-table-thead > tr > th:not(.joined-r) {
+            border: 1px solid $table-border-color !important;
+        }
+
+        .ui-table-thead > tr > th.joined-r {
+            border: 1px solid $table-border-color !important;
+            border-right: 1px solid #c8c8c8 !important;
+            padding-right: 0;
+            padding-left: 0;
+
+            > div {
+                width: 100%;
+                text-align: right;
+                text-overflow: unset !important;
+            }
+        }
+        .ui-table-thead > tr > th.joined-l {
+            padding-right: 0;
+            padding-left: 0;
+
+            > div {
+                left: -3px;
+                position: relative;
+                text-overflow: unset !important;
+            }
+        }
+
+        .ui-table-thead > tr > th {
+            // color: $black !important;
+            background-color: $table-header-background !important;
+            text-align: left;
+            font-size: 12px !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 0.25em 0.5em;
+            color: $table-header-color;
+
+            p-sorticon {
+                vertical-align: middle;
+                position: absolute;
+                right: 1px;
+                float: none !important;
+            }
+
+            .table-column-input-filter {
+                width: 100% !important;
+                border-radius: 3px;
+                border: 1px solid $black;
+                padding-right: 7px;
+                padding-left: 7px;
+            }
+
+            .table-column-input-filter[type="number"] {
+                text-align: right;
+            }
+
+            .t-left {
+                .table-column-input-filter[type="number"] {
+                    text-align: left !important;
+                }
+            }
+
+            .table-column-input-filter[type="number"]::-webkit-inner-spin-button,
+            .table-column-input-filter[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        .selectAllCheckbox {
+            width: 50px;
+            text-align: center !important;
+        }
+
+        .ui-sortable-column:not(.ui-state-highlight):hover {
+            border: 1px solid $table-header-background;
+            // color: white !important;
+        }
+
+        th div {
+            white-space: pre !important;
+
+            .ui-sortable-column:not(.ui-state-highlight):hover {
+                background-color: transparent !important;
+            }
+
+            .ui-sortable-column.ui-state-highlight {
+                background-color: transparent !important;
+            }
+        }
+
+        .ui-sortable-column.ui-state-highlight {
+            color: $orange !important;
+            font-weight: bolder;
+            font-size: 11px;
+        }
+
+        .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+            color: $orange !important;
+        }
+
+        .ui-sortable-column:not(.ui-state-highlight):hover
+            .ui-sortable-column-icon {
+            color: white !important;
+        }
+
+        .ui-table-tbody > tr > td,
+        .ui-table-tbody > tr > td > div {
+            overflow: hidden;
+            clear: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ui-multiselect {
+            width: 100%;
+            background: transparent;
+            // color: $dark-grey !important;
+            border: none;
+            line-height: 10px;
+
+            .ui-multiselect-label {
+                // color: $black !important;
+                font-size: 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block !important;
+                max-width: 100%;
+                margin-top: 6px;
+                margin-left: -4px;
+            }
+
+            .ui-multiselect-trigger {
+                background: transparent;
+            }
+        }
+
+        .ui-chkbox.ui-widget {
+            height: 15px !important;
+            width: 15px !important;
+
+            .ui-chkbox-box {
+                height: 15px !important;
+                width: 15px !important;
+                border-color: $black;
+                background-color: $white;
+                color: $orange;
+            }
+
+            .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+                background-color: $red-dark;
+
+                span {
+                    color: white !important;
+                }
+            }
+        }
+
+        .ui-table-thead {
+            .ui-chkbox .ui-chkbox-icon {
+                font-size: 22px;
+                float: left;
+                top: -1.5px;
+                left: -2px;
+                width: 20px;
+                height: 15px;
+                line-height: 15px;
+            }
+
+            .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+                background-color: $red-dark;
+
+                span {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    .mat-checkbox-layout {
+        margin-bottom: 0 !important;
+    }
+
+    .paginator-aligned {
+        margin-top: -32px;
+    }
+
+    .paginator-not-aligned {
+        margin-top: -15px;
+    }
+
+    .ui-table-scrollable-header-table {
+        width: 100%;
+    }
+
+    .ui-table-scrollable-body {
+        .ui-table-scrollable-body-table {
+            width: 100%;
+        }
+    }
+
+    .ui-table .ui-table-tbody > tr {
+        background-color: transparent;
+        color: $table-color !important;
+    }
+
+    .ui-table .ui-table-tbody > tr:nth-child(even) {
+        background-color: rgba(0,0,0,0.2);
+    }
+}

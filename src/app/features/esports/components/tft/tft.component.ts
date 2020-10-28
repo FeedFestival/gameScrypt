@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from 'src/app/features/home-page/seo.service';
-import { TFT_ROUTE } from 'src/app/routes/esports/esports.seo';
+import { ESPORTS_ROUTE, TFT_ROUTE } from 'src/app/routes/esports/esports.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 export class TftComponent implements OnInit {
 
     bp: string;
+    TFT_ROUTE = TFT_ROUTE;
 
     constructor(
         private titleService: Title,

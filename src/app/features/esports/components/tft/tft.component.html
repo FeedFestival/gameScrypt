@@ -1,3 +1,16 @@
-<div class="row no-gutters page-min-height p-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
-    TFT - WORK IN PROGRESS
+<div class="row no-gutters page-min-height p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <div class="col-12 float-left">
+        <p>
+            <span>Please read the rules before applying, </span>
+            <a class="more-button c-point mt-n3" href="#" [routerLink]="TFT_ROUTE.child.TFT_RULES">
+                <cool-text pre="R" word="ules  of the Competition"></cool-text>
+                <icon-more></icon-more>
+            </a>
+        </p>
+    </div>
+
+    <div class="col-12">
+        WORK IN PROGRESS...
+    </div>
 </div>

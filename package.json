@@ -47,6 +47,8 @@
     "ngx-file-drop": "^8.0.8",
     "ngx-scrollbar": "^7.0.2",
     "ngx-webstorage": "^4.0.1",
+    "primeicons": "^1.0.0",
+    "primeng": "^8.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "undo-redo-ts": "^1.0.2",

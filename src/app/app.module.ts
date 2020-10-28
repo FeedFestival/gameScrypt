@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { AuthService, AuthServiceConfig, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
+import { AuthService, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
 import { NgcCookieConsentConfig, NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { NgxWebstorageModule } from 'ngx-webstorage';
@@ -17,7 +17,8 @@ import { ArticleComponent } from './features/blog/articles/article.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { PzComponent } from './features/esports/components/pz/pz.component';
-import { TftComponent } from './features/esports/components/tft/tft.components';
+import { TftRulesComponent } from './features/esports/components/tft/tft-rules/tft-rules.components';
+import { TftComponent } from './features/esports/components/tft/tft.component';
 import { EsportsComponent } from './features/esports/esports.component';
 import { GameListComponent } from './features/games/components/game-list.component';
 import { GameComponent } from './features/games/components/game.component';
@@ -99,6 +100,7 @@ export const components = [
     UnityWorkflowComponent,
     EsportsComponent,
     TftComponent,
+    TftRulesComponent,
     PzComponent,
     BlogComponent,
     ArticleComponent,

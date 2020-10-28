@@ -1,4 +1,4 @@
-@import '../../theme/overrides/scss/variables';
+@import "../../theme/overrides/scss/variables";
 
 .game-competition {
     padding: 0;
@@ -12,7 +12,13 @@
 
     &:hover {
         border: 1px solid $dark-grey;
-        -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+        -moz-border-image: -moz-linear-gradient(
+                left,
+                transparent,
+                #aacabb,
+                transparent
+            )
+            100% 1;
         box-shadow: 0 4px 15px black;
     }
 
@@ -37,5 +43,29 @@
         left: 0;
         width: calc(100% - 20px);
         border-top: 2px solid $orange;
+    }
+}
+
+::ng-deep {
+    .rules {
+        float: left;
+        .rules-title {
+            color: $table-header-color;
+        }
+
+        .rule-circle {
+            float: left;
+
+            icon-circle {
+                color: $table-header-color;
+                > svg {
+                    color: $table-header-color;
+                }
+            }
+        }
+
+        p, li {
+            font-size: 0.7em;
+        }
     }
 }

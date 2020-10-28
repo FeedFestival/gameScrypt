@@ -6,7 +6,7 @@
 @import "./app/theme/overrides/material";
 
 // Override PrimeNG styles
-// @import 'primeng-overrides';
+@import './app/theme/overrides/primeng';
 
 * {
     outline: none !important;
@@ -44,6 +44,15 @@ b {
 
 a {
     color: white;
+    &:hover {
+        color: $orange !important;
+
+        cool-text {
+            .pre {
+                color: white !important;
+            }
+        }
+    }
 }
 
 .page-min-height {
@@ -61,48 +70,6 @@ a {
 .main-menu {
     background-color: rgba(0, 0, 0, 0.5);
     min-height: 50px;
-}
-
-.navigation-bar {
-    .bec-process {
-        width: 25%;
-    }
-
-    .mindit-menu .multi-op.mat-icon-button.active {
-        top: 1.5px !important;
-    }
-
-    .menu-item {
-        .mat-button {
-            padding: 0px 30px;
-            font-size: 13px !important;
-            min-width: 60px !important;
-        }
-
-        .mat-icon-button {
-            width: 25px;
-        }
-    }
-}
-
-.navigation-bar-tabs {
-    .mindit-submenu button.multi-op.mat-icon-button.active {
-        top: 1.5px !important;
-    }
-
-    .menu-item {
-        .mat-button,
-        .mat-button.active {
-            top: 1.5px !important;
-            padding: 0px 10px !important;
-            font-size: 13px !important;
-            min-width: 60px !important;
-        }
-
-        .mat-icon-button {
-            width: 25px;
-        }
-    }
 }
 
 .basic-dialog-dimensions {
@@ -163,7 +130,7 @@ a {
     color: $Smoke;
 
     a {
-        color: #3f51b5;
+        color: $orange;
     }
 
     a.hyperlink {
@@ -210,10 +177,6 @@ a {
 .facebook-button {
     float: right;
     margin-top: 20px !important;
-
-    .mat-button-wrapper {
-        color: white !important;
-    }
 
     .fa-facebook {
         font-size: 35px;
@@ -298,34 +261,6 @@ fa-icon {
     }
 }
 
-.the-tool {
-    .mat-form-field.mat-focused .mat-form-field-label {
-        color: transparent;
-    }
-
-    .mat-form-field-appearance-legacy {
-        .mat-form-field-label {
-            color: transparent;
-        }
-
-        .mat-form-field-empty {
-            color: rgba(0, 0, 0, 0.54);
-        }
-
-        .mat-form-field-underline {
-            background-color: transparent;
-        }
-    }
-
-    .input-empty.mat-form-field-appearance-legacy {
-        .mat-form-field-underline {
-            background-color: rgba(0, 0, 0, 0.42);
-        }
-    }
-}
-
-//
-
 .back-to-top-button {
     position: absolute;
     bottom: 40px;
@@ -386,10 +321,6 @@ fa-icon {
 
 ckeditor {
     margin-top: -20px;
-}
-
-.mat-checkbox-checked .mat-checkbox-background {
-    background-color: #3f51b5 !important;
 }
 
 a.orange {
@@ -580,4 +511,8 @@ $grdColor2: $Smoke;
         box-shadow: 0 4px 15px rgba(0,0,0,0.44) !important;
         -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1 !important;
     }
+}
+
+.color-golden {
+    color: #f7e793;
 }

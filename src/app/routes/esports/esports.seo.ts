@@ -9,7 +9,10 @@ export const TFT_ROUTE = {
     base: 'tft',
     websiteTitle: 'Teamfight Tactics | Competitions & Ladders ↙ gamescrypt.com',
     keywords: 'Esports, gameScrypt, TFT, Competitions, Prizes',
-    shortDescription: 'Group Competition for Teamfight Tactics with ladders'
+    shortDescription: 'Group Competition for Teamfight Tactics with ladders',
+    child: {
+        TFT_RULES: 'rules'
+    }
 };
 
 export const PZ_ROUTE = {

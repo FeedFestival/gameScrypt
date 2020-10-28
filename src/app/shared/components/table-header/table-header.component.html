@@ -1,0 +1,29 @@
+<ng-template ngFor let-col [ngForOf]="columns">
+    <th *ngIf="col.sortable" [pSortableColumn]="col.sortableKey ? col.sortableKey : col.field"  [ngClass]="col.class">
+        <div [matTooltip]="col.tooltip? col.tooltip : col.header" [matTooltipPosition]="'above'"
+            class="tooltip-header" [ngStyle]="col.headerStyle">
+            <div *ngIf="col.splitHeader" class="header-text">
+                <div *ngFor="let header of col.splitHeader">
+                    {{header}}
+                </div>
+            </div>
+            <div *ngIf="!col.splitHeader" class="header-text">
+                {{col.header}}
+            </div>
+            <p-sortIcon class="float-right" [field]="col.sortableKey ? col.sortableKey : col.field">
+            </p-sortIcon>
+        </div>
+    </th>
+    <th *ngIf="!col.sortable" [ngClass]="col.class">
+        <div [matTooltip]="col.header" [matTooltipPosition]="'above'" class="tooltip-header" [ngStyle]="col.headerStyle">
+            <div *ngIf="col.splitHeader">
+                <div *ngFor="let header of col.splitHeader">
+                    {{header}}
+                </div>
+            </div>
+            <div *ngIf="!col.splitHeader">
+                {{col.header}}
+            </div>
+        </div>
+    </th>
+</ng-template>

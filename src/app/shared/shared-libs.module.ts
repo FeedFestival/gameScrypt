@@ -17,8 +17,15 @@ import {
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { PaginatorModule } from 'primeng/paginator';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { TableModule } from 'primeng/table';
 import { IconGameScript, IconGameScrypt } from './components/icons/gameScrypt';
 import { IconAboutUs } from './components/icons/icon-about-us';
+import { IconCircle } from './components/icons/icon-circle';
 import { IconContact } from './components/icons/icon-contact';
 import { IconContactUs } from './components/icons/icon-contact-us';
 import { IconCopyright } from './components/icons/icon-copyright';
@@ -39,14 +46,14 @@ import { IconTwiter } from './components/icons/icon-twiter';
 import { IconWarning } from './components/icons/icon-warning';
 import { IconWhatsapp } from './components/icons/icon-whatsapp';
 
-// export const primeNgModule = [
-//     ButtonModule,
-//     RadioButtonModule,
-//     CheckboxModule,
-//     MultiSelectModule,
-//     PaginatorModule,
-//     TableModule
-// ];
+export const primeNgModule = [
+    ButtonModule,
+    RadioButtonModule,
+    CheckboxModule,
+    MultiSelectModule,
+    PaginatorModule,
+    TableModule
+];
 
 export const matModules = [
     MatMenuModule,
@@ -77,6 +84,7 @@ export const appIcons = [
     IconQuestion,
     IconSmallWarning,
     IconInfo,
+    IconCircle,
     IconContact,
     IconPaperPlane,
     IconWhatsapp,
@@ -100,6 +108,7 @@ export const appIcons = [
 @NgModule({
     imports: [
         matModules,
+        primeNgModule,
         externalAngularLibraries
     ],
     declarations: [
@@ -107,6 +116,7 @@ export const appIcons = [
     ],
     exports: [
         matModules,
+        primeNgModule,
         externalAngularLibraries,
         appIcons
     ],

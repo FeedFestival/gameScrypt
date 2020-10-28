@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../../home-page/seo.service';
 import { Article } from './article.interfaces';
@@ -13,6 +14,7 @@ import { ARTICLES } from './articleData/articles';
 })
 export class ArticleComponent implements OnInit {
 
+    backUrl = BLOG_ROUTE.base;
     bp: string;
     article: Article;
 

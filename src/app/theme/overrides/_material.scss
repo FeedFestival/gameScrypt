@@ -101,3 +101,77 @@ mat-raised-button[disabled][disabled] {
     font-size: 11px;
     background-color: $grey;
 }
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: transparent;
+}
+
+.mat-form-field-appearance-legacy {
+    .mat-form-field-label {
+        color: transparent;
+    }
+
+    .mat-form-field-empty {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .mat-form-field-underline {
+        background-color: transparent;
+    }
+}
+
+.input-empty.mat-form-field-appearance-legacy {
+    .mat-form-field-underline {
+        background-color: rgba(0, 0, 0, 0.42);
+    }
+}
+
+
+.navigation-bar {
+    .mindit-menu .multi-op.mat-icon-button.active {
+        top: 1.5px !important;
+    }
+
+    .menu-item {
+        .mat-button {
+            padding: 0px 30px;
+            font-size: 13px !important;
+            min-width: 60px !important;
+        }
+
+        .mat-icon-button {
+            width: 25px;
+        }
+    }
+}
+
+.navigation-bar-tabs {
+    .mindit-submenu button.multi-op.mat-icon-button.active {
+        top: 1.5px !important;
+    }
+
+    .menu-item {
+        .mat-button,
+        .mat-button.active {
+            top: 1.5px !important;
+            padding: 0px 10px !important;
+            font-size: 13px !important;
+            min-width: 60px !important;
+        }
+
+        .mat-icon-button {
+            width: 25px;
+        }
+    }
+}
+
+.mat-checkbox-checked .mat-checkbox-background {
+    background-color: $orange !important;
+}
+
+.facebook-button {
+
+    .mat-button-wrapper {
+        color: white !important;
+    }
+}

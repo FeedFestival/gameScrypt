@@ -1,0 +1,50 @@
+<back-hyperlink [url]="backUrl"></back-hyperlink>
+<div class="page-min-height p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+    <div class="col-12 p-0">
+
+        <div class="col-7 pl-0 d-inline-block rules">
+
+            <div class="col-12 p-0 d-inline-block rules-title">
+                Rules
+            </div>
+
+            <div class="col-12 p-0 d-inline-block" *ngFor="let tftRule of tftRules">
+
+                <div class="col-1 d-inline-block rule-circle">
+                    <icon-cicle class="color-golden"></icon-cicle>
+                </div>
+                <div class="col-11 d-inline-block" [innerHTML]="tftRule">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-5 pr-0 d-inline-block basic-table">
+            <div class="col-12 p-0">
+                <p-table #tableRef [columns]="cols" [value]="pointsData" scrollable="true" [paginator]="true"
+                    [rows]="paging.pageSize" [totalRecords]="paging.totalNumberOfRecords" [alwaysShowPaginator]="false">
+                    <ng-template pTemplate="colgroup" let-columns>
+                        <colgroup>
+                            <col *ngFor="let col of columns" [ngStyle]="col.style">
+                        </colgroup>
+                    </ng-template>
+                    <ng-template pTemplate="header" let-columns>
+                        <tr app-table-header [columns]="columns"></tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-i style="height: 200px;">
+                        <tr>
+                            <td class="t-center">
+                                <span> {{rowData['place']}}. </span>
+                            </td>
+                            <td class="t-center">
+                                <span> {{rowData['points']}}p. </span>
+                            </td>
+                            <td class="t-center">
+                                <span> {{rowData['maxPoints']}}p. </span>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>
