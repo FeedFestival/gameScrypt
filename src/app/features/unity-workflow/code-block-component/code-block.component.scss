@@ -1,0 +1,72 @@
+
+.Box-body {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    margin-top: 15px;
+
+    .blob-num {
+        width: 1%;
+        min-width: 50px;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+        font-size: 12px;
+        line-height: 20px;
+        color: #ccc;
+        text-align: right;
+        white-space: nowrap;
+        vertical-align: top;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .blob-code-inner {
+        overflow: visible;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-size: 12px;
+        color: var(--color-text-primary);
+        word-wrap: normal;
+        white-space: pre;
+    }
+
+    .blob-code {
+        position: relative;
+        padding-right: 10px;
+        padding-left: 10px;
+        line-height: 20px;
+        vertical-align: top;
+        color: whitesmoke;
+    }
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::ng-deep {
+
+    .console-block {
+        .Box-body {
+            background-color: black;
+            border-radius: 4px;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            margin-top: 0px;
+            padding-top: 30px !important;
+            padding-bottom: 30px !important;
+
+            .blob-code {
+                color: #9cd642 !important;
+            }
+        }
+    }
+}

@@ -31,6 +31,7 @@ import { LegalDocsComponent } from './features/policy/legal-documents.component'
 import { PrivacyComponent } from './features/policy/privacy/privacy.component';
 import { SnsComponent } from './features/policy/sns/sns.component';
 import { TermsComponent } from './features/policy/terms/terms.component';
+import { CodeBlockComponent } from './features/unity-workflow/code-block-component/code-block.component';
 import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { ConfirmDialogComponent } from './shared/components/confirm/confirm-dialog.component';
@@ -98,6 +99,7 @@ export const mainComponents = [
 export const components = [
     NewsComponent,
     UnityWorkflowComponent,
+    CodeBlockComponent,
     EsportsComponent,
     TftComponent,
     TftRulesComponent,

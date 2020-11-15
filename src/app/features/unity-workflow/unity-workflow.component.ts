@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { UNITY_ROUTE } from 'src/app/routes/unity-workflow/unity.seo';
+import { _isNilOrEmpty } from 'src/app/shared/lodash-utils';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../home-page/seo.service';
 import { NewUnityFile, percent_utils } from './snippet-bank/new-unity-file';
@@ -69,6 +70,9 @@ export class UnityWorkflowComponent implements OnInit {
             CREATE_FROM_PREFAB,
             percent_utils
         );
+        this.snippetList.forEach(s => {
+            s.hasCode = _isNilOrEmpty(s.code) === false;
+        });
 
         this.filterSnippets();
     }

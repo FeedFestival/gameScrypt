@@ -2,8 +2,7 @@ export const NewUnityFile = {
     expanded: false,
     name: 'New Unity File',
     description: 'New file',
-    code: `
-using UnityEngine;
+    code: `using UnityEngine;
 using System.Collections;
 
 public class MainPlayer : MonoBehaviour {
@@ -25,8 +24,7 @@ export const percent_utils = {
     expanded: false,
     name: 'Percent Static Utils Class',
     description: 'Find out the percentage using this operations that are human talk expression.',
-    code: `
-public static class percent
+    code: `public static class percent
 {
     public static float Find(float _percent, float _of)
     {
@@ -40,7 +38,12 @@ public static class percent
 `,
     useInfo: true,
     useDescription: 'How to use:',
-    codeUse: `
-var p = percent.Find(_percent: 25, _of: 275);
+    codeUse: `var value = percent.Find(_percent: 25, _of: 275);
+var p = percent.What(_is: 92, _of: 275);
+Debug.Log('value: ' + value);
+Debug.Log('p: ' + p + '%');
+`,
+    console: `value: 68.75
+p: 33.45%
 `
 };

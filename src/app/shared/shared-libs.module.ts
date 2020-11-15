@@ -26,6 +26,7 @@ import { TableModule } from 'primeng/table';
 import { IconGameScript, IconGameScrypt } from './components/icons/gameScrypt';
 import { IconAboutUs } from './components/icons/icon-about-us';
 import { IconCircle } from './components/icons/icon-circle';
+import { IconTerminal } from './components/icons/icon-console';
 import { IconContact } from './components/icons/icon-contact';
 import { IconContactUs } from './components/icons/icon-contact-us';
 import { IconCopyright } from './components/icons/icon-copyright';
@@ -102,7 +103,8 @@ export const appIcons = [
     IconGameScript,
     IconGameScrypt,
     IconGooglePlay,
-    IconFree
+    IconFree,
+    IconTerminal
 ];
 
 @NgModule({

@@ -40,14 +40,11 @@
                         <span [innerHtml]="snippet.description"></span>
                     </div>
 
-                    <div class="col-12 p-1 code-block-container">
+                    <div class="col-12 p-1 code-block-container" *ngIf="snippet.hasCode">
                         <div class="col-12 code-block-options">
-
                         </div>
                         <div class="col-12 code-block">
-                            <pre><code>
-                                {{snippet.code}}
-                            </code></pre>
+                            <app-code-block [code]="snippet.code"></app-code-block>
                         </div>
                     </div>
 
@@ -55,14 +52,16 @@
                         <span [innerHtml]="snippet.useDescription"></span>
                     </div>
 
-                    <div class="col-12 p-1 code-block-container" *ngIf="snippet.useInfo">
+                    <div class="col-6 p-1 float-left d-inline-block code-block-container" *ngIf="snippet.useInfo">
                         <div class="col-12 code-block-options">
-
                         </div>
                         <div class="col-12 code-block">
-                            <pre><code>
-                                {{snippet.codeUse}}
-                            </code></pre>
+                            <app-code-block [code]="snippet.codeUse"></app-code-block>
+                        </div>
+                    </div>
+                    <div class="offset-1 col-5 p-1 float-left d-inline-block code-block-container" *ngIf="snippet.useInfo">
+                        <div class="col-12 p-0 console-block">
+                            <app-code-block [showLineNr]="false" [code]="snippet.console"></app-code-block>
                         </div>
                     </div>
                 </div>

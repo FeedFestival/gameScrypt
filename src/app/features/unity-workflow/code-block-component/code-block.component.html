@@ -1,0 +1,25 @@
+<div class="Box-body p-0">
+
+    <table class="highlight tab-size js-file-line-container" data-tab-size="4" data-paste-markdown-skip="">
+        <tbody>
+            <tr *ngFor="let line of codeLines">
+                <td class="blob-num js-line-number unselectable" data-line-number="1">
+                    <span *ngIf="showLineNr">
+                        {{line.nr}}
+                    </span>
+                    <span *ngIf="showLineNr === false">
+                        <icon-terminal></icon-terminal>
+                    </span>
+                </td>
+                <td class="blob-code blob-code-inner js-file-line highlighted">
+                    <span [innerHtml]="line.code"></span>
+                    <!-- {{line.code}} -->
+                    <!-- <span class="pl-k">import</span>
+                    <span class="pl-kos">{</span> <span class="pl-smi">Component</span> <span class="pl-kos">}</span>
+                    <span class="pl-k">from</span> <span class="pl-s">'@angular/core'</span><span
+                        class="pl-kos">;</span> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
