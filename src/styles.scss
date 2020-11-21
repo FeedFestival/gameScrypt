@@ -55,6 +55,15 @@ a {
     }
 }
 
+body a {
+    color: white;
+    text-decoration: none;
+}
+
+.fw-5 {
+    font-weight: 500 !important;
+}
+
 .page-min-height {
     min-height: calc(
         100vh - ((#{$header-height} + #{$submenu-height}) + 130px)

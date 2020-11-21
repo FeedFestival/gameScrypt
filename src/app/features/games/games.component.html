@@ -6,9 +6,9 @@
     </span>
 
     <div class="col-12">
-        <div class="col-3 pl-0 games-content d-inline-block c-point" *ngFor="let game of games, let i=index;"
-            [ngClass]="{ 'mt-5': i > 2 }" (click)="goToGame(game.base)">
-            <app-game-list [game]="game"></app-game-list>
+        <div class="col-3 pl-0 games-content d-inline-block c-point" *ngFor="let gameData of gamesData, let i=index;"
+            [ngClass]="{ 'mt-5': i > 2 }" (click)="goToGame(gameData.base)">
+            <app-game-list [game]="gameData.en"></app-game-list>
         </div>
     </div>
 

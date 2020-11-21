@@ -12,7 +12,10 @@ import {
     MatSelectModule,
     MatTooltipModule,
     MatTreeModule,
-    MAT_DIALOG_DEFAULT_OPTIONS
+    MatTab,
+    MAT_DIALOG_DEFAULT_OPTIONS,
+    MatTabGroup,
+    MatTabsModule
 } from '@angular/material';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
@@ -71,7 +74,10 @@ export const matModules = [
     MatTreeModule,
     MatIconModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule
+    // MatTabGroup,
+    // MatTab
 ];
 
 export const externalAngularLibraries = [

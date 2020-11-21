@@ -6,12 +6,12 @@ export const snsDoc = (sanitized: DomSanitizer): SNS_ML => {
         en: {
             SOCIAL_NETWORKING_SERVICES_TITLE: 'Social Networking Services',
             SOCIAL_NETWORKING_SERVICES: sanitized.bypassSecurityTrustHtml(`<p>
-You may register to join the Service by logging into your account with a third party social
-networking service CSNS via our Service (e.g.. Facebook and maybe other third party services
-that let you sign in using your existing credentials with those services). If you choose to register
-via an SNS, or to later link your account with the Service to your account with an SNS. we will use
-the Personal Information you have provided to the SNS (such as your name, email address that you
-made publicly available via the SNS) to create your account.
+    You may register to join the Service by logging into your account with a third party social
+    networking service CSNS via our Service (e.g.. Facebook and maybe other third party services
+    that let you sign in using your existing credentials with those services). If you choose to register
+    via an SNS, or to later link your account with the Service to your account with an SNS. we will use
+    the Personal Information you have provided to the SNS (such as your name, email address that you
+    made publicly available via the SNS) to create your account.
 </p>`),
             WHAT_WE_COLLECT_TITLE: 'What Data Does Gamescrypt Website Collect\?',
             WHAT_WE_COLLECT: sanitized.bypassSecurityTrustHtml(`<p>

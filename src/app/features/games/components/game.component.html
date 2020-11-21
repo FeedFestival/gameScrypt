@@ -1,6 +1,5 @@
 <back-hyperlink [url]="backUrl"></back-hyperlink>
-<div class="row no-gutters page-min-height p-3"
-    [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+<div class="row no-gutters page-min-height p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
 
     <span class="bp">
         {{bp}}
@@ -14,15 +13,155 @@
         <div class="col-12 mt-5" [innerHtml]="game.introduction"></div>
     </div>
 
-    <mat-card class="col-7" style="max-height: 444px; margin-top: 44px;">
-        <div class="col-7 d-inline-block">
-
-        </div>
-        <div class="col-5 d-inline-block p-0 games-content d-inline-block">
-            <app-game-list [game]="game"></app-game-list>
+    <mat-card class="col-7" style="max-height: 444px; margin-top: 44px; z-index: 9;">
+        <div class="row" style="font-weight: 300; font-size: 15px;">
+            <div class="col-7 pr-0 d-inline-block">
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Developer(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        {{ game.extraInfo.developer }}
+                    </div>
+                </div>
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Publisher(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        {{ game.extraInfo.publisher }}
+                    </div>
+                </div>
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Platform(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        {{ game.extraInfo.platforms }}
+                    </div>
+                </div>
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Release(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block" [innerHTML]="game.extraInfo.release"></div>
+                </div>
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Genre(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        {{ game.extraInfo.genre }}
+                    </div>
+                </div>
+                <div class="col-12 pr-0 float-left mb-2">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Mode(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        {{ game.extraInfo.mode }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 d-inline-block p-0 games-content d-inline-block">
+                <app-game-list [game]="game"></app-game-list>
+            </div>
         </div>
     </mat-card>
 
-    <div class="col-12" style="margin-top: -66px;" [innerHtml]="game.description"></div>
+    <div class="col-12" [ngStyle]="game.descriptionStyle" [innerHtml]="game.description"></div>
+
+    <div class="col-12">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Screens">
+                <div class="col-12 mt-3">
+
+
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Patch Notes">
+                <div class="col-12 mt-3">
+                    <div class="col-12" *ngFor="let version of game.versions">
+                        <div class="col-12">
+                            <span>
+                                {{ version.name }}
+                            </span>
+                            <span class="version-date">
+                                {{ version.date }}
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li *ngFor="let change of version.changes">
+                                    {{ change }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Privacy Policy">
+                <div class="col-12 mt-3">
+
+                    <!-- THE GAME POLICY - START -->
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES"></div>
+
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.THIS_GAME_POLICY"></div>
+
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES_POLICY"></div>
+                    <!-- THE GAME POLICY - END -->
+
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.INFORMATION_VOLUNTARILY_PROVIDED_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.INFORMATION_VOLUNTARILY_PROVIDED">
+                    </div>
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.OUR_USE_OF_PERSONAL_INFO_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.OUR_USE_OF_PERSONAL_INFO"></div>
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.VIEWING_PERSONAL_INFO_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.VIEWING_PERSONAL_INFO"></div>
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.LINKS_THIRD_PARTY_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.LINKS_THIRD_PARTY"></div>
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.WHERE_WE_STORE_INFO_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.WHERE_WE_STORE_INFO"></div>
+                    <div class="col-11 m-auto">
+                        <h4 [innerHTML]="game.policy.BASIC_POLICY.YOUR_RIGHTS_TITLE"></h4>
+                    </div>
+                    <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.YOUR_RIGHTS"></div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Developers">
+                <div class="col-12 mt-3">
+                    <div class="col-12 d-inline-block" *ngFor="let developer of game.developers">
+                        <div class="developer-function">
+                            {{ developer.function }}
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li *ngFor="let dev of developer.devs">
+                                    <a href="#" [routerLink]="dev.url">
+                                        <cool-text [pre]="dev.pre" [word]="dev.word" [suffix]="dev.suffix"></cool-text>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
 
 </div>

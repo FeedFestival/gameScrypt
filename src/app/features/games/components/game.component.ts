@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES_ROUTE } from 'src/app/routes/games/games.seo';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
@@ -22,14 +22,17 @@ export class GameComponent implements OnInit {
         private titleService: Title,
         private metaService: Meta,
         private onResizeService: OnResizeService,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private sanitized?: DomSanitizer
     ) {
         onResizeService.getResizeEvent()
             .subscribe((bp) => {
                 this.bp = bp;
             });
         this.activatedRoute.data.subscribe(data => {
-            this.game = GAMES_DATA.find(g => g.base === data.codeBase);
+            const gameData = GAMES_DATA(this.sanitized).find(g => g.base === data.codeBase);
+            this.game = gameData.en;
+            this.game._base = gameData.base;
             this.init();
         });
     }
@@ -39,10 +42,10 @@ export class GameComponent implements OnInit {
     }
 
     init() {
-        this.titleService.setTitle(this.seoService.getTitle(this.game.base));
+        this.titleService.setTitle(this.seoService.getTitle(this.game._base));
         this.seoService.getAllTags().forEach(tag => {
             this.metaService.removeTag(tag);
         });
-        this.metaService.addTags(this.seoService.getMetaTags(this.game.base));
+        this.metaService.addTags(this.seoService.getMetaTags(this.game._base));
     }
 }
