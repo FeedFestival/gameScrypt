@@ -98,4 +98,18 @@
         padding-left: 15px;
         color: $dark-grey;
     }
+
+    .game-image-container {
+        > div {
+            height: 280px;
+            -webkit-clip-path: inset(0% 0% 0% 0%);
+            clip-path: inset(0% 0% 0% 0%);
+            border: 1px solid #ccc;
+            > img {
+                transform: translate(18%, 0%) scale(1.4, 1.4);
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
 }

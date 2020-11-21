@@ -26,6 +26,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { PaginatorModule } from 'primeng/paginator';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TableModule } from 'primeng/table';
+import { GamesPicturesComponent } from './components/games-pictures/games-pictures.component';
 import { IconGameScript, IconGameScrypt } from './components/icons/gameScrypt';
 import { IconAboutUs } from './components/icons/icon-about-us';
 import { IconCircle } from './components/icons/icon-circle';
@@ -120,13 +121,15 @@ export const appIcons = [
         externalAngularLibraries
     ],
     declarations: [
-        appIcons
+        appIcons,
+        GamesPicturesComponent
     ],
     exports: [
         matModules,
         primeNgModule,
         externalAngularLibraries,
-        appIcons
+        appIcons,
+        GamesPicturesComponent
     ],
     providers: [
         {
