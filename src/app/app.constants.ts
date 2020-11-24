@@ -5,7 +5,8 @@ export const HttpDefaultHeaders = new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     // 'Origin': 'http://localhost:4200'
-    // 'UserId': '1445866905885',
+    'X-Protected-By': 'TSCamPeg/7.3.4 TryScamNX/6.1.2 TraudXP/32.17.37.0 (Win64; x64)',
+    'X-User-Check': 'BadNeck/4.0.7',
     // 'SessionID': '9F5A5548743EA42C69D2685E41FCB50E',
     // 'JSESSIONID': 'C57B67E0039E7AF4BDA8E2002B54EE4A'
     //  Cookie: JSESSIONID=C57B67E0039E7AF4BDA8E2002B54EE4A; UserID=1531381765430; SessionID=9F5A5548743EA42C69D2685E41FCB50E

@@ -5,7 +5,6 @@ import jwt_decode from 'jwt-decode';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Observable, of } from 'rxjs';
 import { APP_VERSION, HttpDefaultOptions, STORAGE_KEY } from 'src/app/app.constants';
-import { GameScryptUtils } from 'src/app/features/home-page/gamescrypt.utils';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
@@ -18,7 +17,7 @@ export class LoginService {
     ) { }
 
     saveUser(user): Observable<any> {
-        const url = APP_VERSION.URL + 'UserService/Register.php' + '?a=' + APP_VERSION.SECRET;
+        const url = APP_VERSION.URL + 'UserService/Register.php';
         return this.http.post<any>(
             url,
             user,
@@ -30,7 +29,7 @@ export class LoginService {
     }
 
     getUser(userId): Observable<any> {
-        const url = APP_VERSION.URL + 'UserService/GetUser.php' + '?a=' + APP_VERSION.SECRET + '&userId=' + userId;
+        const url = APP_VERSION.URL + 'UserService/GetUser.php' + '?userId=' + userId;
         return this.http.get<any>(
             url,
             {

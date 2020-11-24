@@ -160,15 +160,21 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
                 this.appService.emitLangEvent();
             }
         } else {
-            this.appService.getIPAddress()
-                .subscribe((res: any) => {
-                    console.log('ID: ', res.ip);
-                    this.appService.getLocation(res.ip)
-                        .subscribe((loc: any) => {
-                            console.log('LOC: ', loc);
-                            this.appService.setLang(loc.geoplugin_countryCode);
-                            this.figureOutLanguage();
-                        });
+            // this.appService.getIPAddress()
+            //     .subscribe((res: any) => {
+            //         console.log('ID: ', res.ip);
+            //         this.appService.getLocation(res.ip)
+            //             .subscribe((loc: any) => {
+            //                 console.log('LOC: ', loc);
+            //                 this.appService.setLang(loc.geoplugin_countryCode);
+            //                 this.figureOutLanguage();
+            //             });
+            //     });
+            this.appService.getCountry()
+                .subscribe((loc: any) => {
+                    console.log('LOC: ', loc);
+                    this.appService.setLang(loc.geoplugin_countryCode);
+                    this.figureOutLanguage();
                 });
         }
     }
