@@ -1,18 +1,23 @@
 <ng-scrollbar #NgScrollbar class="scroll-area"
     [class.with-wall]="showWall" [ngClass]="scrollClass">
 
-    <app-header class="header-container" [scrollClass]="scrollClass"></app-header>
+    <app-header *ngIf="headerType === HEADER_TYPE.GAMESCRYPT"
+        class="header-container"
+        [scrollClass]="scrollClass"></app-header>
 
-    <div class="container-fluid p-0" style="background: rgba(0,0,0,0.33);">
+    <div class="container-fluid p-0"
+        [ngClass]="{ 'm-h-100vh': headerType === HEADER_TYPE.BACKGROUND_CV }"
+        style="background: rgba(0,0,0,0.33);">
         <router-outlet></router-outlet>
 
-        <div class="col-12 p-0 header-container website-bottom-space">
+        <div *ngIf="headerType === HEADER_TYPE.GAMESCRYPT"
+            class="col-12 p-0 header-container website-bottom-space">
             <div class="col-12">
                 <cool-text full="gameScrypt" [size]="'h3'" fontForce="roboto"></cool-text>
             </div>
         </div>
 
-        <app-footer></app-footer>
+        <app-footer *ngIf="headerType === HEADER_TYPE.GAMESCRYPT"></app-footer>
     </div>
 </ng-scrollbar>
 

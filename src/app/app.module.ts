@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { APP_VERSION } from './app.constants';
 import { AdminComponent } from './auth/admin.component';
 import { AboutComponent } from './features/about/about.component';
+import { BackgroundComponent } from './features/about/background-cv/background-cv.component';
 import { ArticleComponent } from './features/blog/articles/article.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
@@ -136,6 +137,7 @@ export const mockData: Provider[] = [
         LegalDocsComponent,
         ContactComponent,
         AboutComponent,
+        BackgroundComponent,
         TermsComponent,
         PrivacyComponent,
         CookiesComponent,

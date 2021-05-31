@@ -10,6 +10,8 @@ import { COUNTRIES, ScrollBreakpoints, STORAGE_KEY } from './app.constants';
 import { AppService } from './app.service';
 import { _isNilOrEmpty } from './shared/lodash-utils';
 import { OnResizeService } from './shared/on-resize/on-resize.service';
+import { EventBusService } from './shared/services/event-bus.service';
+import { EventData, Evt, HEADER_TYPE } from './shared/services/EventData';
 
 // tslint:disable-next-line: ban-types
 declare let gtag: Function;
@@ -24,11 +26,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     faArrowCircleUp = faArrowCircleUp;
     faBars = faBars;
 
+    HEADER_TYPE = HEADER_TYPE;
+    headerType = HEADER_TYPE.GAMESCRYPT;
+
     scrollClass = 'max';
     showWall = false;
     bp: string;
     scrollBreakpoint: any = ScrollBreakpoints.sm;
     private backgroundInterval: any;
+    private isCookieAccepted = false;
 
     // keep refs to subscriptions to be able to unsubscribe later
     private popupOpenSubscription: Subscription;
@@ -50,6 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         private onResizeService: OnResizeService,
         private localStorage: LocalStorageService,
         private appService: AppService,
+        private eventBus: EventBusService,
         private router: Router
     ) {
         this.router.events.pipe(
@@ -79,6 +86,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
             .subscribe((scrollClass) => {
                 this.setScrollClass(scrollClass);
             });
+
+        this.eventBus.on(Evt.HEADER_CHANGE, (eventData: EventData) => {
+            this.headerType = eventData.data;
+        });
+
+        this.initGDPR();
     }
 
     ngOnInit() {
@@ -86,49 +99,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         this.setScrollClass(this.scrollClass);
 
         this.figureOutLanguage();
-
-        const isCookieAccepted = this.localStorage.retrieve('isCookieAccepted');
-        if (isCookieAccepted && isCookieAccepted === true) {
-            setTimeout(() => {
-                this.ccService.close(false);
-            });
-            return;
-        }
-
-        // subscribe to cookieconsent observables to react to main events
-        this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(
-            () => {
-                // you can use this.ccService.getConfig() to do stuff...
-            });
-
-        this.popupCloseSubscription = this.ccService.popupClose$.subscribe(
-            () => {
-                // you can use this.ccService.getConfig() to do stuff...
-                this.localStorage.store(STORAGE_KEY.COOKIE_ACCEPTED, true);
-            });
-
-        this.initializeSubscription = this.ccService.initialize$.subscribe(
-            (event: NgcInitializeEvent) => {
-                // you can use this.ccService.getConfig() to do stuff...
-            });
-
-        this.statusChangeSubscription = this.ccService.statusChange$.subscribe(
-            (event: NgcStatusChangeEvent) => {
-                // you can use this.ccService.getConfig() to do stuff...
-            });
-
-        this.revokeChoiceSubscription = this.ccService.revokeChoice$.subscribe(
-            () => {
-                // you can use this.ccService.getConfig() to do stuff...
-            });
-
-        this.noCookieLawSubscription = this.ccService.noCookieLaw$.subscribe(
-            (event: NgcNoCookieLawEvent) => {
-                // you can use this.ccService.getConfig() to do stuff...
-            });
     }
 
     ngAfterViewInit() {
+
+        if (this.isCookieAccepted && this.isCookieAccepted === true) {
+            setTimeout(() => {
+                this.ccService.close(false);
+            }, 100);
+        }
 
         this.animateBackground(4000);
 
@@ -212,6 +191,46 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         z = z || '0';
         n = n + '';
         return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    }
+
+    private initGDPR() {
+
+        this.isCookieAccepted = this.localStorage.retrieve(STORAGE_KEY.COOKIE_ACCEPTED);
+
+        // this.popupOpenSubscription =
+        // this.ccService.popupOpen$.subscribe(
+        //     () => {
+        //         console.log('on open');
+        //     });
+        this.popupCloseSubscription = this.ccService.popupClose$.subscribe(
+            () => {
+                console.log('you can use this.ccService.getConfig() to do stuff...');
+                this.localStorage.store(STORAGE_KEY.COOKIE_ACCEPTED, true);
+            });
+        // this.initializeSubscription = this.ccService.initialize$.subscribe(
+        //     (event: NgcInitializeEvent) => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...', event);
+        //     });
+        // (this.ccService as any).initializeSource.subscribe(
+        //     (event: NgcInitializeEvent) => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...', event);
+        //     });
+        // (this.ccService as any).popupOpenSource.subscribe(
+        //     (event: NgcInitializeEvent) => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...', event);
+        //     });
+        // this.statusChangeSubscription = this.ccService.statusChange$.subscribe(
+        //     (event: NgcStatusChangeEvent) => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...', event);
+        //     });
+        // this.revokeChoiceSubscription = this.ccService.revokeChoice$.subscribe(
+        //     () => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...');
+        //     });
+        // this.noCookieLawSubscription = this.ccService.noCookieLaw$.subscribe(
+        //     (event: NgcNoCookieLawEvent) => {
+        //         console.log('you can use this.ccService.getConfig() to do stuff...', event);
+        //     });
     }
 
     ngOnDestroy() {

@@ -20,3 +20,10 @@ export const CONTACT_ROUTE = {
     keywords: 'gameScrypt, Daniel, Mihaita, Simionescu, simionescudani07@gmail.com',
     shortDescription: 'I\'m Daniel Simionescu and I own this place. Come see what the website has to offer.'
 };
+
+export const BACKGROUND_ROUTE = {
+    base: 'Daniel_Simionescu',
+    websiteTitle: 'Simionescu Daniel Mihaita ↙ Official Website',
+    keywords: 'Daniel, Mihaita, Simionescu, cv, curriculum vitae, simionescudani07@gmail.com',
+    shortDescription: 'I\'m Daniel Simionescu, Web Developer and Game Developer Enthusiast.'
+}
