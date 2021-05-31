@@ -184,3 +184,11 @@ mat-raised-button[disabled][disabled] {
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: $orange;
 }
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #c7bbb357;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: $orange;
+}

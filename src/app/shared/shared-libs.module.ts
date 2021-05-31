@@ -19,6 +19,7 @@ import {
 } from '@angular/material';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -86,6 +87,7 @@ export const externalAngularLibraries = [
     NgScrollbarModule,
     SocialLoginModule,
     NgtUniversalModule,
+    ColorPickerModule
 ];
 
 export const appIcons = [

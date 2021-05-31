@@ -40,7 +40,8 @@
                             "src/resize.scss"
                         ],
                         "scripts": [
-                            "node_modules/cookieconsent/build/cookieconsent.min.js"
+                            "node_modules/cookieconsent/build/cookieconsent.min.js",
+                            "src/app/shared/custom-js/vibrant.js"
                         ]
                     },
                     "configurations": {

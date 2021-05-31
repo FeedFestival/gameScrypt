@@ -6,21 +6,24 @@
         <mat-card class="py-0" style="z-index: 999;">
             <div class="row">
 
-                <mat-form-field class="col-12 mt-3">
-                    <input type="text" matInput pInputText [placeholder]="'Search...'" [(ngModel)]="pastedImage"
-                        autocomplete="off" (paste)="onPaste($event)" />
+                <mat-form-field class="col-12 mt-3" appearance="outline" color="primary">
+                    <mat-label>
+                        Paste image here...
+                    </mat-label>
+                    <input type="text" matInput pInputText [placeholder]="'Paste image here...'"
+                        [(ngModel)]="pastedImage" autocomplete="off" (paste)="onPaste($event)" />
                 </mat-form-field>
 
                 <div class="col-12 mt-3">
 
-                    <div class="pasted-img-container"
-                        (mousemove)="onMouseMove($event)"
-                        (click)="stealColor()">
+                    <div class="pasted-img-container" [ngClass]="{ 'eyedrop': isEyedropMode }"
+                        (mousemove)="onMouseMove($event)" (click)="stealColor()">
 
                         <img #imgRenderer />
                     </div>
 
-                    <canvas #canvasRef style="display:none;"></canvas>
+                    <!-- style="display:none;"-->
+                    <canvas #canvasRef ></canvas>
 
                 </div>
 
@@ -35,24 +38,130 @@
 
             <div class="row">
 
-                <div class="col-4">
-                    <button
-                        [disabled]="canvasEnabled === false"
-                        mat-raised-button
-                        color="accent"
-                        [ngClass]="{ 'active': isEyedropMode }"
-                        (click)="toggleEyedrop()"
-                        >
+                <div class="col-6 pr-0">
+                    <button [disabled]="canvasEnabled === false" mat-raised-button color="accent"
+                        [ngClass]="{ 'active': isEyedropMode }" (click)="toggleEyedrop()">
                         {{ isEyedropMode ? 'Cancel Eyedropper' : 'Eyedrop' }}
                     </button>
                 </div>
 
-                <div class="col-8">
+                <div class="col-6">
                     <div class="preview" #previewRef></div>
                 </div>
 
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-6 pr-0">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field class="w-100" appearance="outline" color="primary">
+                                <mat-label>
+                                    HEX
+                                </mat-label>
+                                <input type="text" matInput pInputText [(ngModel)]="hexValue" autocomplete="off" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field class="w-100" appearance="outline" color="primary">
+                                <mat-label>
+                                    RGBA
+                                </mat-label>
+                                <input type="text" matInput pInputText [(ngModel)]="rgbaValue" autocomplete="off" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field class="w-100" appearance="outline" color="primary">
+                                <mat-label>
+                                    HSL
+                                </mat-label>
+                                <input type="text" matInput pInputText [(ngModel)]="hslValue" autocomplete="off" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-6">
+
+                    <input #colorPickerRef style="display: none;" [cpOutputFormat]="'hex'"
+                        [(colorPicker)]="colorPickerValue" [cpToggle]="true" [cpDialogDisplay]="'inline'"
+                        (colorPickerChange)="colorPickerChange($event)" />
+                </div>
 
             </div>
+
+            <div class="row">
+
+                <div class="col-2 m-3" style="height: 40px;" *ngFor="let color of imageColors, let i=index;"
+                    [style.background]="color">
+
+                </div>
+
+            </div>
+
+        </mat-card>
+    </div>
+
+    <div class="col-12 mt-3">
+
+        <mat-card>
+
+            <div class="row">
+
+                <div class="col-12 pt-5 justify-content-center">
+
+                    <div class="col-10 m-auto">
+                        <h5>
+                            PASTE TO EYEDROP
+                        </h5>
+                    </div>
+
+                    <br />
+
+                    <div class="col-10 m-auto">
+                        <p>
+                            This tool is designed to help artists of any kind and even web developers to steal/eyedrop
+                            colors from images in a simple manner.
+                        </p>
+                    </div>
+
+                    <div class="col-10 m-auto">
+                        <p>
+                            Step 0.     Open the Snipping Tool in windows or any program like that and crop the image
+                            you want to take the colors from.
+                        </p>
+                    </div>
+
+                    <div class="col-10 m-auto">
+                        <p>
+                            Step 1.     Ctrl + C the image. Attention! The image itself.
+                        </p>
+                    </div>
+
+                    <div class="col-10 m-auto">
+                        <p>
+                            Step 2.     Paste it in the above field.
+                        </p>
+                    </div>
+
+                    <div class="col-10 m-auto">
+                        <p>
+                            Step 3.     Press the Eyedropper button and click on the desired color.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </mat-card>
     </div>
 </div>
