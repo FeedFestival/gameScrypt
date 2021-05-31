@@ -32,6 +32,8 @@ import { LegalDocsComponent } from './features/policy/legal-documents.component'
 import { PrivacyComponent } from './features/policy/privacy/privacy.component';
 import { SnsComponent } from './features/policy/sns/sns.component';
 import { TermsComponent } from './features/policy/terms/terms.component';
+import { ColorThiefComponent } from './features/toolbox/components/color-thief/color-thief.component';
+import { ToolboxComponent } from './features/toolbox/toolbox.component';
 import { CodeBlockComponent } from './features/unity-workflow/code-block-component/code-block.component';
 import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
 import { AppRoutingModule } from './routes/app-routing.module';
@@ -105,6 +107,8 @@ export const components = [
     TftComponent,
     TftRulesComponent,
     PzComponent,
+    ToolboxComponent,
+    ColorThiefComponent,
     BlogComponent,
     ArticleComponent,
     GamesComponent,

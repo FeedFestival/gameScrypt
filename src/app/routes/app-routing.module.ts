@@ -8,6 +8,7 @@ import { esportsRoutes } from './esports/esports.routes';
 import { gamesRoutes } from './games/games.routes';
 import { mainRoutes } from './main/main.routes';
 import { termsAndPrivacyRoutes } from './termsAndPrivacy/termsAndPrivacy.routes';
+import { toolboxRoutes } from './toolbox/toolbox.routes';
 import { unityRoutes } from './unity-workflow/unity.routes';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     ...gamesRoutes,
     ...unityRoutes,
     ...esportsRoutes,
+    ...toolboxRoutes,
     //
     ...blogRoutes,
     //

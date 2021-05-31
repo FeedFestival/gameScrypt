@@ -1,0 +1,20 @@
+<div class="row no-gutters page-min-height-330 p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span class="bp">
+        {{bp}}
+    </span>
+
+    <div class="row">
+        <div class="col-3 d-inline-flex game-competition c-point"
+            (click)="goToLadder('colorthief')">
+            <div class="pic-competition">
+                <img src="assets/images/color-thief.jpg" />
+            </div>
+            <div>
+                <div class="title-competition px-3">
+                    <cool-text pre="C" word="olor " suffix="Thief"></cool-text>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

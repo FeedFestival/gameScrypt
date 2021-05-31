@@ -5,7 +5,7 @@
     </span>
 
     <div class="col-12 mb-3">
-        <mat-card class="py-0">
+        <mat-card class="py-0" style="z-index: 999;">
             <mat-form-field class="col-7 mt-3">
                 <input type="text" matInput pInputText [placeholder]="'Search...'" [(ngModel)]="searchText"
                     (change)="filterSnippets()" (input)="filterSnippets()" autocomplete="off" />

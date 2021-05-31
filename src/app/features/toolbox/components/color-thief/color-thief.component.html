@@ -1,0 +1,58 @@
+<back-hyperlink [url]="backUrl"></back-hyperlink>
+<div class="row no-gutters page-min-height p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <div class="col-6 pr-3">
+
+        <mat-card class="py-0" style="z-index: 999;">
+            <div class="row">
+
+                <mat-form-field class="col-12 mt-3">
+                    <input type="text" matInput pInputText [placeholder]="'Search...'" [(ngModel)]="pastedImage"
+                        autocomplete="off" (paste)="onPaste($event)" />
+                </mat-form-field>
+
+                <div class="col-12 mt-3">
+
+                    <div class="pasted-img-container"
+                        (mousemove)="onMouseMove($event)"
+                        (click)="stealColor()">
+
+                        <img #imgRenderer />
+                    </div>
+
+                    <canvas #canvasRef style="display:none;"></canvas>
+
+                </div>
+
+            </div>
+        </mat-card>
+
+    </div>
+
+    <div class="col-6">
+
+        <mat-card class="p-4">
+
+            <div class="row">
+
+                <div class="col-4">
+                    <button
+                        [disabled]="canvasEnabled === false"
+                        mat-raised-button
+                        color="accent"
+                        [ngClass]="{ 'active': isEyedropMode }"
+                        (click)="toggleEyedrop()"
+                        >
+                        {{ isEyedropMode ? 'Cancel Eyedropper' : 'Eyedrop' }}
+                    </button>
+                </div>
+
+                <div class="col-8">
+                    <div class="preview" #previewRef></div>
+                </div>
+
+
+            </div>
+        </mat-card>
+    </div>
+</div>
