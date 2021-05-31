@@ -1,3 +1,4 @@
+import { SafeHtml } from '@angular/platform-browser';
 import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
 import { UNITY_ROUTE } from 'src/app/routes/unity-workflow/unity.seo';
 
@@ -15,12 +16,14 @@ export interface Article {
     title: string;
     titleTimeline: string;
     shortDescription: string;
+    description?: SafeHtml | string;
     websiteTitle: string;
     keywords: string;
     mainPic?: string;
     category: ArticleCategory;
     date: string;
     dateNr: number;
+    parts?: any[];
 }
 
 export interface TimelineYear {

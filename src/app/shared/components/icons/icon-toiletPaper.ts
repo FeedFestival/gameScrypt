@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 /* tslint:disable */
 @Component({
-    selector: 'icon-info',
+    selector: 'icon-toilet-paper',
     template: `
 <span class="toilet-paper"></span>
     `,
 })
-export class IconInfo { }
+export class IconToiletPaper { }

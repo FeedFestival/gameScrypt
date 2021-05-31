@@ -47,6 +47,7 @@ import { IconPaperPlane } from './components/icons/icon-paper-plane';
 import { IconPolicy } from './components/icons/icon-policy';
 import { IconQuestion } from './components/icons/icon-question';
 import { IconSmallWarning } from './components/icons/icon-small-warning';
+import { IconToiletPaper } from './components/icons/icon-toiletPaper';
 import { IconTwiter } from './components/icons/icon-twiter';
 import { IconWarning } from './components/icons/icon-warning';
 import { IconWhatsapp } from './components/icons/icon-whatsapp';
@@ -91,6 +92,7 @@ export const appIcons = [
     IconWarning,
     IconQuestion,
     IconSmallWarning,
+    IconToiletPaper,
     IconInfo,
     IconCircle,
     IconContact,

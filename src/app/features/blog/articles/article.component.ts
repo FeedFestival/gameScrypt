@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
+import { _isNilOrEmpty } from 'src/app/shared/lodash-utils';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../../home-page/seo.service';
 import { Article } from './article.interfaces';
@@ -23,7 +24,8 @@ export class ArticleComponent implements OnInit {
         private onResizeService: OnResizeService,
         private titleService: Title,
         private metaService: Meta,
-        private seoService: SeoService
+        private seoService: SeoService,
+        private sanitized: DomSanitizer,
     ) {
         this.onResizeService.getResizeEvent()
             .subscribe((bp) => {
@@ -46,5 +48,18 @@ export class ArticleComponent implements OnInit {
             this.metaService.removeTag(tag);
         });
         this.metaService.addTags(this.seoService.getMetaTags(this.article.base));
+
+        if (_isNilOrEmpty(this.article.description)) {
+            this.article.description = this.article.shortDescription;
+        }
+        this.article.description = this.sanitized.bypassSecurityTrustHtml(this.article.description as string);
+
+        if (_isNilOrEmpty(this.article.parts) === false) {
+            this.article.parts
+                .forEach(p => {
+                    p.text = this.sanitized.bypassSecurityTrustHtml(p.text);
+                });
+        }
+
     }
 }

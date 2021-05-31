@@ -17,14 +17,22 @@
             <div class="col-12 mt-3">
                 <div class="row">
                     <div class="col-6">
-                        {{article.shortDescription}}
+                        <div class="col-12 p-0" [innerHtml]="article.description">
+                        </div>
                     </div>
+
                     <div class="col-6 px-0" style="margin-top: -15px;">
                         <div class="col-12 px-0 mb-3 article-pic img-shadow">
                             <img *ngIf="article.mainPic" [src]="article.mainPic" />
                             <img *ngIf="!article.mainPic" src="assets/images/no-pic.jpg" />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-12 mt-3" *ngIf="article.parts && article.parts.length > 0">
+                <div class="row" *ngFor="let part of article.parts, let i=index;"
+                    [innerHtml]="part.text">
+                    
                 </div>
             </div>
         </mat-card>
