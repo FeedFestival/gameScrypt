@@ -7,7 +7,7 @@ export const TOOLBOX_ROUTE = {
 
 export const COLOR_THIEF_ROUTE = {
     base: 'colorthief',
-    websiteTitle: 'Color Thief | Steal Colors from Images ↙ gamescrypt.com',
+    websiteTitle: 'Color Thief | Paste Images and Eyedrop ↙ gamescrypt.com',
     keywords: 'Toolbox, gameScrypt, Color Thief, Steal Colors, HEX, RGB, RGBA',
-    shortDescription: 'Easily Steal Colors from Images in RGBA format or HEX.'
+    shortDescription: 'Easily Steal/Eyedrop Colors from Pasted Images in RGBA format or HEX.'
 };

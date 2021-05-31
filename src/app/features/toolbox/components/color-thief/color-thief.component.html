@@ -23,7 +23,7 @@
                     </div>
 
                     <!-- style="display:none;"-->
-                    <canvas #canvasRef ></canvas>
+                    <canvas #canvasRef style="display:none;"></canvas>
 
                 </div>
 
@@ -39,7 +39,7 @@
             <div class="row">
 
                 <div class="col-6 pr-0">
-                    <button [disabled]="canvasEnabled === false" mat-raised-button color="accent"
+                    <button [disabled]="canvasEnabled === false" mat-raised-button color="primary"
                         [ngClass]="{ 'active': isEyedropMode }" (click)="toggleEyedrop()">
                         {{ isEyedropMode ? 'Cancel Eyedropper' : 'Eyedrop' }}
                     </button>
