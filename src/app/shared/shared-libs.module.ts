@@ -48,6 +48,7 @@ import { IconPaperPlane } from './components/icons/icon-paper-plane';
 import { IconPolicy } from './components/icons/icon-policy';
 import { IconQuestion } from './components/icons/icon-question';
 import { IconSmallWarning } from './components/icons/icon-small-warning';
+import { IconStar } from './components/icons/icon-star';
 import { IconToiletPaper } from './components/icons/icon-toiletPaper';
 import { IconTwiter } from './components/icons/icon-twiter';
 import { IconWarning } from './components/icons/icon-warning';
@@ -115,7 +116,8 @@ export const appIcons = [
     IconGameScrypt,
     IconGooglePlay,
     IconFree,
-    IconTerminal
+    IconTerminal,
+    IconStar
 ];
 
 @NgModule({

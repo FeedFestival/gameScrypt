@@ -161,6 +161,18 @@
         }
     }
 
+    icon-star {
+
+        position: relative;
+        margin-right: 3px;
+        bottom: 2px;
+
+        > svg {
+            width: 15px;
+            color: $Smoke;
+        }
+    }
+
     .toilet-paper {
         background-image: url('../../../../assets/images/ToiletPaper_512.png');
         background-size: cover;

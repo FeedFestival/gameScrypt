@@ -1,9 +1,17 @@
+@import '../../../theme/overrides/scss/variables';
+
 $f5-color: rgba(4, 154, 205, 1);
 
 .h-divider {
     height: 2px;
     background: rgb(204,199,208);
     background: linear-gradient(90deg, rgba(204,199,208,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(114,76,142,0) 100%);
+}
+
+.h-divider.dim {
+    background: linear-gradient(
+    90deg
+    , rgba(204, 199, 208, 0) 0%, #ffffff42 25%, #ffffff42 50%, #ffffff42 75%, rgba(114, 76, 142, 0) 100%) !important;
 }
 
 .revealer {
@@ -30,6 +38,26 @@ $f5-color: rgba(4, 154, 205, 1);
         width: calc(50% - 40px);
         max-width: calc(50% - 40px);
         flex: 0 0 calc(50% - 40px);
+
+        .secondary-skill {
+            font-size: 13px;
+            color: #ffffffa3;
+            margin-top: .10rem!important;
+
+            ::ng-deep {
+                .rating-star {
+                    svg {
+                        width: 13px;
+                    }
+
+                    &.checked {
+                        svg {
+                            color: #ffffffa3;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .col-c {
@@ -63,6 +91,35 @@ $f5-color: rgba(4, 154, 205, 1);
             .dot.f5 {
                 background: $f5-color;
             }
+
+            .low-connector-line,
+            .low-connector-curve {
+                width: 18px;
+                background: transparent;
+                position: absolute;
+                float: right;
+                z-index: 2;
+            }
+
+            .low-connector-line {
+                height: 79px;
+
+                right: 0px;
+                top: 40px;
+                border-left: 2px solid $f5-color;
+            }
+            .low-connector-curve {
+
+                width: 19px;
+                height: 10px;
+                right: -1px;
+                top: 110px;
+                border-right: 2px solid #049acd;
+                border-left: 2px solid #049acd;
+                border-bottom: 2px solid #049acd;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
         }
 
         .divider-v {
@@ -78,9 +135,9 @@ $f5-color: rgba(4, 154, 205, 1);
         .divider-v-start {
             width: 2px;
             min-height: 10px;
-            height: 100%;
-            position: absolute;
-            right: calc(50% - 2px);
+            position: relative;
+            float: left;
+            left: 40px;
             top: 0;
             //
             background: rgb(204,199,208);
@@ -149,6 +206,24 @@ $f5-color: rgba(4, 154, 205, 1);
 
             background: rgb(204,199,208);
             background: linear-gradient(270deg, rgba(204,199,208,0) 0%, $f5-color 75%, $f5-color 100%);
+        }
+
+        .project-info {
+            color: $secondary-text;
+
+            .project-time {
+                font-size: 12px;
+            }
+
+            .project-role {
+                float: right;
+                font-size: 12px;
+            }
+        }
+
+        .project-tech {
+            text-align: right;
+            color: $secondary-text;
         }
     }
 }

@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../routes/app-routing.module';
 import { BackHyperlink } from './components/back-hyper/back-hyper.component';
 import { CoolText } from './components/cool-text/cool-text';
 import { LanguageComponent } from './components/language/language.component';
+import { RatingComponent } from './components/rating/rating.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +19,8 @@ export const sharedComponents = [
     CoolText,
     LanguageComponent,
     TableHeaderComponent,
-    BackHyperlink
+    BackHyperlink,
+    RatingComponent
 ];
 
 @NgModule({

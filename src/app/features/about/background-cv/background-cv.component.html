@@ -48,25 +48,124 @@
 
                             <div class="col-12" id="cl-0">
                                 <h3 class="w-100 text-center">
-                                    PROFILE
+                                    SUMMARY
                                 </h3>
 
                                 <p class="text-book mt-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Integer ac lobortis nisi, ut placerat neque. Morbi feugiat eu justo quis viverra.
-                                    Duis at
-                                    enim
-                                    nisi. Fusce id porta nibh, eu pharetra dui. Donec malesuada enim in nisi semper, ac
-                                    vestibulum
-                                    neque aliquam. Integer molestie aliquet dolor, a maximus turpis. Lorem ipsum dolor
-                                    sit amet,
-                                    consectetur adipiscing elit. Suspendisse enim nulla, consequat nec tempus ut,
-                                    ullamcorper et
-                                    enim.
+
+                                    Senior Software Developer with 7+ years of experience in helping companies build, maintain
+                                    and release quality products for clients.
+
+                                </p>
+
+                                <p class="text-book">
+                                    I have solid understanding of core browser concepts, how the browser parses and
+                                    constructs a web page.
+                                    Very Proficient in English, both written and verbal, sufficient for success in a remote
+                                    and largely asynchronous work environment.
+                                </p>
+
+                                <p class="text-book">
+                                    Looking to further my knowledge and experience in this field.
                                 </p>
                             </div>
 
-                            <div class="col-12" id="cl-1">
+                            <div class="col-12 mt-3" id="cl-1">
+                                <h3 class="w-100 text-center">
+                                    SKILLS
+                                </h3>
+
+                                <div class="row mt-3">
+
+                                    <div class="col-6 text-right">Angular X</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Angular JS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">jQuery</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Vanilla JS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">SCSS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">CSS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">GIT</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Node JS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">C#</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">JAVA</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">PHP</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Python</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="2"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">SQL</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -75,17 +174,46 @@
                     <div class="col col-c">
                         <div class="row m-0">
 
-                            <div class="col-12 p-0" id="cc-0" [ngStyle]="cv[0]?.style">
-                                <div class="divider-v-start"></div>
+                            <div class="col-12 p-0" id="cc-0" [style.height.px]="firstRow.startLineH">
+                                <!-- + firstRow.lineH -->
+                                <div class="divider-v-start"
+                                    [style.height.px]="firstRow.startLineH"></div>
+                                <!-- <div class="divider-v" id="timespan-99"
+                                    [style.top.px]="firstRow.startLineH"
+                                    [style.height.px]="firstRow.lineH"
+                                    style="height: 10px;"></div> -->
                             </div>
 
                             <div class="col-12 p-0" id="cc-1">
-                                <div class="divider-v" style="height: 10px;"></div>
+                                <div class="divider-v" id="timespan-0"
+                                    style="height: 20px;"></div>
                                 <div class="time-period">
                                     <span>Nov 2014</span>
                                     <span class="dot f5"></span>
+
+                                    <span class="dot f5" style="right: 4px; top: 20px;"></span>
+                                    <span class="low-connector-line" [style.height.px]="smartDeviation.connLine"></span>
+                                    <span class="low-connector-curve" [style.top.px]="smartDeviation.connCurveTop"></span>
                                 </div>
-                                <div class="divider-v"></div>
+                                <div class="divider-v" id="timespan-1"
+                                    style="height: 91px;"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-2">
+                                <div class="divider-v" id="timespan-2"
+                                    [style.height.px]="smartDeviation.height"></div>
+
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-3">
+                                <div class="divider-v" id="timespan-3"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Jan 2015</span>
+                                    <span class="dot f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-3"
+                                    [style.height.px]="smartMeet.height"></div>
                             </div>
                         </div>
                     </div>
@@ -99,10 +227,12 @@
                                 </h3>
 
                                 <p class="text-book mt-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Integer ac lobortis nisi, ut placerat neque. Morbi feugiat eu justo quis viverra.
-                                    Duis at
-                                    enim nisi.
+                                    With experience I developed the ability to both diagnose and prevent
+                                    performance and optimization problems.
+                                </p>
+                                <p class="text-book">
+                                    Got a positive and solution-oriented mindset and I'm very comfortable in working in
+                                    a highly agile and intensely iterative software development process.
                                 </p>
                             </div>
 
@@ -110,7 +240,7 @@
 
                                 <div class="col-12 p-0">
                                     <div class="bar-left-connect f5"
-                                        [style.height.px]="100"
+                                        [style.height.px]="f5LeftBarConnectedToTimelineHeight"
                                     ></div>
                                     <div class="bar-top-round f5"></div>
                                 </div>
@@ -122,20 +252,20 @@
                                         F5 IT Solutions
                                     </div>
                                     <p class="text-book mt-4">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Integer ac lobortis nisi, ut placerat neque. Morbi feugiat eu justo quis
-                                        viverra. Duis at enim nisi.
+                                        Fresh out of college I started as a junior and learned a lot about software
+                                        development in a very competitive environment.
+
                                     </p>
                                 </div>
                             </mat-card>
 
                             <mat-card class="col-12"
-                                style="padding-top: 0; border-top-left-radius: 13px; margin-top: 15px;" id="cr-1">
+                                style="padding-top: 0; border-top-left-radius: 13px; margin-top: 15px;" id="cr-2">
 
                                 <div class="col-12 p-0">
-                                    <div class="bar-left-connect f5"
-                                        [style.height.px]="30"></div>
-                                    <div class="bar-top-round f5"></div>
+                                    <!-- <div class="bar-left-connect f5"
+                                        [style.height.px]="30"></div> -->
+                                    <div class="bar-top-round f5" [style.height.px]="25"></div>
                                 </div>
 
                                 <div class="col-12 p-0">
@@ -144,15 +274,45 @@
                                     <div class="pt-2">
                                         Smart Deviation
                                     </div>
-                                    <p>
-                                        Nov 2014 – Jan 2015
+                                    <p class="project-info">
+                                        <span class="project-time">Nov 2014 – Jan 2015</span>
+                                        <span class="project-role">Full Stack</span>
                                     </p>
-                                    <p class="text-book mt-4">
-                                        Smart Deviation is a Web application that keeps track of deviations for
+                                    <p class="text-book mt-3">
+                                        Smart Deviation is a web application that keeps track of deviations for
                                         companies. I smoothed out the mobile interface of the application.
                                     </p>
-                                    <p>
-                                        Technologies: C#, AngularJS, Microsoft SQL Server, JavaScript, Bootstrap.
+                                    <p class="project-tech">
+                                        Tech: AngularJS, Bootstrap, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12"
+                                style="padding-top: 0; border-top-left-radius: 13px; margin-top: 15px;" id="cr-3">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar f5"></div>
+                                    <div class="pt-2">
+                                        Foodtime - Smart Meet
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Jan 2015 – Apr 2015</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Developed the system that allows the administration of buildings
+                                        within a company and booking of meeting rooms in that company.
+                                        It was integrated into SmartFood and Foodtime projects for ordering
+                                        food and better administration.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: AngularJS, Bootstrap, C#, Microsoft SQL Server.
                                     </p>
                                 </div>
                             </mat-card>
