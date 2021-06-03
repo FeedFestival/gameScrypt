@@ -16,8 +16,8 @@ export const ArticleBank: ArticleBank = {
         ARTICLES.getArticle('blender-procedural-rocky')
     ],
     TimeLine: [
-        y2020,
-        y2021
+        y2021,
+        y2020
     ]
 };
 

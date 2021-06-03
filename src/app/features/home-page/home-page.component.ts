@@ -3,6 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MAIN_ROUTE } from 'src/app/routes/main/main.seo';
+import { _orderBy } from 'src/app/shared/lodash-utils';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { ArticleBank } from '../blog/articles/articleData/article.bank';
 import { News } from '../news/news';
@@ -46,6 +47,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.news = [
             ...ArticleBank.LatestArticles.map(this.mapArticleToNews)
         ];
+
+        this.news = _orderBy(this.news, (o) => {
+            return o.dateNr;
+        }, ['desc']);
     }
 
     private mapArticleToNews = (a): News => {
@@ -55,7 +60,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
             shortDescription: a.shortDescription,
             date: a.date,
             redirect: a.base,
-            category: a.category
+            category: a.category,
+            dateNr: a.dateNr
         };
     }
 

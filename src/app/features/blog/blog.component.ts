@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { Meta, Title } from '@angular/platform-browser';
 import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
+import { _orderBy } from 'src/app/shared/lodash-utils';
 import { AppEventManager } from 'src/app/shared/navigation/event-manager.service';
 import { EventContent } from 'src/app/shared/navigation/event-with-content.model';
 import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
@@ -50,7 +51,10 @@ export class BlogComponent implements OnInit {
         this.metaService.addTags(this.seoService.getMetaTags(BLOG_ROUTE.base));
         this.onResizeService.emitScrollClassEvent('max');
 
-        this.latestArticles = ArticleBank.LatestArticles;
+        this.latestArticles = _orderBy(ArticleBank.LatestArticles, (o) => {
+            return o.dateNr;
+        }, ['desc']);
+
         this.treeFlattener = new MatTreeFlattener(
             treeTransformer,
             node => node.level,

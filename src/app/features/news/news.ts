@@ -6,5 +6,6 @@ export interface News {
     shortDescription?: string;
     category?: ArticleCategory;
     date?: string;
+    dateNr?: number;
     redirect?: string;
 }
