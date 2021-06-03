@@ -9,8 +9,6 @@ import { PrivacyPolicy } from 'src/app/features/policy/privacy-policy.doc';
 import { ConfirmDialogText } from '../components/confirm/confirm-dialog-text';
 import { ConfirmDialogComponent } from '../components/confirm/confirm-dialog.component';
 import { OnResizeService } from '../on-resize/on-resize.service';
-import { EventBusService } from '../services/event-bus.service';
-import { EventData, Evt, HEADER_TYPE } from '../services/EventData';
 
 @Component({
     selector: 'app-footer',
