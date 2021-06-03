@@ -22,17 +22,54 @@ export class BackgroundComponent implements OnInit, AfterViewInit {
         startLineH: 1,
         lineH: 1
     };
-
-    f5LeftBarConnectedToTimelineHeight: number;
-
+    f5It = {
+        timespanHeight: 1
+    };
     smartDeviation = {
         connLine: 1,
         connCurveTop: 1,
         height: 10
     };
-
     smartMeet = {
         height: 10
+    };
+    sekal = {
+        timespanLineHeight: 60
+    }
+    leanWay = {
+        timespanHeight: 1
+    };
+    smartfood = {
+        timespanHeight: 1
+    };
+    smartFarm = {
+        timespanHeight: 1
+    }
+    tracOnline = {
+        topTimespanHeight: 1,
+        connLine: 1,
+        connCurveTop: 1
+    };
+    quipFinder = {
+        topTimespanHeight: 1
+    };
+    smartManagement = {
+        timespanHeight: 1,
+        lowTimespanHeight: 20
+    };
+    mindit = {
+        margin: 1
+    };
+    dufry = {
+        timespanHeight: 1,
+        connLine: 20,
+        connCurveTop: 20
+    }
+    dufryQuantity = {
+        margin: 1
+    };
+    solutionX = {
+        timespanHeight: 1
     };
 
     constructor(
@@ -62,15 +99,12 @@ export class BackgroundComponent implements OnInit, AfterViewInit {
     initCv() {
 
         setTimeout(_ => {
-            this.cv = [
-                {id: 0},
-                {id: 1},
-                {id: 2},
-                {id: 3},
-            ];
-
-
-            for (var i = 0; i < 4; i++) {
+            this.cv = [];
+            const length = 14;
+            for (var i = 0; i <= length; i++) {
+                this.cv.push({ id: i });
+            }
+            for (var i = 0; i <= length; i++) {
                 this.cv[i].clEl = document.querySelector('#cl-' + this.cv[i].id);
                 this.cv[i].ccEl = document.querySelector('#cc-' + this.cv[i].id);
                 this.cv[i].crEl = document.querySelector('#cr-' + this.cv[i].id);
@@ -87,28 +121,96 @@ export class BackgroundComponent implements OnInit, AfterViewInit {
             this.firstRow.startLineH = ccH;
             this.firstRow.lineH = clH - crH;
 
-            // second row - F5 IT SOLUTIONS
-            let diff = ccH - crH;
-            this.f5LeftBarConnectedToTimelineHeight = diff + 15;
-
             setTimeout(_ => {
 
-                this.setupSmartDeviation();
-
-                this.setupSmartMeet();
+                this.setupF5It();
 
                 setTimeout(_ => {
-                    this.reveal = true;
-                }, 100);
+
+                    this.setupSmartDeviation();
+
+                    setTimeout(_ => {
+
+                        this.setupSmartMeet();
+
+                        setTimeout(_ => {
+
+                            this.setupSekal();
+
+                            setTimeout(_ => {
+
+                                this.setupLeanWay();
+
+                                setTimeout(_ => {
+
+                                    this.setupSmartFood();
+
+                                    setTimeout(_ => {
+
+                                        this.setupSmartFarm();
+
+                                        setTimeout(_ => {
+
+                                            this.setupTracOnline();
+
+                                            setTimeout(_ => {
+
+                                                this.setupQuipFinder();
+
+                                                setTimeout(_ => {
+
+                                                    this.setupSmartManagement();
+
+                                                    setTimeout(_ => {
+
+                                                        this.setupMindit();
+
+                                                        setTimeout(_ => {
+
+                                                            this.setupDufryPmp();
+
+                                                            setTimeout(_ => {
+
+                                                                this.setupDufryQuantity();
+
+                                                                setTimeout(_ => {
+
+                                                                    this.setupSolutionX();
+
+                                                                    setTimeout(_ => {
+                                                                        this.reveal = true;
+                                                                    }, 10);
+                                                                }, 10);
+                                                            }, 10);
+                                                        }, 10);
+                                                    }, 10);
+                                                }, 10);
+                                            }, 10);
+                                        }, 10);
+                                    }, 10);
+                                }, 10);
+                            }, 10);
+                        }, 10);
+                    }, 10);
+                }, 10);
             }, 10);
         }, 100);
+    }
+
+    private setupF5It() {
+
+        const f5itRow = this.cv[1];
+
+        const rightHeight = f5itRow.crEl.offsetHeight;
+
+        this.f5It.timespanHeight = rightHeight - 20 - 40 + 15;
     }
 
     private setupSmartDeviation() {
         const timeSpanPos = this.getYPos('timespan-1');
         const smartDeviationRow = this.cv[2];
         const crEl3Pos = this.getYPos(null, smartDeviationRow.crEl);
-        const diff = crEl3Pos - timeSpanPos;
+        const diff = Math.abs(crEl3Pos - timeSpanPos);
         let top = 40;
         this.smartDeviation.connLine = diff + 25;
         this.smartDeviation.connCurveTop = diff + top + 25;
@@ -117,7 +219,130 @@ export class BackgroundComponent implements OnInit, AfterViewInit {
 
     private setupSmartMeet() {
         const smartMeetRow = this.cv[3];
-        this.smartMeet.height = smartMeetRow.crEl.offsetHeight - 20 - 40  + 15;
+        this.smartMeet.height = smartMeetRow.crEl.offsetHeight - 20 - 40 + 15;
+    }
+
+    private setupSekal() {
+        const sekalRow = this.cv[4];
+        const timeSpanPos = this.getYPos('timespan-6');
+        const clEl5Pos = this.getYPos(null, sekalRow.clEl);
+        this.sekal.timespanLineHeight = Math.abs(clEl5Pos - timeSpanPos);
+    }
+
+    private setupLeanWay() {
+        const leanWayRow = this.cv[5];
+        const centerPos = this.getYPos(null, leanWayRow.ccEl);
+        const rightPos = this.getYPos(null, leanWayRow.crEl);
+        this.leanWay.timespanHeight = Math.abs(rightPos - centerPos) - 20 - 40;
+    }
+
+    private setupSmartFood() {
+        const smartfoodRow = this.cv[5];
+        const centerRow = this.cv[6];
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+        const leftPos = this.getYPos(null, smartfoodRow.clEl);
+        this.smartfood.timespanHeight = Math.abs(leftPos - centerPos) - 20 - 40;
+    }
+
+    private setupSmartFarm() {
+        const smartFarmRow = this.cv[6];
+        const centerRow = this.cv[7];
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+        const rightPos = this.getYPos(null, smartFarmRow.crEl);
+        this.smartFarm.timespanHeight = Math.abs(rightPos - centerPos) - 20 - 40;
+    }
+
+    private setupTracOnline() {
+        const tracRow = this.cv[6];
+        const centerRow = this.cv[9];
+
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+        const leftPos = this.getYPos(null, tracRow.clEl);
+
+        this.tracOnline.topTimespanHeight = Math.abs(leftPos - centerPos) - 20 - 40;
+
+        this.tracOnline.connLine = 20 + 40;
+        this.tracOnline.connCurveTop = this.tracOnline.connLine + 40;
+    }
+
+    private setupQuipFinder() {
+        const quipRow = this.cv[7];
+        const tracRow = this.cv[6];
+
+        const leftPos = this.getYPos(null, tracRow.clEl);
+        const rightPos = this.getYPos(null, quipRow.crEl);
+
+        this.quipFinder.topTimespanHeight = Math.abs(rightPos - leftPos) + 20;
+    }
+
+    private setupSmartManagement() {
+        const smartManagementRow = this.cv[7];
+        const centerRow = this.cv[10];
+
+        const leftPos = this.getYPos(null, smartManagementRow.clEl);
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+
+        this.smartManagement.timespanHeight = Math.abs(centerPos - leftPos) - 40 - this.quipFinder.topTimespanHeight;
+
+        const leftHeight = smartManagementRow.clEl.offsetHeight;
+        const firstCenterRow = this.cv[11];
+        const firstCenterHeight = firstCenterRow.ccEl.offsetHeight;
+        const secondCenterRow = this.cv[12];
+        const secondCenterHeight = secondCenterRow.ccEl.offsetHeight;
+
+        this.smartManagement.lowTimespanHeight = leftHeight - firstCenterHeight - secondCenterHeight + 20;
+    }
+
+    private setupMindit() {
+        const minditRow = this.cv[8];
+        const centerRow = this.cv[12];
+
+        const rightPos = this.getYPos(null, minditRow.crEl);
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+
+        this.mindit.margin = Math.abs(centerPos - rightPos);
+    }
+
+    private setupDufryPmp() {
+
+        const dufryPmpRow = this.cv[9];
+        const centerRow = this.cv[12];
+
+        const rightPos = this.getYPos(null, dufryPmpRow.crEl);
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+        const rightHeight = dufryPmpRow.crEl.offsetHeight / 2;
+
+        this.dufry.timespanHeight = Math.abs(centerPos - rightPos) - 40 - 20 + rightHeight - 20;
+
+        const minditRow = this.cv[8];
+        const marginBetween = 15;
+        const rightConnectingLine = 25;
+        const minditHeight = minditRow.crEl.offsetHeight;
+        this.dufry.connLine = minditHeight - 20 - 40 + marginBetween + rightConnectingLine;
+        this.dufry.connCurveTop = this.dufry.connLine + 40;
+
+    }
+
+    private setupDufryQuantity() {
+
+        const dufryQuantityRow = this.cv[8];
+        const centerRow = this.cv[13];
+
+        const letfPos = this.getYPos(null, dufryQuantityRow.clEl);
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+
+        this.dufryQuantity.margin = Math.abs(centerPos - letfPos);
+    }
+
+    private setupSolutionX() {
+
+        const solutionRow = this.cv[9];
+        const centerRow = this.cv[13];
+
+        const rightPos = this.getYPos(null, solutionRow.crEl);
+        const centerPos = this.getYPos(null, centerRow.ccEl);
+
+        this.solutionX.timespanHeight = Math.abs(centerPos - rightPos) - 2;
     }
 
     private getYPos(id: string, el?: any) {

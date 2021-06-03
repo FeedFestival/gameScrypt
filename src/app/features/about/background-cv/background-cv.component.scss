@@ -1,17 +1,69 @@
-@import '../../../theme/overrides/scss/variables';
+@import "../../../theme/overrides/scss/variables";
 
 $f5-color: rgba(4, 154, 205, 1);
+$mindit-color: #e01728;
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .background-cv-page {
+        margin: 0 !important;
+    }
+    .background-cv-skills {
+        padding: 0 !important;
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .background-cv-page {
+        margin: 0 !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    // .background-cv-skills {
+    //     padding: 0 !important;
+    // }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    .background-cv-page {
+        margin: 0 !important;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+}
 
 .h-divider {
     height: 2px;
-    background: rgb(204,199,208);
-    background: linear-gradient(90deg, rgba(204,199,208,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(114,76,142,0) 100%);
+    background: rgb(204, 199, 208);
+    background: linear-gradient(
+        90deg,
+        rgba(204, 199, 208, 0) 0%,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 1) 75%,
+        rgba(114, 76, 142, 0) 100%
+    );
 }
 
 .h-divider.dim {
     background: linear-gradient(
-    90deg
-    , rgba(204, 199, 208, 0) 0%, #ffffff42 25%, #ffffff42 50%, #ffffff42 75%, rgba(114, 76, 142, 0) 100%) !important;
+        90deg,
+        rgba(204, 199, 208, 0) 0%,
+        #ffffff42 25%,
+        #ffffff42 50%,
+        #ffffff42 75%,
+        rgba(114, 76, 142, 0) 100%
+    ) !important;
 }
 
 .revealer {
@@ -23,11 +75,10 @@ $f5-color: rgba(4, 154, 205, 1);
 }
 
 .timeline-container {
-
     padding-top: 0px;
 
     .col-l,
-    .col-c ,
+    .col-c,
     .col-r {
         display: inline-block;
         float: left;
@@ -39,10 +90,24 @@ $f5-color: rgba(4, 154, 205, 1);
         max-width: calc(50% - 40px);
         flex: 0 0 calc(50% - 40px);
 
+        .project-card {
+            padding-top: 0;
+            border-top-right-radius: 13px;
+            flex: 0 0 calc(100% - 5px) !important;
+
+            &:not(.first) {
+                margin-top: 15px;
+            }
+
+            &.first {
+                margin-top: 0;
+            }
+        }
+
         .secondary-skill {
             font-size: 13px;
             color: #ffffffa3;
-            margin-top: .10rem!important;
+            margin-top: 0.1rem !important;
 
             ::ng-deep {
                 .rating-star {
@@ -86,10 +151,18 @@ $f5-color: rgba(4, 154, 205, 1);
                 right: -5px;
                 z-index: 2;
                 margin-top: 14px;
+
+                &.left {
+                    right: unset;
+                    left: -80px;
+                }
             }
 
             .dot.f5 {
                 background: $f5-color;
+            }
+            .dot.mindit {
+                background: $mindit-color;
             }
 
             .low-connector-line,
@@ -106,19 +179,43 @@ $f5-color: rgba(4, 154, 205, 1);
 
                 right: 0px;
                 top: 40px;
-                border-left: 2px solid $f5-color;
+
+                &.f5 {
+                    border-left: 2px solid $f5-color;
+                }
+                &.mindit {
+                    border-left: 2px solid $mindit-color;
+                }
+
+                &.left {
+                    right: unset;
+                    left: 11px;
+                }
             }
             .low-connector-curve {
-
                 width: 19px;
                 height: 10px;
                 right: -1px;
                 top: 110px;
-                border-right: 2px solid #049acd;
-                border-left: 2px solid #049acd;
-                border-bottom: 2px solid #049acd;
+
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;
+
+                &.f5 {
+                    border-right: 2px solid $f5-color;
+                    border-left: 2px solid $f5-color;
+                    border-bottom: 2px solid $f5-color;
+                }
+                &.mindit {
+                    border-right: 2px solid $mindit-color;
+                    border-left: 2px solid $mindit-color;
+                    border-bottom: 2px solid $mindit-color;
+                }
+
+                &.left {
+                    right: unset;
+                    left: -6px;
+                }
             }
         }
 
@@ -140,8 +237,29 @@ $f5-color: rgba(4, 154, 205, 1);
             left: 40px;
             top: 0;
             //
-            background: rgb(204,199,208);
-            background: linear-gradient(180deg, rgba(204,199,208,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+            background: rgb(204, 199, 208);
+            background: linear-gradient(
+                180deg,
+                rgba(204, 199, 208, 0) 0%,
+                rgba(255, 255, 255, 1) 75%,
+                rgba(255, 255, 255, 1) 100%
+            );
+        }
+        .divider-v-end {
+            width: 2px;
+            min-height: 10px;
+            position: relative;
+            float: left;
+            left: 40px;
+            top: 0;
+            //
+            background: rgb(204, 199, 208);
+            background: linear-gradient(
+                0deg,
+                rgba(204, 199, 208, 0) 0%,
+                rgba(255, 255, 255, 1) 75%,
+                rgba(255, 255, 255, 1) 100%
+            );
         }
     }
 
@@ -149,6 +267,19 @@ $f5-color: rgba(4, 154, 205, 1);
         width: calc(50% - 40px);
         max-width: calc(50% - 40px);
         flex: 0 0 calc(50% - 40px);
+
+        .project-card {
+            padding-top: 0;
+            border-top-left-radius: 13px;
+
+            &:not(.first) {
+                margin-top: 15px;
+            }
+
+            &.first {
+                margin-top: 0;
+            }
+        }
 
         .bar-left-connect {
             position: relative;
@@ -163,22 +294,8 @@ $f5-color: rgba(4, 154, 205, 1);
         .bar-left-connect.f5 {
             background: $f5-color;
         }
-
-        .bar-top-round {
-            position: absolute;
-            float: left;
-            display: block;
-            top: 0;
-            left: -17px;
-            width: 30px;
-            height: 40px;
-            border-top: 2px solid white;
-            border-left: 2px solid white;
-            border-top-left-radius: 13px;
-        }
-        .bar-top-round.f5 {
-            border-top-color: $f5-color;
-            border-left-color: $f5-color;
+        .bar-left-connect.mindit {
+            background: $mindit-color;
         }
 
         .f5-title {
@@ -188,42 +305,105 @@ $f5-color: rgba(4, 154, 205, 1);
             font-size: 18px;
             letter-spacing: 1px;
         }
+    }
 
-        .title-bar {
-            position: absolute;
-            float: left;
-            display: block;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            //
-            background: rgb(204,199,208);
-            background: linear-gradient(270deg, rgba(204,199,208,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    .bar-top-round.left {
+        right: -17px;
+        border-right: 2px solid white;
+        border-top-right-radius: 13px;
+        //
+        left: unset;
+        border-left: none;
+        border-top-left-radius: 0;
+        &.f5 {
+            border-right-color: $f5-color;
+        }
+        &.mindit {
+            border-right-color: $mindit-color;
+        }
+    }
+    .bar-top-round {
+        position: absolute;
+        float: left;
+        display: block;
+        top: 0;
+        left: -17px;
+        width: 30px;
+        height: 40px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        border-top-left-radius: 13px;
+    }
+    .bar-top-round.f5 {
+        border-top-color: $f5-color;
+        border-left-color: $f5-color;
+    }
+    .bar-top-round.mindit {
+        border-top-color: $mindit-color;
+        border-left-color: $mindit-color;
+    }
+
+    .title-bar {
+        position: absolute;
+        float: left;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        //
+        background: rgb(204, 199, 208);
+        background: linear-gradient(
+            270deg,
+            rgba(204, 199, 208, 0) 0%,
+            rgba(255, 255, 255, 1) 75%,
+            rgba(255, 255, 255, 1) 100%
+        );
+    }
+    .title-bar.left {
+        background: linear-gradient(
+            90deg,
+            rgba(204, 199, 208, 0) 0%,
+            rgba(255, 255, 255, 1) 75%,
+            rgba(255, 255, 255, 1) 100%
+        ) !important;
+    }
+
+    .title-bar.f5 {
+        background: rgb(204, 199, 208);
+        background: linear-gradient(270deg, rgba(204, 199, 208, 0) 0%, $f5-color 75%, $f5-color 100%);
+        &.left {
+            background: linear-gradient(90deg, rgba(204, 199, 208, 0) 0%, $f5-color 75%, $f5-color 100%) !important;
+        }
+    }
+    .title-bar.mindit {
+        background: rgb(204, 199, 208);
+        background: linear-gradient(270deg, rgba(204, 199, 208, 0) 0%, $mindit-color 75%, $mindit-color 100%);
+        &.left {
+            background: linear-gradient(
+                90deg,
+                rgba(204, 199, 208, 0) 0%,
+                $mindit-color 75%,
+                $mindit-color 100%
+            ) !important;
+        }
+    }
+
+    .project-info {
+        color: $secondary-text;
+
+        .project-time {
+            font-size: 12px;
         }
 
-        .title-bar.f5 {
-
-            background: rgb(204,199,208);
-            background: linear-gradient(270deg, rgba(204,199,208,0) 0%, $f5-color 75%, $f5-color 100%);
+        .project-role {
+            float: right;
+            font-size: 12px;
         }
+    }
 
-        .project-info {
-            color: $secondary-text;
-
-            .project-time {
-                font-size: 12px;
-            }
-
-            .project-role {
-                float: right;
-                font-size: 12px;
-            }
-        }
-
-        .project-tech {
-            text-align: right;
-            color: $secondary-text;
-        }
+    .project-tech {
+        text-align: right;
+        color: $secondary-text;
     }
 }

@@ -1,4 +1,4 @@
-<div class="row no-gutters container m-auto page-min-height p-3">
+<div class="row no-gutters container m-auto page-min-height p-3 background-cv-page">
     <div class="col-12 pt-5 justify-content-center">
 
         <div class="row">
@@ -70,7 +70,7 @@
                                 </p>
                             </div>
 
-                            <div class="col-12 mt-3" id="cl-1">
+                            <div class="col-12 mt-3 background-cv-skills" id="cl-1">
                                 <h3 class="w-100 text-center">
                                     SKILLS
                                 </h3>
@@ -119,15 +119,27 @@
                                 <div class="row mx-5 my-2 h-divider dim"></div>
 
                                 <div class="row mt-1">
-                                    <div class="col-6 text-right">GIT</div>
+                                    <div class="col-6 text-right">Git</div>
                                     <div class="col-6">
                                         <app-rating [rating]="4"></app-rating>
                                     </div>
                                 </div>
                                 <div class="row secondary-skill">
-                                    <div class="col-6 text-right">Node JS</div>
+                                    <div class="col-6 text-right">Node</div>
                                     <div class="col-6">
                                         <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Ionic</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Electron JS</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
                                     </div>
                                 </div>
 
@@ -161,13 +173,222 @@
                                 <div class="row mx-5 my-2 h-divider dim"></div>
 
                                 <div class="row mt-1">
-                                    <div class="col-6 text-right">SQL</div>
+                                    <div class="col-6 text-right">SQLite</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">MySQL & SQL Server</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="3"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">NoSQL</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="2"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">Unity 3D</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Blender</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+
+                                <div class="row mx-5 my-2 h-divider dim"></div>
+
+                                <div class="row mt-1">
+                                    <div class="col-6 text-right">Photoshop</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="5"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">Illustrator</div>
+                                    <div class="col-6">
+                                        <app-rating [rating]="4"></app-rating>
+                                    </div>
+                                </div>
+                                <div class="row secondary-skill">
+                                    <div class="col-6 text-right">UX Figma</div>
                                     <div class="col-6">
                                         <app-rating [rating]="3"></app-rating>
                                     </div>
                                 </div>
 
                             </div>
+
+                            <mat-card class="col-12 mt-5 project-card" id="cl-4">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left f5"></div>
+                                    <div class="pt-2">
+                                        Sekal
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Aug 2015 – Sep 2015</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Developed an application for an oil drilling company called Sekal.
+                                        The application makes precise calculations of environmental variables
+                                        to better facilitate the workflow of the company.
+                                        It also monitors the drilling activity and provides feedback about its progress.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: WPF, C#, XAML, MVVM, DevExpress, Caliburn, Entity Framework.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cl-5">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left f5"></div>
+                                    <div class="pt-2">
+                                        Foodtime and Smartfood
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Oct 2015 – Apr 2016</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Web based system for canteen internal management.
+                                        List and keep record of customers, users, departments, order etc.
+                                        Produce reports and orders. Added new functionalities in the application,
+                                        bug fixing, and layout improvement for cross browser compatibility.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Vanilla JavaScript, Bootstrap, Visual Basic, C#, Microsoft SQL Server, asp.net.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cl-6">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left f5"></div>
+                                    <div class="pt-2">
+                                        Trac Online
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Aug 2016 – Nov 2016</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Web application for managing customers and employees billing.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Bootstrap, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cl-7">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left f5"></div>
+                                    <div class="pt-2">
+                                        Smart Management
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Apr 2017 – May 2018</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Web and Mobile Application for managing the workflows of any company.
+                                        Implemented cool features like Swim Lanes, Process Lists and Smart Calendars.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Material Design, Bootstrap, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cl-8"
+                                [style.marginTop.px]="dufryQuantity.margin">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left mindit"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left mindit"></div>
+                                    <div class="pt-2">
+                                        Dufry - Quantity Management
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Oct 2018 – Apr 2019</span>
+                                        <span class="project-role">Front End</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Web Application for visualizing reports data.
+                                        Developed and structured it from the ground up in Angular JS.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Material Design, Bootstrap
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cl-8">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round left mindit"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar left mindit"></div>
+                                    <div class="pt-2">
+                                        Intrexx - GBS
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Ian 2021 – Present</span>
+                                        <span class="project-role">Front End</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Currently developing a Web Component to be used in multiple other
+                                        applications as a standalone tool.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular 11, Angular Material, Primeng, Bootstrap
+                                    </p>
+                                </div>
+                            </mat-card>
+
                         </div>
                     </div>
 
@@ -175,13 +396,8 @@
                         <div class="row m-0">
 
                             <div class="col-12 p-0" id="cc-0" [style.height.px]="firstRow.startLineH">
-                                <!-- + firstRow.lineH -->
                                 <div class="divider-v-start"
                                     [style.height.px]="firstRow.startLineH"></div>
-                                <!-- <div class="divider-v" id="timespan-99"
-                                    [style.top.px]="firstRow.startLineH"
-                                    [style.height.px]="firstRow.lineH"
-                                    style="height: 10px;"></div> -->
                             </div>
 
                             <div class="col-12 p-0" id="cc-1">
@@ -192,17 +408,16 @@
                                     <span class="dot f5"></span>
 
                                     <span class="dot f5" style="right: 4px; top: 20px;"></span>
-                                    <span class="low-connector-line" [style.height.px]="smartDeviation.connLine"></span>
-                                    <span class="low-connector-curve" [style.top.px]="smartDeviation.connCurveTop"></span>
+                                    <span class="low-connector-line f5" [style.height.px]="smartDeviation.connLine"></span>
+                                    <span class="low-connector-curve f5" [style.top.px]="smartDeviation.connCurveTop"></span>
                                 </div>
                                 <div class="divider-v" id="timespan-1"
-                                    style="height: 91px;"></div>
+                                    [style.height.px]="f5It.timespanHeight"></div>
                             </div>
 
                             <div class="col-12 p-0" id="cc-2">
                                 <div class="divider-v" id="timespan-2"
                                     [style.height.px]="smartDeviation.height"></div>
-
                             </div>
 
                             <div class="col-12 p-0" id="cc-3">
@@ -212,9 +427,159 @@
                                     <span>Jan 2015</span>
                                     <span class="dot f5"></span>
                                 </div>
-                                <div class="divider-v" id="timespan-3"
+                                <div class="divider-v" id="timespan-4"
                                     [style.height.px]="smartMeet.height"></div>
                             </div>
+
+                            <div class="col-12 p-0" id="cc-4">
+                                <div class="divider-v" id="timespan-5"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Apr 2015</span>
+                                    <span class="dot f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-6"
+                                    [style.height.px]="sekal.timespanLineHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-5">
+                                <div class="divider-v" id="timespan-7"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Aug 2015</span>
+                                    <span class="dot left f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-8"
+                                    [style.height.px]="leanWay.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-6">
+                                <div class="divider-v" id="timespan-9"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Sep 2015</span>
+                                    <span class="dot f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-10"
+                                    [style.height.px]="smartfood.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-7">
+                                <div class="divider-v" id="timespan-11"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Oct 2015</span>
+                                    <span class="dot left f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-12"
+                                    [style.height.px]="smartFarm.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-8">
+                                <div class="divider-v" id="timespan-13"
+                                    style="height: 20px;"></div>
+                                <div class="time-period">
+                                    <span>Apr 2016</span>
+                                    <span class="dot f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-14"
+                                    [style.height.px]="20"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-9">
+                                <div class="divider-v" id="timespan-15"
+                                    [style.height.px]="tracOnline.topTimespanHeight"></div>
+                                <div class="time-period">
+                                    <span>Aug 2016</span>
+
+                                    <span class="dot left f5" style="top: 20px; left: -64px;"></span>
+                                    <span class="low-connector-line left f5" [style.height.px]="tracOnline.connLine"></span>
+                                    <span class="low-connector-curve left f5" [style.top.px]="tracOnline.connCurveTop"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-16"
+                                    [style.height.px]="20"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-10">
+                                <div class="divider-v" id="timespan-17"
+                                    [style.height.px]="quipFinder.topTimespanHeight"></div>
+                                <div class="time-period">
+                                    <span>Jul 2016</span>
+                                    <span class="dot f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-18"
+                                    [style.height.px]="smartManagement.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-11">
+                                <div class="divider-v" id="timespan-19"
+                                    [style.height.px]="20"></div>
+                                <div class="time-period">
+                                    <span>Apr 2017</span>
+
+                                    <span class="dot left f5"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-20"
+                                    [style.height.px]="smartManagement.lowTimespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-12">
+                                <div class="divider-v" id="timespan-21"
+                                    [style.height.px]="20"></div>
+                                <div class="time-period">
+                                    <span>May 2018</span>
+
+                                    <span class="dot mindit"></span>
+
+                                    <span class="dot mindit" style="right: 4px; top: 20px;"></span>
+                                    <span class="low-connector-line mindit" [style.height.px]="dufry.connLine"></span>
+                                    <span class="low-connector-curve mindit" [style.top.px]="dufry.connCurveTop"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-22"
+                                    [style.height.px]="dufry.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-13">
+                                <div class="divider-v" id="timespan-23"
+                                    [style.height.px]="20"></div>
+                                <div class="time-period">
+                                    <span>Oct 2018</span>
+
+                                    <span class="dot left mindit"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-24"
+                                    [style.height.px]="solutionX.timespanHeight"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-14">
+                                <div class="divider-v" id="timespan-25"
+                                    [style.height.px]="20"></div>
+                                <div class="time-period">
+                                    <span>Apr 2019</span>
+
+                                    <span class="dot mindit"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-26"
+                                    [style.height.px]="20"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-15">
+                                <div class="divider-v" id="timespan-27"
+                                    [style.height.px]="20"></div>
+                                <div class="time-period">
+                                    <span>Ian 2021</span>
+
+                                    <span class="dot left mindit"></span>
+                                </div>
+                                <div class="divider-v" id="timespan-28"
+                                    [style.height.px]="20"></div>
+                            </div>
+
+                            <div class="col-12 p-0" id="cc-0" [style.height.px]="firstRow.startLineH">
+                                <div class="divider-v-end"
+                                    [style.height.px]="firstRow.startLineH"></div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -236,12 +601,12 @@
                                 </p>
                             </div>
 
-                            <mat-card class="col-12" style="padding-top: 0; border-top-left-radius: 13px;" id="cr-1">
+                            <mat-card class="col-12 project-card first" id="cr-1">
 
                                 <div class="col-12 p-0">
-                                    <div class="bar-left-connect f5"
+                                    <!-- <div class="bar-left-connect f5"
                                         [style.height.px]="f5LeftBarConnectedToTimelineHeight"
-                                    ></div>
+                                    ></div> -->
                                     <div class="bar-top-round f5"></div>
                                 </div>
 
@@ -259,8 +624,7 @@
                                 </div>
                             </mat-card>
 
-                            <mat-card class="col-12"
-                                style="padding-top: 0; border-top-left-radius: 13px; margin-top: 15px;" id="cr-2">
+                            <mat-card class="col-12 project-card" id="cr-2">
 
                                 <div class="col-12 p-0">
                                     <!-- <div class="bar-left-connect f5"
@@ -283,13 +647,12 @@
                                         companies. I smoothed out the mobile interface of the application.
                                     </p>
                                     <p class="project-tech">
-                                        Tech: AngularJS, Bootstrap, C#, Microsoft SQL Server.
+                                        Tech: Angular JS, Bootstrap, C#, Microsoft SQL Server.
                                     </p>
                                 </div>
                             </mat-card>
 
-                            <mat-card class="col-12"
-                                style="padding-top: 0; border-top-left-radius: 13px; margin-top: 15px;" id="cr-3">
+                            <mat-card class="col-12 project-card" id="cr-3">
 
                                 <div class="col-12 p-0">
                                     <div class="bar-top-round f5"></div>
@@ -312,7 +675,191 @@
                                         food and better administration.
                                     </p>
                                     <p class="project-tech">
-                                        Tech: AngularJS, Bootstrap, C#, Microsoft SQL Server.
+                                        Tech: Angular JS, Bootstrap, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-4">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar f5"></div>
+                                    <div class="pt-2">
+                                        Risa
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Apr 2015 – Aug 2015</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Developed the Social/Work Interaction Medium for Risa company.
+                                        The application is designed to help communication between co-workers
+                                        and employers through posting of questionnaires, images work related topics.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Bootstrap, Apache Cordova, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-5">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar f5"></div>
+                                    <div class="pt-2">
+                                        The Lean Way
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Sep 2015 – Oct 2015</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        A Web based application that uses the Lean way system of administrating
+                                        and improving a project.
+                                        Added new functionalities in the application.
+                                        Implemented the design of the application.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Bootstrap, C#, Microsoft SQL Server.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-6">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar f5"></div>
+                                    <div class="pt-2">
+                                        Smart Farm Journal
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Apr 2016 – Aug 2016</span>
+                                        <span class="project-role">Full Stack</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Mobile application used for journaling pesticides/fertiliers according to EU regulations.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Material Design, Apache Cordova, SQLite, C#, Microsoft SQL Server
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-7">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round f5"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar f5"></div>
+                                    <div class="pt-2">
+                                        Quip Finder
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Nov 2016 – Apr 2017</span>
+                                        <span class="project-role">Front End</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Web application similar to alibaba.com in wich organizations can sell
+                                        oil drilling materials and equipments.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular JS, Material Design, Bootstrap, C#, Microsoft SQL Server
+                                    </p>
+                                </div>
+                            </mat-card>
+
+
+                            <mat-card class="col-12 project-card first" id="cr-8" [style.marginTop.px]="mindit.margin">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-left-connect mindit"
+                                        [style.height.px]="20"
+                                    ></div>
+                                    <div class="bar-top-round mindit"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar mindit"></div>
+                                    <div class="f5-title">
+                                        <img src="https://uploads-ssl.webflow.com/5cdc2c6bc3a13fdbe6c96439/5f6c5c236417bb0731037237_Logo_White_Gray_RGB-01.png"
+                                            sizes="(max-width: 479px) 100px, (max-width: 767px) 21vw, 110px"
+                                            srcset="https://uploads-ssl.webflow.com/5cdc2c6bc3a13fdbe6c96439/5f6c5c236417bb0731037237_Logo_White_Gray_RGB-01-p-500.png 500w, https://uploads-ssl.webflow.com/5cdc2c6bc3a13fdbe6c96439/5f6c5c236417bb0731037237_Logo_White_Gray_RGB-01-p-800.png 800w, https://uploads-ssl.webflow.com/5cdc2c6bc3a13fdbe6c96439/5f6c5c236417bb0731037237_Logo_White_Gray_RGB-01-p-1080.png 1080w, https://uploads-ssl.webflow.com/5cdc2c6bc3a13fdbe6c96439/5f6c5c236417bb0731037237_Logo_White_Gray_RGB-01.png 1677w"
+                                            alt="" class="image-4">
+                                    </div>
+                                    <p class="text-book mt-4">
+                                        After 3.5 years I needed a change and joined Mindit as
+                                        a Mid-Level Front End Developer.
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-9">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round mindit"
+                                        [style.height.px]="25"
+                                        ></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar mindit"></div>
+                                    <div class="pt-2">
+                                        Dufry - PMP
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">May 2018 – Oct 2018</span>
+                                        <span class="project-role">Front End</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Refactor and Bug Fixing over existing implementation.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Struts Web Framework, Vanilla JavaScript, CSS, Java Servlet API
+                                    </p>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="col-12 project-card" id="cr-10">
+
+                                <div class="col-12 p-0">
+                                    <div class="bar-top-round mindit"></div>
+                                </div>
+
+                                <div class="col-12 p-0">
+
+                                    <div class="title-bar mindit"></div>
+                                    <div class="pt-2">
+                                        Dufry - Solution X
+                                    </div>
+                                    <p class="project-info">
+                                        <span class="project-time">Apr 2019 – Ian 2021</span>
+                                        <span class="project-role">Front End</span>
+                                    </p>
+                                    <p class="text-book mt-3">
+                                        Rewrite and Expand Quantities Management with the new Angular X Framework.
+                                    </p>
+                                    <p class="project-tech">
+                                        Tech: Angular 8, Angular Material, Primeng, Bootstrap
                                     </p>
                                 </div>
                             </mat-card>
