@@ -1,4 +1,3 @@
-import { digest } from '@angular/compiler/src/i18n/serializers/xmb';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { GAMES_ROUTE } from 'src/app/routes/games/games.seo';
@@ -8,7 +7,7 @@ import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../home-page/seo.service';
 import { GAMES_DATA } from './data/games.data';
-import { Game, GameData } from './models/game';
+import { GameData } from './models/game';
 
 @Component({
     selector: 'app-games',

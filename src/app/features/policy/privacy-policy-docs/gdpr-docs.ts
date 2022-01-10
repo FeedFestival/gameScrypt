@@ -97,72 +97,72 @@ Email: <a href="mailto:daniel.gamescrypt@gmail.com">daniel.gamescrypt@gmail.com<
         ro: {
             WHAT_ARE_COOKIES_TITLE: 'Ce sunt cookie-urile?',
             WHAT_ARE_COOKIES: sanitized.bypassSecurityTrustHtml(`<p>
-Așa cum este o practică obișnuită cu aproape toate site-urile web profesionale, acest site folosește
-cookie-uri, care sunt mici fișiere care sunt descărcate pe computer, pentru a vă îmbunătăți experiența.
-Această pagină descrie informațiile pe care le adună, cum le folosim și de ce trebuie uneori să stocăm
+Asa cum este o practica obisnuita cu aproape toate site-urile web profesionale, acest site foloseste
+cookie-uri, care sunt mici fisiere care sunt descarcate pe computer, pentru a va îmbunatati experienta.
+Aceasta pagina descrie informatiile pe care le aduna, cum le folosim si de ce trebuie uneori sa stocam
 aceste cookie-uri.
-Noi vom împărtășiți, de asemenea, modul în care puteți preveni stocarea acestor cookie-uri, cu toate acestea,
-acest lucru poate retrograda sau „strica” anumite elemente ale funcționalității site-ului.
+Noi vom împartasiti, de asemenea, modul în care puteti preveni stocarea acestor cookie-uri, cu toate acestea,
+acest lucru poate retrograda sau „strica” anumite elemente ale functionalitatii site-ului.
 
-Pentru informații mai generale despre cookie-uri, consultați articolul Wikipedia de pe
+Pentru informatii mai generale despre cookie-uri, consultati articolul Wikipedia de pe
 <a href="https://en.wikipedia.org/wiki/HTTP_cookie">HTTP Cookies</a>.
 </p>`),
             HOW_COOKIES_TITLE: 'Cum folosim cookie-urile?',
             HOW_COOKIES: sanitized.bypassSecurityTrustHtml(`<p>
-Folosim cookie-uri din mai multe motive detaliate mai jos. Din păcate în majoritatea cazurilor nu există
-opțiuni standard din industrie pentru dezactivarea cookie-urilor fără a dezactiva complet funcționalitatea și
-caracteristicile pe care le adaugă la acest site.
+Folosim cookie-uri din mai multe motive detaliate mai jos. Din pacate în majoritatea cazurilor nu exista
+optiuni standard din industrie pentru dezactivarea cookie-urilor fara a dezactiva complet functionalitatea si
+caracteristicile pe care le adauga la acest site.
 <span style="color: $orange;">
-    Este recomandat să lăsați toate cookie-urile dacă nu sunteți sigur dacă aveți nevoie de ele sau
-    nu în cazul în care acestea sunt utilizate pentru a furniza un serviciu pe care îl utilizați.
+    Este recomandat sa lasati toate cookie-urile daca nu sunteti sigur daca aveti nevoie de ele sau
+    nu în cazul în care acestea sunt utilizate pentru a furniza un serviciu pe care îl utilizati.
 </span>
 </p>
 `),
             DISABLING_COOKIES_TITLE: 'Dezactivarea cookie-urilor',
             DISABLING_COOKIES: sanitized.bypassSecurityTrustHtml(`<p>
-Puteți preveni setarea cookie-urilor ajustând setările din browserul dvs.
-(consultați Ajutor pentru browser pentru a face acest lucru).
-Rețineți că dezactivarea cookie-urilor va afecta funcționalitatea acestui site și a multor alte site-uri
+Puteti preveni setarea cookie-urilor ajustand setarile din browserul dvs.
+(consultati Ajutor pentru browser pentru a face acest lucru).
+Retineti ca dezactivarea cookie-urilor va afecta functionalitatea acestui site si a multor alte site-uri
 web pe care tu vizitezi. Dezactivarea cookie-urilor va duce, de obicei, la dezactivarea anumitor
-funcționalități și caracteristici ale aceslui site. Prin urmare, este recomandat să nu dezactivați cookie-urile.
+functionalitati si caracteristici ale aceslui site. Prin urmare, este recomandat sa nu dezactivati cookie-urile.
 </p>
 `),
-            THIRD_PARTIES_TITLE: 'Cookie-uri de la terți',
+            THIRD_PARTIES_TITLE: 'Cookie-uri de la terti',
             THIRD_PARTIES: sanitized.bypassSecurityTrustHtml(`<p>
-În unele cazuri speciale, folosim și cookie-uri furnizate de terți de încredere (Facebook, Google).
-Următoarea secțiune contine detalii despre cookie-urile terților pe care le-ați putea întâlni
+În unele cazuri speciale, folosim si cookie-uri furnizate de terti de încredere (Facebook, Google).
+Urmatoarea sectiune contine detalii despre cookie-urile tertilor pe care le-ati putea întalni
 prin intermediul acestui site.
 </p>
 <p>
-Acest site folosește Google Analytics, care este una dintre cele mai răspândite și de încredere soluții de analiză
-pe web pentru a ne ajuta să înțelegem modul în care utilizați site-ul și modalitățile prin care vă putem îmbunătăți
-experienţă. Aceste cookie-uri pot urmări lucruri, cum ar fi cât timp petreceți pe site și paginile care
-pe care le vizitați, astfel încât să putem continua să producem conținut interesant.
+Acest site foloseste Google Analytics, care este una dintre cele mai raspandite si de încredere solutii de analiza
+pe web pentru a ne ajuta sa întelegem modul în care utilizati site-ul si modalitatile prin care va putem îmbunatati
+experienta. Aceste cookie-uri pot urmari lucruri, cum ar fi cat timp petreceti pe site si paginile care
+pe care le vizitati, astfel încat sa putem continua sa producem continut interesant.
 </p>
 <p>
-Pentru mai multe informații despre cookie-urile Google Analytics, consultați Google Analytics oficial
+Pentru mai multe informatii despre cookie-urile Google Analytics, consultati Google Analytics oficial
 <a href="https://marketingplatform.google.com/about/analytics/terms/us/">page</a>.
 </p>
 <p>
-Din când în când testăm noi funcții și facem modificări subtile modului în care site-ul este livrat.
-Când încă testăm funcții noi, aceste cookie-uri pot fi utilizate pentru a vă asigura că primiți o
-experiență consecventă în timp ce vă aflați pe site, asigurându-ne, în același timp, că înțelegem
-ce optimizări apreciază utilizatorii noștri cel mai mult.
+Din cand în cand testam noi functii si facem modificari subtile modului în care site-ul este livrat.
+Cand înca testam functii noi, aceste cookie-uri pot fi utilizate pentru a va asigura ca primiti o
+experienta consecventa în timp ce va aflati pe site, asigurandu-ne, în acelasi timp, ca întelegem
+ce optimizari apreciaza utilizatorii nostri cel mai mult.
 </p>
 <p>
-Serviciul Google AdSense pe care îl folosim pentru a difuza publicitate folosește un cookie DoubleClick
-pentru a difuza mai mult reclame relevante de pe web și pentru a limita de câte ori vi se afișează un anumit anunț.
+Serviciul Google AdSense pe care îl folosim pentru a difuza publicitate foloseste un cookie DoubleClick
+pentru a difuza mai mult reclame relevante de pe web si pentru a limita de cate ori vi se afiseaza un anumit anunt.
 </p>
 <p>
-Pentru mai multe informații despre Google AdSense, consultați Google Adsense Oficial
+Pentru mai multe informatii despre Google AdSense, consultati Google Adsense Oficial
 <a href="https://policies.google.com/technologies/ads">Advertising Terms</a>.
 </p>
 <p>
-De asemenea, folosim butoane și/sau plugin-uri de social media pe acest site care vă permit să vă conectați la
-rețeaua socială preferata în diferite moduri. Pentru ca acestea să funcționeze următoarele site-uri de socializare,
+De asemenea, folosim butoane si/sau plugin-uri de social media pe acest site care va permit sa va conectati la
+reteaua sociala preferata în diferite moduri. Pentru ca acestea sa functioneze urmatoarele site-uri de socializare,
 inclusiv; facebook, twitter, google, instagram, tiktok va seta cookie-uri prin intermediul site-ului nostru,
-care pot fi utilizate pentru a vă îmbunătăți profilul site-ul lor sau contribuie la datele pe care le dețin
-în diverse scopuri prezentate în respectivele lor politici de confidențialitate.
+care pot fi utilizate pentru a va îmbunatati profilul site-ul lor sau contribuie la datele pe care le detin
+în diverse scopuri prezentate în respectivele lor politici de confidentialitate.
 </p>
 <ul>
 <li>
@@ -179,10 +179,10 @@ care pot fi utilizate pentru a vă îmbunătăți profilul site-ul lor sau contr
 `),
             MORE_INFO_TITLE: 'Mai multe informatii',
             MORE_INFO: sanitized.bypassSecurityTrustHtml(`<p>
-Sperăm că acest lucru a clarificat lucrurile pentru dvs. și așa cum sa menționat anterior dacă există ceva
-de care nu sunteți sigur dacă aveți nevoie sau nu, este de obicei mai sigur să lăsați cookie-urile activate
-în cazul în care acestea interacționează cu una dintre funcțiile pe care le utilizați pe site-ul nostru.
-Cu toate acestea, dacă încă mai căutați mai multe informații, atunci ne puteți contacta printr-una dintre
+Speram ca acest lucru a clarificat lucrurile pentru dvs. si asa cum sa mentionat anterior daca exista ceva
+de care nu sunteti sigur daca aveti nevoie sau nu, este de obicei mai sigur sa lasati cookie-urile activate
+în cazul în care acestea interactioneaza cu una dintre functiile pe care le utilizati pe site-ul nostru.
+Cu toate acestea, daca înca mai cautati mai multe informatii, atunci ne puteti contacta printr-una dintre
 metodele noastre de contact.
 </p>
 <p>

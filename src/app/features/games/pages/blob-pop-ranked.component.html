@@ -1,0 +1,45 @@
+<back-hyperlink [url]="backUrl"></back-hyperlink>
+<div class="row no-gutters page-min-height p-3" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <div class="col-12 mt-3">
+
+        <!-- THE GAME POLICY - START -->
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES"></div>
+
+        <div class="col-10 m-auto" [innerHTML]="game.policy.THIS_GAME_POLICY"></div>
+
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.GAMESCRYPT_GAMES_POLICY"></div>
+        <!-- THE GAME POLICY - END -->
+
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.INFORMATION_VOLUNTARILY_PROVIDED_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.INFORMATION_VOLUNTARILY_PROVIDED">
+        </div>
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.OUR_USE_OF_PERSONAL_INFO_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.OUR_USE_OF_PERSONAL_INFO"></div>
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.VIEWING_PERSONAL_INFO_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.VIEWING_PERSONAL_INFO"></div>
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.LINKS_THIRD_PARTY_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.LINKS_THIRD_PARTY"></div>
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.WHERE_WE_STORE_INFO_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.WHERE_WE_STORE_INFO"></div>
+        <div class="col-11 m-auto">
+            <h4 [innerHTML]="game.policy.BASIC_POLICY.YOUR_RIGHTS_TITLE"></h4>
+        </div>
+        <div class="col-10 m-auto" [innerHTML]="game.policy.BASIC_POLICY.YOUR_RIGHTS"></div>
+
+    </div>
+
+</div>

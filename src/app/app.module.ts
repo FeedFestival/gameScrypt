@@ -24,6 +24,7 @@ import { EsportsComponent } from './features/esports/esports.component';
 import { GameListComponent } from './features/games/components/game-list.component';
 import { GameComponent } from './features/games/components/game.component';
 import { GamesComponent } from './features/games/games.component';
+import { BlobPopGameComponent } from './features/games/pages/blob-pop-ranked.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { NewsComponent } from './features/news/news.component';
 import { CookiesComponent } from './features/policy/cookies/cookies.component';
@@ -113,7 +114,8 @@ export const components = [
     ArticleComponent,
     GamesComponent,
     GameListComponent,
-    GameComponent
+    GameComponent,
+    BlobPopGameComponent
 ];
 export const entryDialogComponents = [
     PageDialogComponent,

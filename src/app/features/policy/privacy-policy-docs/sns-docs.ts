@@ -134,49 +134,49 @@ with such SNS.
 </p>`)
         },
         ro: {
-            SOCIAL_NETWORKING_SERVICES_TITLE: 'Servicii de rețele sociale',
+            SOCIAL_NETWORKING_SERVICES_TITLE: 'Servicii de retele sociale',
             SOCIAL_NETWORKING_SERVICES: sanitized.bypassSecurityTrustHtml(`<p>
-Vă puteți înregistra pentru a vă alătura Serviciului conectându-vă la contul dvs. cu o terță parte Serviciu de
-Rețea Socială 'CSNS' prin intermediul Serviciului nostru (de exemplu, Facebook și poate alte servicii terțe
-care vă permit să vă conectați folosind acreditările existente cu aceste servicii). Dacă alegeți să vă înregistrați
-prin intermediul unui SNS sau pentru a vă conecta ulterior contul cu Serviciul la contul dvs. cu un SNS. noi vom folosi
-Informațiile personale pe care le-ați furnizat către SNS (cum ar fi numele dvs., adresa de e-mail pe care le-ați furnizat)
-puse la dispoziția publicului prin intermediul SNS) pentru a vă crea contul.
+Va puteti înregistra pentru a va alatura Serviciului conectandu-va la contul dvs. cu o terta parte Serviciu de
+Retea Sociala 'CSNS' prin intermediul Serviciului nostru (de exemplu, Facebook si poate alte servicii terte
+care va permit sa va conectati folosind acreditarile existente cu aceste servicii). Daca alegeti sa va înregistrati
+prin intermediul unui SNS sau pentru a va conecta ulterior contul cu Serviciul la contul dvs. cu un SNS. noi vom folosi
+Informatiile personale pe care le-ati furnizat catre SNS (cum ar fi numele dvs., adresa de e-mail pe care le-ati furnizat)
+puse la dispozitia publicului prin intermediul SNS) pentru a va crea contul.
 </p>`),
-            WHAT_WE_COLLECT_TITLE: 'Ce date colectează Gamescrypt Website\?',
+            WHAT_WE_COLLECT_TITLE: 'Ce date colecteaza Gamescrypt Website\?',
             WHAT_WE_COLLECT: sanitized.bypassSecurityTrustHtml(`<p>
-Când creați un cont `
+Cand creati un cont `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` puteți, dacă doriți, să accesați datele colectate de dispozitivul dvs.
-de la aplicația noastră, veți avea, de asemenea, opțiunea de a vă crea contul `
+                ` puteti, daca doriti, sa accesati datele colectate de dispozitivul dvs.
+de la aplicatia noastra, veti avea, de asemenea, optiunea de a va crea contul `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` folosind un serviciu acreditat precum cel al Facebook-ului. Dacă alegeți să faceți
-acest lucru, vă vom cere permisiunea de a accesa baza informații din acel cont, cum ar fi numele dvs.,
-fotografia de profil, puteți opri distribuirea acestor informații cu noi în orice moment, eliminând accesul `
+                ` folosind un serviciu acreditat precum cel al Facebook-ului. Daca alegeti sa faceti
+acest lucru, va vom cere permisiunea de a accesa baza informatii din acel cont, cum ar fi numele dvs.,
+fotografia de profil, puteti opri distribuirea acestor informatii cu noi în orice moment, eliminand accesul `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `la contul respectiv de către Facebook.
+                `la contul respectiv de catre Facebook.
 </p>
 <p>
-Dacă vă conectați la Serviciul nostru prin Facebook, este posibil să aveți ocazia să vă conectați la
+Daca va conectati la Serviciul nostru prin Facebook, este posibil sa aveti ocazia sa va conectati la
 ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` prin API-ul Facebook când vă înregistrați pentru Serviciul nostru sau după ce v-ați
+                ` prin API-ul Facebook cand va înregistrati pentru Serviciul nostru sau dupa ce v-ati
 înregistrat pentru Serviciul nostru.
 </p>
 <p>
-Dacă vă conectați la ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` prin Facebook, fie când vă înregistrați, fie după ce vă înregistrați,
-vom colecta, stoca și utiliza în conformitate cu această politică de confidențialitate informațiile
-pe care le-ați acceptat cu Facebook ca ar putea furniza `
+Daca va conectati la ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
+                ` prin Facebook, fie cand va înregistrati, fie dupa ce va înregistrati,
+vom colecta, stoca si utiliza în conformitate cu aceasta politica de confidentialitate informatiile
+pe care le-ati acceptat cu Facebook ca ar putea furniza `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` prin intermediul API-ului său.
+                ` prin intermediul API-ului sau.
 </p>
 <p>
-Acordul dvs. (și accesul nostru la informațiile dvs.) are loc atunci când instruiți, acceptați sau
-permiteți Facebook pentru a vă înregistra pentru un cont `
+Acordul dvs. (si accesul nostru la informatiile dvs.) are loc atunci cand instruiti, acceptati sau
+permiteti Facebook pentru a va înregistra pentru un cont `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` sau pentru a vă conecta în alt mod la Serviciul nostru prin Facebook.
-Informațiile pe care Serviciul nostru le poate accesa, colecta și stoca pot include următoarele,
-printre altele informații, permise de dvs., API-ul Facebook și setările dvs. de confidențialitate
+                ` sau pentru a va conecta în alt mod la Serviciul nostru prin Facebook.
+Informatiile pe care Serviciul nostru le poate accesa, colecta si stoca pot include urmatoarele,
+printre altele informatii, permise de dvs., API-ul Facebook si setarile dvs. de confidentialitate
 cu Facebook-ul sunt:
 </p>
 <ul>
@@ -190,76 +190,76 @@ cu Facebook-ul sunt:
     adresa ta de email
 </li>
 </ul>`),
-            INFORMATION_OTHER_SOURCES_TITLE: 'Informații din alte surse',
+            INFORMATION_OTHER_SOURCES_TITLE: 'Informatii din alte surse',
             INFORMATION_OTHER_SOURCES: sanitized.bypassSecurityTrustHtml(`<p>
 Facebook connect `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` vă permite să vă înscrieți și să vă conectați utilizând contul dvs. de Facebook.
-Facebook vă va cere permisiunea de a partaja anumite informații din contul dvs. Facebook serviciul nostru.
+                ` va permite sa va înscrieti si sa va conectati utilizand contul dvs. de Facebook.
+Facebook va va cere permisiunea de a partaja anumite informatii din contul dvs. Facebook serviciul nostru.
 </p>
 <p>
-Aceasta include prenumele, prenumele, adresa de e-mail, un link către profilul dvs. Facebook, profilul
+Aceasta include prenumele, prenumele, adresa de e-mail, un link catre profilul dvs. Facebook, profilul
 imagine.
 <b>
-    pentru ca noi să salvăm conținutul pe care îl creați pe serverul nostru ca fiind al dvs.
+    pentru ca noi sa salvam continutul pe care îl creati pe serverul nostru ca fiind al dvs.
 </b>
 </p>
 <p>
-Aceste informații sunt colectate de Facebook și ne sunt furnizate în condițiile date de
-<a href="https://www.facebook.com/policy.php"> politica de confidențialitate Facebook </a>.
-Puteți controla informațiile pe care le primim de la Facebook utilizând setările de confidențialitate din contul
+Aceste informatii sunt colectate de Facebook si ne sunt furnizate în conditiile date de
+<a href="https://www.facebook.com/policy.php"> politica de confidentialitate Facebook </a>.
+Puteti controla informatiile pe care le primim de la Facebook utilizand setarile de confidentialitate din contul
 deFacebook.
 </p>
 <p>
-Dacă nu doriți să partajați activitatea `
+Daca nu doriti sa partajati activitatea `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` cu prietenii dvs. de pe Facebook, puteți controla aceasta din pagina Setări de pe site.
+                ` cu prietenii dvs. de pe Facebook, puteti controla aceasta din pagina Setari de pe site.
 </p>
 <p>
-Dacă v-ați înscris folosind Facebook din greșeală ne puteți trimite un e-mail la
+Daca v-ati înscris folosind Facebook din greseala ne puteti trimite un e-mail la
 <a href="mailto:owner.gamescrypt@gmail.com">owner.gamescrypt@gmail.com.</a>
 </p>`),
-            SNS_RELATIONSHIP_TITLE: 'Relația SNS',
+            SNS_RELATIONSHIP_TITLE: 'Relatia SNS',
             SNS_RELATIONSHIP: sanitized.bypassSecurityTrustHtml(`<p>
-Rețineți că informațiile pe care le colectăm de la și prin intermediul unui SNS pot depinde de
-confidențialitatea setărilor pe care le-ați setat cu acel SNS și permisiunile pe care ni le acordați
-în legătură cu conectarea contului dvs. cu serviciul nostru la contul dvs. cu un SNS. În afară de ceea ce putem sa
-partajam cu SNS-ul așa cum este descris mai jos, sunt obținute informațiile personale pe care le are
-un SNS despre dvs. de către SNS <b>independent de Serviciul nostru</b>, iar `
+Retineti ca informatiile pe care le colectam de la si prin intermediul unui SNS pot depinde de
+confidentialitatea setarilor pe care le-ati setat cu acel SNS si permisiunile pe care ni le acordati
+în legatura cu conectarea contului dvs. cu serviciul nostru la contul dvs. cu un SNS. În afara de ceea ce putem sa
+partajam cu SNS-ul asa cum este descris mai jos, sunt obtinute informatiile personale pe care le are
+un SNS despre dvs. de catre SNS <b>independent de Serviciul nostru</b>, iar `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
                 ` nu este responsabil pentru acesta.
 </p>
 <p>
 Serviciul ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` poate permite, de asemenea, interacțiuni suplimentare între acesta și un site web terț.
-Serviciului sau alt furnizor de conținut, poate sa va ofere posibilitatea de a da like sau sa distribuiti
-conținut sau pentru a partaja altfel informații de la sau prin intermediul Serviciului nostru cu un site
-sau serviciu terță parte, care informație poate fi afișata public, iar terțul poate avea acces la informații
-despre dvs. și despre utilizarea dvs. din Serviciul nostru (și este posibil să avem acces la informații
-despre dvs. de la terți).
+                ` poate permite, de asemenea, interactiuni suplimentare între acesta si un site web tert.
+Serviciului sau alt furnizor de continut, poate sa va ofere posibilitatea de a da like sau sa distribuiti
+continut sau pentru a partaja altfel informatii de la sau prin intermediul Serviciului nostru cu un site
+sau serviciu terta parte, care informatie poate fi afisata public, iar tertul poate avea acces la informatii
+despre dvs. si despre utilizarea dvs. din Serviciul nostru (si este posibil sa avem acces la informatii
+despre dvs. de la terti).
 </p>
 <p>
-Aceste funcții pot colecta adresa dvs. IP, pe ce pagină vizitați pe site-ul nostru și poate
-setați un cookie pentru a permite funcției să funcționeze corect.
-Interacțiunile dvs. cu terți prin SNS sau funcții similare sunt guvernate de
-politicile de confidențialitate ale acelor terțe părți.
-Declarați că aveți dreptul să utilizați contul dvs. SNS în scopurile descrise aici
-fără încălcarea de către dvs. a oricăruia dintre termenii și condițiile care guvernează SNS și fără
+Aceste functii pot colecta adresa dvs. IP, pe ce pagina vizitati pe site-ul nostru si poate
+setati un cookie pentru a permite functiei sa functioneze corect.
+Interactiunile dvs. cu terti prin SNS sau functii similare sunt guvernate de
+politicile de confidentialitate ale acelor terte parti.
+Declarati ca aveti dreptul sa utilizati contul dvs. SNS în scopurile descrise aici
+fara încalcarea de catre dvs. a oricaruia dintre termenii si conditiile care guverneaza SNS si fara
 obligarea ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` la plata oricăror taxe sau supunerea `
+                ` la plata oricaror taxe sau supunerea `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` a oricărei utilizări/limitările impuse de astfel de SNS.
+                ` a oricarei utilizari/limitarile impuse de astfel de SNS.
 </p>`),
             SNS_DISABLE_ANYTIME: sanitized.bypassSecurityTrustHtml(`<p>
-Cu toate acestea, puteți dezactiva oricând legătura dintre contul dvs. `
+Cu toate acestea, puteti dezactiva oricand legatura dintre contul dvs. `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` și contul dvs. SNS secțiunea „Setări” a Serviciului nostru.
-Vă rugăm să rețineți că relația dvs. cu orice SNS este guvernată numai prin acordul (acordurile)
+                ` si contul dvs. SNS sectiunea „Setari” a Serviciului nostru.
+Va rugam sa retineti ca relatia dvs. cu orice SNS este guvernata numai prin acordul (acordurile)
 dvs. cu astfel de SNS.
 <b>
-    Dacă contul dvs. SNS se încheie, atunci funcțiile sunt activate prin link-ul dintre `
+    Daca contul dvs. SNS se încheie, atunci functiile sunt activate prin link-ul dintre `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `contul dvs. și contul dvs. SNS se vor încheia, de asemenea.
+                `contul dvs. si contul dvs. SNS se vor încheia, de asemenea.
 </b>
 </p>`)
         }

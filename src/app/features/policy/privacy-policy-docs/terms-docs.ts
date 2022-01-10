@@ -148,147 +148,147 @@ export const termsDoc = (sanitized: DomSanitizer): TERMS_ML => {
         ro: {
             TITLE: 'Termenii serviciului',
             TERMS_OF_SERVICE_AGREEMENT: sanitized.bypassSecurityTrustHtml(`<p>
-    Acești Termenii și Condiții de Analitică `
+    Acesti Termenii si Conditii de Analitica `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` (acest „<b> Acord </b>”) sunt încheiate de către `
+                ` (acest „<b> Acord </b>”) sunt încheiate de catre `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + `
-    și entitatea care execută acest Acord („<b> Dvs. </b>”). Prezentul Acord guvernează utilizarea Dvs.
+    si entitatea care executa acest Acord („<b> Dvs. </b>”). Prezentul Acord guverneaza utilizarea Dvs.
     a acestui site web („<b> Serviciul </b>”).
-    RĂMÂNIND PE ACEST SITE WEB ȘI FOLOSIND SERVICIUL, RECUNOAȘTEȚI CĂ AȚI EXAMINAT ȘI ACCEPTAT ACEST
-    ACORD ȘI SUNTEȚI AUTORIZAT SĂ ACȚIONAȚI NUMAI ÎN DOMENIUL SI IN CONCORDANȚA CU ACEST ACORD.
-    Având în vedere cele de mai sus, părțile sunt de acord, după cum se specifică mai jos.
+    RaMaNIND PE ACEST SITE WEB sI FOLOSIND SERVICIUL, RECUNOAsTEtI Ca AtI EXAMINAT sI ACCEPTAT ACEST
+    ACORD sI SUNTEtI AUTORIZAT Sa ACtIONAtI NUMAI ÎN DOMENIUL SI IN CONCORDANtA CU ACEST ACORD.
+    Avand în vedere cele de mai sus, partile sunt de acord, dupa cum se specifica mai jos.
     <br/>
-        Putem modifica acest Acord în orice moment, postând termenii modificați pe site-ul nostru web. Putem
-        sa postam (sau nu) notificări pe pagina de pornire a site-ului nostru web atunci când apar astfel de modificări.
+        Putem modifica acest Acord în orice moment, postand termenii modificati pe site-ul nostru web. Putem
+        sa postam (sau nu) notificari pe pagina de pornire a site-ului nostru web atunci cand apar astfel de modificari.
     <br/>
-    Ne referim la acest Acord, la Politica noastră de confidențialitate accesibilă mai jos și la orice alți termeni, reguli sau
+    Ne referim la acest Acord, la Politica noastra de confidentialitate accesibila mai jos si la orice alti termeni, reguli sau
     liniile directoare de pe site-ul nostru colectiv ca „Termeni legali”.
-    Sunteți de acord în mod explicit și implicit sa respectați Termenii noștri legali de fiecare dată când accesați
+    Sunteti de acord în mod explicit si implicit sa respectati Termenii nostri legali de fiecare data cand accesati
     site-ul nostru web.
-    Dacă nu doriți să fiți atât de legat, vă rugăm să nu utilizați sau să accesați site-ul nostru web.
+    Daca nu doriti sa fiti atat de legat, va rugam sa nu utilizati sau sa accesati site-ul nostru web.
 </p>`),
-            LIMITED_LICENSE_TITLE: 'Licență limitată',
+            LIMITED_LICENSE_TITLE: 'Licenta limitata',
             YOUR_RIGHTS: sanitized.bypassSecurityTrustHtml(`<p>
     ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` vă acordă o licență neexclusivă, netransferabilă, revocabilă pentru a accesa și utiliza
-    site-ul web pentru ca dvs. să participați la competiții, să citiți articole, să comentați jocurile noastre, să le folosiți
-    Pachete și scripturi Unity, utilizați WriteTool și primiți alte conținuturi media prin intermediul
-    serviciului nostru, strict în conformitate cu Termenii noștri legali.
+                ` va acorda o licenta neexclusiva, netransferabila, revocabila pentru a accesa si utiliza
+    site-ul web pentru ca dvs. sa participati la competitii, sa cititi articole, sa comentati jocurile noastre, sa le folositi
+    Pachete si scripturi Unity, utilizati WriteTool si primiti alte continuturi media prin intermediul
+    serviciului nostru, strict în conformitate cu Termenii nostri legali.
 </p>`),
-            COPYRIGHT_AND_TRADEMARKS: 'Drepturi de autor și mărci comerciale',
+            COPYRIGHT_AND_TRADEMARKS: 'Drepturi de autor si marci comerciale',
             WEBSITE_PROPERTY: sanitized.bypassSecurityTrustHtml(`<p>
-    Cu excepția cazului în care se prevede altfel, toate materialele, inclusiv fără limitare, sigle, nume de marcă, imagini,
-    modele, fotografii, videoclipuri, materiale scrise și alte materiale care apar ca parte a site-ului nostru web cu excepția(*)
-    <b> sunt </b> drepturi de autor, mărci comerciale, mărci de servicii, îmbrăcăminte comercială și / sau
-    alte proprietăți intelectuale, indiferent dacă înregistrat sau neînregistrat
-    („<b> Proprietate intelectuală </b>”) deținut, controlat sau licențiat de
+    Cu exceptia cazului în care se prevede altfel, toate materialele, inclusiv fara limitare, sigle, nume de marca, imagini,
+    modele, fotografii, videoclipuri, materiale scrise si alte materiale care apar ca parte a site-ului nostru web cu exceptia(*)
+    <b> sunt </b> drepturi de autor, marci comerciale, marci de servicii, îmbracaminte comerciala si / sau
+    alte proprietati intelectuale, indiferent daca înregistrat sau neînregistrat
+    („<b> Proprietate intelectuala </b>”) detinut, controlat sau licentiat de
     ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + `.
 </p>
 <p>
-    Site-ul nostru în ansamblu este protejat de drepturile de autor și de îmbrăcăminte comercială.
+    Site-ul nostru în ansamblu este protejat de drepturile de autor si de îmbracaminte comerciala.
     Nimic de pe site-ul nostru nu ar trebui interpretat ca acordarea, implicit, de oprire sau
-    orice licență sau drept de utilizare a oricărei proprietăți intelectuale afișate sau utilizate pe site-ul
-    nostru web cu excepția(*), <b> fără permisiunea prealabilă scrisă a proprietarului de proprietate intelectuală </b>.
+    orice licenta sau drept de utilizare a oricarei proprietati intelectuale afisate sau utilizate pe site-ul
+    nostru web cu exceptia(*), <b> fara permisiunea prealabila scrisa a proprietarului de proprietate intelectuala </b>.
     ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + `
-    își aplică în mod agresiv drepturile de proprietate intelectuală în cea mai mare măsură a legii.
+    îsi aplica în mod agresiv drepturile de proprietate intelectuala în cea mai mare masura a legii.
 </p>
 <p>
-    Numele și siglele Serviciului nostru nu pot fi utilizate în niciun fel
+    Numele si siglele Serviciului nostru nu pot fi utilizate în niciun fel
     mod, inclusiv în publicitate sau publicitate referitoare la distribuirea materialelor pe site-ul nostru web,
-    fără permisiunea scrisă prealabilă de la`
+    fara permisiunea scrisa prealabila de la`
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `. Utilizarea corectă a Proprietatii Intelectuale `
+                `. Utilizarea corecta a Proprietatii Intelectuale `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` necesită o recunoaștere adecvată.
-    Alte nume de produse și companii menționate pe site-ul nostru web
-    pot fi proprietatea intelectuală a proprietarilor respectivi, cu excepția(*).
+                ` necesita o recunoastere adecvata.
+    Alte nume de produse si companii mentionate pe site-ul nostru web
+    pot fi proprietatea intelectuala a proprietarilor respectivi, cu exceptia(*).
 </p>
 <p>
-    Site-ul nostru web conține linkuri către site-uri web deținute sau operate de alte părți decât` +
+    Site-ul nostru web contine linkuri catre site-uri web detinute sau operate de alte parti decat` +
                 __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `. Astfel de link-uri sunt furnizate numai pentru referință. Serviciul nostru nu
-    monitorizează sau controlează site-urile externe și nu este responsabil pentru conținutul acestora.
-    includerea de link-uri către un site web extern de către `
-                + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + ` nu implică
-    orice aprobare a materialului de pe site-ul nostru web sau, cu excepția cazului în care este
+                `. Astfel de link-uri sunt furnizate numai pentru referinta. Serviciul nostru nu
+    monitorizeaza sau controleaza site-urile externe si nu este responsabil pentru continutul acestora.
+    includerea de link-uri catre un site web extern de catre `
+                + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + ` nu implica
+    orice aprobare a materialului de pe site-ul nostru web sau, cu exceptia cazului în care este
     divulgat în mod expres altfel, orice
-    sponsorizare, afiliere sau asociere cu proprietarul, operatorul sau sponsorul său și nici prin
-    includerea link-urilor de către `
+    sponsorizare, afiliere sau asociere cu proprietarul, operatorul sau sponsorul sau si nici prin
+    includerea link-urilor de catre `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `implică faptul că Serviciul nostru este autorizat să utilizeze orice nume comercial, marcă comercială,
-    siglă, sigiliu legal sau oficial sau simbol protejat prin drepturi de autor care pot fi reflectate pe site-ul web conectat.
+                `implica faptul ca Serviciul nostru este autorizat sa utilizeze orice nume comercial, marca comerciala,
+    sigla, sigiliu legal sau oficial sau simbol protejat prin drepturi de autor care pot fi reflectate pe site-ul web conectat.
 </p>`),
-            NO_WARRANTY_TITLE: 'Fără garanții; Excluderea răspunderii; Despăgubire',
+            NO_WARRANTY_TITLE: 'Fara garantii; Excluderea raspunderii; Despagubire',
             NO_WARRANTY_INDEMNIFICATION: sanitized.bypassSecurityTrustHtml(`<p>
     Site-ul nostru web este operat de`
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                `pe baza „așa cum este”, „așa cum este disponibil”, fără reprezentări sau garanții de orice fel.
-    În măsura permisă de lege, `
+                `pe baza „asa cum este”, „asa cum este disponibil”, fara reprezentari sau garantii de orice fel.
+    În masura permisa de lege, `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` renunță în mod specific la
-    toate garanțiile și condițiile de orice fel, inclusiv toate garanțiile și condițiile implicite de
-    comercializabilitate, aptitudini pentru un anumit scop, titlu și neîncălcare pentru site-ul nostru și orice altceva,
-    contractele și serviciile pe care le achiziționați prin intermediul acestuia.
+                ` renunta în mod specific la
+    toate garantiile si conditiile de orice fel, inclusiv toate garantiile si conditiile implicite de
+    comercializabilitate, aptitudini pentru un anumit scop, titlu si neîncalcare pentru site-ul nostru si orice altceva,
+    contractele si serviciile pe care le achizitionati prin intermediul acestuia.
     ` + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) + `
-    nu va avea nicio răspundere sau responsabilitate pentru orice erori sau omisiuni în conținutul site-ul web,
-    pentru contracte sau servicii vândute prin intermediul site-ului nostru web, pentru acțiunea sau inacțiunea dvs.
-    în legătură cu site-ul nostru web sau pentru orice daune aduse
-    computerul sau datele dvs. sau orice alte daune pe care le-ați putea avea în legătură cu site-ul nostru web.
+    nu va avea nicio raspundere sau responsabilitate pentru orice erori sau omisiuni în continutul site-ul web,
+    pentru contracte sau servicii vandute prin intermediul site-ului nostru web, pentru actiunea sau inactiunea dvs.
+    în legatura cu site-ul nostru web sau pentru orice daune aduse
+    computerul sau datele dvs. sau orice alte daune pe care le-ati putea avea în legatura cu site-ul nostru web.
 </p>
 <p>
-    Utilizarea site-ului nostru web și a oricăror contracte sau servicii sunt pe propriul risc.
+    Utilizarea site-ului nostru web si a oricaror contracte sau servicii sunt pe propriul risc.
     Nici în niciun caz nu trebuie ca `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` sau agenții lor sa fie răspunzători pentru orice acțiune directă, indirectă, punitivă,
-    daune accidentale, speciale sau consecințe care decurg din sau în vreun fel legate de utilizarea site-ul nostru web,
-    contractele și serviciile achiziționate prin intermediul site-ului nostru web, întârzierea sau incapacitatea de a ne utiliza
-    site-ul web sau care apar în alt mod în legătură cu site-ul nostru web, contracte sau servicii conexe, indiferent dacă
-    pe bază de contract, delict, răspundere strictă sau altfel, chiar dacă este informat despre posibilitatea unor astfel de daune.
-    Răspunderea `
+                ` sau agentii lor sa fie raspunzatori pentru orice actiune directa, indirecta, punitiva,
+    daune accidentale, speciale sau consecinte care decurg din sau în vreun fel legate de utilizarea site-ul nostru web,
+    contractele si serviciile achizitionate prin intermediul site-ului nostru web, întarzierea sau incapacitatea de a ne utiliza
+    site-ul web sau care apar în alt mod în legatura cu site-ul nostru web, contracte sau servicii conexe, indiferent daca
+    pe baza de contract, delict, raspundere stricta sau altfel, chiar daca este informat despre posibilitatea unor astfel de daune.
+    Raspunderea `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` în niciun caz nu va depăși suma plătită de dvs. Serviciului nostru
-    pentru tranzacția care a dat naștere unei astfel de despăgubiri.
+                ` în niciun caz nu va depasi suma platita de dvs. Serviciului nostru
+    pentru tranzactia care a dat nastere unei astfel de despagubiri.
 </p>
 <p>
-    Unele jurisdicții nu permit excluderea sau limitarea daunelor accidentale sau indirecte,
-    deci este posibil ca excluderea de mai sus să nu se aplice pentru dvs.
+    Unele jurisdictii nu permit excluderea sau limitarea daunelor accidentale sau indirecte,
+    deci este posibil ca excluderea de mai sus sa nu se aplice pentru dvs.
 </p>
 <p>
-    Fără a limita cele de mai sus, `
+    Fara a limita cele de mai sus, `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` nu reprezintă sau garantează că informațiile de pe
-    site-ul web este corect, complet, fiabil, util sau actual sau pe care site-ul nostru web va funcționa fără
+                ` nu reprezinta sau garanteaza ca informatiile de pe
+    site-ul web este corect, complet, fiabil, util sau actual sau pe care site-ul nostru web va functiona fara
     întrerupere sau eroare.
 </p>
 <p>
-    Sunteți de acord că, de fiecare dată, vă veți adresa unor avocați de la care achiziționați servicii pentru orice pretenții
-    orice natură, inclusiv pierderea, deteriorarea sau garanția. Serviciul nostru și afiliații lor respectivi fac nr
-    reprezentare sau garanții cu privire la orice contracte și servicii oferite prin intermediul site-ului nostru web.
+    Sunteti de acord ca, de fiecare data, va veti adresa unor avocati de la care achizitionati servicii pentru orice pretentii
+    orice natura, inclusiv pierderea, deteriorarea sau garantia. Serviciul nostru si afiliatii lor respectivi fac nr
+    reprezentare sau garantii cu privire la orice contracte si servicii oferite prin intermediul site-ului nostru web.
 </p>`),
-            DISCLAIMER_TITLE: 'Disclaimer privind conținutul',
+            DISCLAIMER_TITLE: 'Disclaimer privind continutul',
             CONTENT_DISCLAIMER: sanitized.bypassSecurityTrustHtml(`<p>
-    Înregistrările `
+    Înregistrarile `
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` pe site-ul nostru web sunt făcute în momentele stabilite la discreția sa. Tu nu ar trebui să
-    presupupui că informațiile conținute pe site-ul nostru web au fost actualizate sau conțin în mod curent
-    informație.`
+                ` pe site-ul nostru web sunt facute în momentele stabilite la discretia sa. Tu nu ar trebui sa
+    presupupui ca informatiile continute pe site-ul nostru web au fost actualizate sau contin în mod curent
+    informatie.`
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` nu examinează postările anterioare pentru a stabili dacă acestea rămân corecte și
-    informațiile conținute în astfel de postări pot fi înlocuite.
+                ` nu examineaza postarile anterioare pentru a stabili daca acestea raman corecte si
+    informatiile continute în astfel de postari pot fi înlocuite.
 </p>
 <p>
     <b>
-        INFORMAȚII ȘI MATERIALE DIN PE PE SITE SUNT FURNIZATE PENTRU REVIZUIREA DUMNEAVOASTRĂ ÎN CONFORMITATE
-        CU NOTIFICĂRILE, TERMENII ȘI CONDIȚIILE STABILITE AICI.
-        ACESTE MATERIALE NU SUNT GARANTATE SAU REPREZENTATE PENTRU A FI COMPLETE, CORECTE SAU PÂNĂ LA DATA.
-        ACESTE MATERIALE POATE FI SCHIMBATE DIN TIMP ÎN TIMP FĂRĂ NOTIFICARE.
+        INFORMAtII sI MATERIALE DIN PE PE SITE SUNT FURNIZATE PENTRU REVIZUIREA DUMNEAVOASTRa ÎN CONFORMITATE
+        CU NOTIFICaRILE, TERMENII sI CONDItIILE STABILITE AICI.
+        ACESTE MATERIALE NU SUNT GARANTATE SAU REPREZENTATE PENTRU A FI COMPLETE, CORECTE SAU PaNa LA DATA.
+        ACESTE MATERIALE POATE FI SCHIMBATE DIN TIMP ÎN TIMP FaRa NOTIFICARE.
     </b>
 </p>`),
-            INDEMNIFICATION_TITLE: 'Despăgubire',
+            INDEMNIFICATION_TITLE: 'Despagubire',
             INDEMNIFICATION: sanitized.bypassSecurityTrustHtml(`<p>
-    Sunteți de acord să apărați, să despăgubiți și să mențineți Serviciul nostru inofensiv pentru și împotriva
-    oricăror revendicări, daune, costuri și cheltuieli, inclusiv onorariile avocaților, rezultate din sau
-    legate de utilizarea de către dvs. a site-ul web sau orice contracte sau servicii pe care le achiziționați
+    Sunteti de acord sa aparati, sa despagubiti si sa mentineti Serviciul nostru inofensiv pentru si împotriva
+    oricaror revendicari, daune, costuri si cheltuieli, inclusiv onorariile avocatilor, rezultate din sau
+    legate de utilizarea de catre dvs. a site-ul web sau orice contracte sau servicii pe care le achizitionati
     prin intermediul acestuia.
 </p>`)
         }

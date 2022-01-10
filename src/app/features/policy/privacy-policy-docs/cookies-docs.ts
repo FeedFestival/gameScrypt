@@ -48,43 +48,43 @@ export const cookiesDoc = (sanitized: DomSanitizer): COOKIES_ML => {
         ro: {
             COOKIES_TITLE: 'Cookie-uri',
             COOKIES_DEFINITION: sanitized.bypassSecurityTrustHtml(`<p>
-    Un cookie este un fișier mic care poate fi plasat pe dispozitivul dvs. care ne permite sa te
-    recunoaștem și sa ne amintim de tine.
-    Acesta este trimis în browserul dvs. și stocat pe hard diskul computerului,
-    pe tabletă sau pe dispozitiv mobil.
-    Când vizitați site-urile noastre, este posibil să colectăm informații de la dvs. automat
-    prin cookie-uri sau tehnologie similară.
+    Un cookie este un fisier mic care poate fi plasat pe dispozitivul dvs. care ne permite sa te
+    recunoastem si sa ne amintim de tine.
+    Acesta este trimis în browserul dvs. si stocat pe hard diskul computerului,
+    pe tableta sau pe dispozitiv mobil.
+    Cand vizitati site-urile noastre, este posibil sa colectam informatii de la dvs. automat
+    prin cookie-uri sau tehnologie similara.
 </p>`),
             WHAT_COOKIES_TITLE: 'Ce tipuri de cookie folosim?',
             LISTING_THE_COOKIES: sanitized.bypassSecurityTrustHtml(`<p>
-    Folosim patru tipuri de cookie-uri, pe care le descriem în această secțiune.
+    Folosim patru tipuri de cookie-uri, pe care le descriem în aceasta sectiune.
 </p>
 <p>
-    <b> Esențial </b> - cookie-uri care sunt esențiale pentru a vă oferi serviciile pe care le-ați solicitat. De exemplu,
-    acestea includ cookie-urile care vă permit să rămâneți conectat la contul dvs. și sa comentati.
-    Dacă setați browserul dvs. să blocheze aceste cookie-uri, atunci aceste funcții și servicii
-    nu vor funcționa pentru tine. În special, nu vom putea salva preferințele dvs. despre cookie-uri.
+    <b> Esential </b> - cookie-uri care sunt esentiale pentru a va oferi serviciile pe care le-ati solicitat. De exemplu,
+    acestea includ cookie-urile care va permit sa ramaneti conectat la contul dvs. si sa comentati.
+    Daca setati browserul dvs. sa blocheze aceste cookie-uri, atunci aceste functii si servicii
+    nu vor functiona pentru tine. În special, nu vom putea salva preferintele dvs. despre cookie-uri.
 </p>
 <p>
-    <b> Performanță </b> - cookie-uri care măsoară frecvența cu care vizitați site-urile noastre,
-    oferite de cookie-ul Google Analytics, informații despre noi, cum ar fi călătoria dvs. între pagini și
-    dacă ați descărcat ceva (detalii despre cum să renunțați la aceasta sunt mai jos).
+    <b> Performanta </b> - cookie-uri care masoara frecventa cu care vizitati site-urile noastre,
+    oferite de cookie-ul Google Analytics, informatii despre noi, cum ar fi calatoria dvs. între pagini si
+    daca ati descarcat ceva (detalii despre cum sa renuntati la aceasta sunt mai jos).
 </p>
 <p>
-    <b> Funcționalitate </b> - cookie-uri care sunt utilizate pentru a vă recunoaște și a vă aminti preferințele sau setările
-    când vă întoarceți pe site-ul nostru, astfel încât să vă putem oferi o experiență mai personalizată.
-    De exemplu, dacă aveți sediul în România, ne vom aminti acest lucru și ne vom asigura că primiți unele pagini in Română,
-    mai degrabă decât pagina de pornire din United Kindgom. Un amestec de prim-petrecere și
-    sunt utilizate cookie-uri de la terți.
+    <b> Functionalitate </b> - cookie-uri care sunt utilizate pentru a va recunoaste si a va aminti preferintele sau setarile
+    cand va întoarceti pe site-ul nostru, astfel încat sa va putem oferi o experienta mai personalizata.
+    De exemplu, daca aveti sediul în Romania, ne vom aminti acest lucru si ne vom asigura ca primiti unele pagini in Romana,
+    mai degraba decat pagina de pornire din United Kindgom. Un amestec de prim-petrecere si
+    sunt utilizate cookie-uri de la terti.
 </p>
 <p>
-    <b> Publicitate </b> - cookie-uri care sunt utilizate pentru a colecta informații despre vizita dvs.
-    pe site-ul nostru, conținutul pe care le-ați vizualizat, linkurile pe care le-ați urmat și informații
-    despre browserul dvs., dispozitivul și adresa IP. Am prezentat mai multe detalii despre aceasta mai jos.
+    <b> Publicitate </b> - cookie-uri care sunt utilizate pentru a colecta informatii despre vizita dvs.
+    pe site-ul nostru, continutul pe care le-ati vizualizat, linkurile pe care le-ati urmat si informatii
+    despre browserul dvs., dispozitivul si adresa IP. Am prezentat mai multe detalii despre aceasta mai jos.
 </p>
 <p>
-    Folosim <b>Google Analytics</b> pentru a urmări activitatea vizitatorilor.
-    Acest instrument terță parte folosește cookie-uri pe care le puteți dezactivați în browserul dvs.
+    Folosim <b>Google Analytics</b> pentru a urmari activitatea vizitatorilor.
+    Acest instrument terta parte foloseste cookie-uri pe care le puteti dezactivati în browserul dvs.
 </p>`)
         }
     };

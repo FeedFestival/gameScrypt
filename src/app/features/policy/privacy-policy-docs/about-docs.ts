@@ -22,15 +22,15 @@ export const aboutDoc = (sanitized: DomSanitizer): ABOUT_ML => {
 </p>`)
         },
         ro: {
-            TITLE: 'Este locul in care poți fi awesome!',
+            TITLE: 'Este locul in care poti fi awesome!',
             WHAT_WEBSITE_DOES: sanitized.bypassSecurityTrustHtml(`<p>
-    Este un site de jocuri care conține competiții online gratuite, scriere alternativă prin aplicația WriteTool,
-    Utilitați in lucrul cu Unity și opinii personale ale mele sau ale altora prezentate în Blog.
+    Este un site de jocuri care contine competitii online gratuite, scriere alternativa prin aplicatia WriteTool,
+    Utilitati in lucrul cu Unity si opinii personale ale mele sau ale altora prezentate în Blog.
     ` + __sanitizeComponent('cool-text', { full: 'gameScrypt' }) +
-                ` a fost, de asemenea, conceput pentru prezentarea <b> Jocurilor </b> create și alimentate de Dezvoltatorii`
+                ` a fost, de asemenea, conceput pentru prezentarea <b> Jocurilor </b> create si alimentate de Dezvoltatorii`
                 + __sanitizeComponent('cool-text', { full: 'gameScrypt', afterFull: '.com' }) +
-                ` , precum și munca către a crea o echipă de esport competitivă, lucrăm din greu
-    pentru a dezvolta o comunitate, nu uitați să consultați <b> serverul nostru de Discord </b>.
+                ` , precum si munca catre a crea o echipa de esport competitiva, lucram din greu
+    pentru a dezvolta o comunitate, nu uitati sa consultati <b> serverul nostru de Discord </b>.
 </p>`),
         }
     };

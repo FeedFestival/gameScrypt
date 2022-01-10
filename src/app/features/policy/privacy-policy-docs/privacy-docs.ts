@@ -70,13 +70,13 @@ export const privacyDoc = (sanitized: DomSanitizer): PRIVACY_ML => {
 </p>`)
         },
         ro: {
-            PRIVACY_TITLE: 'Politica de Confidențialitate',
+            PRIVACY_TITLE: 'Politica de Confidentialitate',
             DATA_COLECTED: sanitized.bypassSecurityTrustHtml(`<p>
-    <b> Nu colectăm date cu caracter personal, dar folosim aplicații terță parte care ar putea face acest lucru. </b>
-    Vă rugăm să verificați politicile lor de confidențialitate pentru a afla mai multe:
+    <b> Nu colectam date cu caracter personal, dar folosim aplicatii terta parte care ar putea face acest lucru. </b>
+    Va rugam sa verificati politicile lor de confidentialitate pentru a afla mai multe:
         <b> Google Analytics, Google Adsense, Gmail, Facebook, Youtube </b>.
-    S-ar putea să adăugăm sau să eliminăm aplicații thrid party pe site în orice moment, fără notificare prealabilă.
-    Vă rugăm să verificați codul sursă al site-ului sau să utilizați pluginurile browserului pentru a le identifica.
+    S-ar putea sa adaugam sau sa eliminam aplicatii thrid party pe site în orice moment, fara notificare prealabila.
+    Va rugam sa verificati codul sursa al site-ului sau sa utilizati pluginurile browserului pentru a le identifica.
 </p>
 <ul>
     <li>
@@ -97,40 +97,40 @@ export const privacyDoc = (sanitized: DomSanitizer): PRIVACY_ML => {
     </li>
 </ul>
 <p>
-    Politica noastră de confidențialitate a fost postată la ` + APP_VERSION.TERMS_DATE.POSTED + ` și actualizată
-    ultima dată la ` + APP_VERSION.TERMS_DATE.LAST_UPDATED + `.
-    Aceasta guvernează condițiile de confidențialitate ale site-ului nostru web, situat la www.gamescrypt.com.
-    Orice termeni cu majuscule care nu sunt definiți în Politica noastră de confidențialitate are semnificația
-    specificată în Termenii de utilizare accesibilă mai sus.
+    Politica noastra de confidentialitate a fost postata la ` + APP_VERSION.TERMS_DATE.POSTED + ` si actualizata
+    ultima data la ` + APP_VERSION.TERMS_DATE.LAST_UPDATED + `.
+    Aceasta guverneaza conditiile de confidentialitate ale site-ului nostru web, situat la www.gamescrypt.com.
+    Orice termeni cu majuscule care nu sunt definiti în Politica noastra de confidentialitate are semnificatia
+    specificata în Termenii de utilizare accesibila mai sus.
 </p>`),
             WHAT_WEBSITE_DOES_TITLE: 'Ce face site-ul web?',
             WHAT_WEBSITE_DOES: aboutDoc(sanitized).ro.WHAT_WEBSITE_DOES,
-            DEFINITIONS_TITLE: 'Definiții',
+            DEFINITIONS_TITLE: 'Definitii',
             DEFINITIONS: sanitized.bypassSecurityTrustHtml(`<p>
-    ”Informații de identificare personală” sunt informații non-publice care va pot identificate personal sau care pot
-    fi obținute de noi pentru a vă oferi în cadrul site-ului nostru web o experienta personalizată.
-    Informații de identificare personală pot include informații precum numele dvs., adresa de e-mail și
-    alte informații conexe pe care ni le furnizați sau pe care le obținem despre dvs. din SNS-uri.
+    ”Informatii de identificare personala” sunt informatii non-publice care va pot identificate personal sau care pot
+    fi obtinute de noi pentru a va oferi în cadrul site-ului nostru web o experienta personalizata.
+    Informatii de identificare personala pot include informatii precum numele dvs., adresa de e-mail si
+    alte informatii conexe pe care ni le furnizati sau pe care le obtinem despre dvs. din SNS-uri.
 </p>
 <p>
-    „Informații non-personale” sunt informații care nu vă pot fi identificate personal și pe care noi
-    le colectam automat când accesați site-ul nostru de pe un browser web.
-    Poate include, de asemenea, în mod public informațiile disponibile care sunt partajate între dvs. și alte persoane.
+    „Informatii non-personale” sunt informatii care nu va pot fi identificate personal si pe care noi
+    le colectam automat cand accesati site-ul nostru de pe un browser web.
+    Poate include, de asemenea, în mod public informatiile disponibile care sunt partajate între dvs. si alte persoane.
 </p>`),
-            YOUR_PRIVACY_TITLE: 'Confidențialitatea dvs.',
+            YOUR_PRIVACY_TITLE: 'Confidentialitatea dvs.',
             YOUR_PRIVACY: sanitized.bypassSecurityTrustHtml(`<p>
-    Serviciul nostru respectă toate cerințele legale pentru a vă proteja confidențialitatea.
-    Politica noastră de confidențialitate este o declarație legală care explică modul în care putem
-    colecta informații de la dvs., cum putem partaja informațiile dvs., și cum puteți limita partajarea informațiilor dvs.
+    Serviciul nostru respecta toate cerintele legale pentru a va proteja confidentialitatea.
+    Politica noastra de confidentialitate este o declaratie legala care explica modul în care putem
+    colecta informatii de la dvs., cum putem partaja informatiile dvs., si cum puteti limita partajarea informatiilor dvs.
 </p>
 <p>
-    În general, controlați cantitatea și tipul de informații pe care ni le furnizați atunci când utilizați site-ul nostru web.
-    Nu vi se cere să ne furnizați informații de identificare personală ca <b> Vizitator </b>.
+    În general, controlati cantitatea si tipul de informatii pe care ni le furnizati atunci cand utilizati site-ul nostru web.
+    Nu vi se cere sa ne furnizati informatii de identificare personala ca <b> Vizitator </b>.
 </p>
 <p>
-    Când utilizați site-ul nostru web, colectăm automat anumite informații despre computer prin interacțiunea dintre
-    telefonul mobil sau browserul web cu site-ul nostru. Astfel de informații sunt de obicei luate în considerare ca
-    <b>Informații non-personale</b>.
+    Cand utilizati site-ul nostru web, colectam automat anumite informatii despre computer prin interactiunea dintre
+    telefonul mobil sau browserul web cu site-ul nostru. Astfel de informatii sunt de obicei luate în considerare ca
+    <b>Informatii non-personale</b>.
 </p>`)
         }
     };

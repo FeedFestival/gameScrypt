@@ -25,8 +25,7 @@ export const GAMES_DATA = (sanitized: DomSanitizer): GameData[] => [
             },
             introduction: sanitized.bypassSecurityTrustHtml(`
 <p>
-    Come prove your might and "Rage, rage against the dying of the light".
-    Pop as many Blobs as you can before Darkness takes over and surpass your neighbors.
+    Match Colors! Destroy Blobs! ... and try to stay alive as long as possible.
 </p>`),
             descriptionStyle: {
                 'margin-top': '-300px',
@@ -35,8 +34,12 @@ export const GAMES_DATA = (sanitized: DomSanitizer): GameData[] => [
             },
             description: sanitized.bypassSecurityTrustHtml(`
 <p style="width: 40%;">
-    Score as many points as you can in this Regional Competitive Game and Challenge your friends.
-    Download and play right away, match 3 colors and earn it's rewards, the game increases it's dificulty as you play.
+    The goal of the game is to clear the playing surface by grouping three or more like-colored blobs together.
+    When the blobs reach the bottom line of the screen, the game is over.
+    Score as many points as you can and challenge your friends in this Regional Competitive Game.
+</p>
+<p style="width: 40%;">
+    Your progress is saved on your device after each game, and only the best score from each week can be submitted to our ranking system.
 </p>
 <h5>
     First Dificulty
@@ -68,50 +71,10 @@ export const GAMES_DATA = (sanitized: DomSanitizer): GameData[] => [
         Brown Blobs (No Points)
     </li>
     <li>
-        Brown Blobs don't have points but they have a chance to drop
-        <span class="toilet-paper"></span>
-        (Toilet Paper) which is very valuable these days.
+        Crystalized Blobs don't have points and they can't be destroyed.
     </li>
 </ul>
-<h5>
-    Fifth Dificulty
-</h5>
-<ul>
-    <li>
-        Pink Blobs (+5 Points)
-    </li>
-</ul>
-<h5>
-    Sixth Dificulty
-</h5>
-<ul>
-    <li>
-        White Blobs (+6 Points)
-    </li>
-    <li>
-        White Blobs shares it's light with other Blobs near, can be popped when hit popping all
-enlightened Blobs and doubling their points.
-    </li>
-</ul>
-<h5>
-    Seventh Dificulty
-</h5>
-<ul>
-    <li>
-        Dark Blobs (+7 Points)
-    </li>
-    <li>
-        Dark Blobs can't be destroyed by Popping them and infect other colored Blobs arround,
-the only way to get rid of them is to debranch them from other blobs.
-Total Darkness is the ultimate fate of the universe and also... our game.
-    </li>
-</ul>
-<p>
-    The goal of the game is to clear the playing field by forming groups of three or more like-colored blobs.
-    The game ends when the blobs reach the bottom line of the screen.
-    After each game your progress is stored on your device, only the best score each week is submited to our
-    ranking system.
-<p/>`),
+`),
             versions: [
                 {
                     name: 'alpha',
