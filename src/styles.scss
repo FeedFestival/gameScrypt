@@ -6,7 +6,7 @@
 @import "./app/theme/overrides/material";
 
 // Override PrimeNG styles
-@import './app/theme/overrides/primeng';
+@import "./app/theme/overrides/primeng";
 
 * {
     outline: none !important;
@@ -65,15 +65,11 @@ body a {
 }
 
 .page-min-height {
-    min-height: calc(
-        100vh - ((#{$header-height} + #{$submenu-height}) + 130px)
-    );
+    min-height: calc(100vh - ((#{$header-height} + #{$submenu-height}) + 130px));
 }
 
 .page-min-height-330 {
-    min-height: calc(
-        100vh - ((#{$header-height} + #{$submenu-height}) + 330px)
-    );
+    min-height: calc(100vh - ((#{$header-height} + #{$submenu-height}) + 330px));
 }
 
 .main-menu {
@@ -459,29 +455,13 @@ $grdColor2: $Smoke;
         -webkit-background-size: 100% $gradiantBorderWidth !important;
         -moz-background-size: 100% $gradiantBorderWidth !important;
         background-size: 100% $gradiantBorderWidth !important;
-        background-image: -webkit-linear-gradient(
-                left,
-                $grdColor1 0%,
-                $grdColor2 100%
-            ),
+        background-image: -webkit-linear-gradient(left, $grdColor1 0%, $grdColor2 100%),
             -webkit-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
-        background-image: -moz-linear-gradient(
-                left,
-                $grdColor1 0%,
-                $grdColor2 100%
-            ),
+        background-image: -moz-linear-gradient(left, $grdColor1 0%, $grdColor2 100%),
             -moz-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
-        background-image: -o-linear-gradient(
-                left,
-                $grdColor1 0%,
-                $grdColor2 100%
-            ),
+        background-image: -o-linear-gradient(left, $grdColor1 0%, $grdColor2 100%),
             -o-linear-gradient(left, $grdColor1 0%, $grdColor2 100%) !important;
-        background-image: linear-gradient(
-                to right,
-                $grdColor1 0%,
-                $grdColor2 100%
-            ),
+        background-image: linear-gradient(to right, $grdColor1 0%, $grdColor2 100%),
             linear-gradient(to right, $grdColor1 0%, $grdColor2 100%) !important;
 
         .dialog-background {
@@ -517,7 +497,7 @@ $grdColor2: $Smoke;
 
 .img-shadow {
     > img {
-        box-shadow: 0 4px 15px rgba(0,0,0,0.44) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.44) !important;
         -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1 !important;
     }
 }
@@ -549,4 +529,15 @@ $grdColor2: $Smoke;
     text-indent: 50px;
     //
     font-size: 14px;
+}
+
+.picture-dialog {
+    .mat-dialog-container {
+        margin-top: 0;
+        transform: none;
+        max-height: unset;
+        height: 100vh !important;
+        min-height: 100vh;
+        overflow-x: clip;
+    }
 }

@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+    <div class="image-container">
+        <img (click)="onNoClick()" [src]="currentImage"/>
+    </div>
+</div>
+
+<div class="side-container left-side" (click)="moveLeft()">
+    <div class="arrow">
+        <
+    </div>
+</div>
+<div class="side-container right-side" (click)="moveRight()">
+    <div class="arrow">
+        >
+    </div>
+</div>

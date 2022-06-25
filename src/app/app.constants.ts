@@ -55,8 +55,8 @@ export const ScrollBreakpoints = {
 };
 
 export const APP_VERSION = {
-    _: '1.0.3',
-    UPDATE: '3/6/2021',
+    _: '1.0.5',
+    UPDATE: '25/06/2022',
     TERMS_DATE: {
         POSTED: '22/10/2020',
         LAST_UPDATED: '25/10/2020'

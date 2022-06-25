@@ -39,12 +39,18 @@
                     <div class="col-8 float-left d-inline-block">
                         {{ game.extraInfo.platforms }}
                     </div>
+                    <!-- <div class="col-8 float-left d-inline-block">
+                        TBA
+                    </div> -->
                 </div>
                 <div class="col-12 pr-0 float-left mb-2">
                     <div class="col-4 fw-5 float-left d-inline-block">
                         Release(s):
                     </div>
                     <div class="col-8 float-left d-inline-block" [innerHTML]="game.extraInfo.release"></div>
+                    <!-- <div class="col-8 float-left d-inline-block">
+                        TBA
+                    </div> -->
                 </div>
                 <div class="col-12 pr-0 float-left mb-2">
                     <div class="col-4 fw-5 float-left d-inline-block">
@@ -62,8 +68,21 @@
                         {{ game.extraInfo.mode }}
                     </div>
                 </div>
+                <div class="col-12 pr-0 float-left mb-2" *ngIf="this.game._hasGameUrl">
+                    <div class="col-4 fw-5 float-left d-inline-block">
+                        Link(s):
+                    </div>
+                    <div class="col-8 float-left d-inline-block">
+                        <button class="mat-raised-button mat-primary"
+                            color="primary" style="height: 24px; line-height: 24px;"
+                            [style.backgroundColor]="'#803a80'" (click)="goToGameUrl()">
+                            Play
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-5 d-inline-block p-0 games-content d-inline-block">
+            <div class="col-5 d-inline-block p-0 games-content d-inline-block"
+                (click)="goToGameUrl()">
                 <app-game-list [game]="game"></app-game-list>
             </div>
         </div>
@@ -76,7 +95,7 @@
             <mat-tab label="Screens">
                 <div class="col-12 mt-3">
 
-                    <app-game-pictures></app-game-pictures>
+                    <app-game-pictures [pictureCssUrls]="game.picUrls"></app-game-pictures>
 
                 </div>
             </mat-tab>

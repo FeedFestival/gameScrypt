@@ -16,6 +16,7 @@ export interface Game {
         release: SafeHtml;
         genre: string;
         mode: string;
+        gameUrl?: string;
     };
     _base?: string;
     introduction: SafeHtml;
@@ -24,7 +25,9 @@ export interface Game {
     versions: GameVersion[];
     policy: GamePolicy;
     developers: GameDeveloper[];
+    picUrls?: GamePic[];
     _picStyle: any;
+    _hasGameUrl?: boolean;
 }
 
 export interface GamePolicy {
@@ -84,7 +87,7 @@ export interface DeveloperData {
 
 export const DEVELOPER: DeveloperData = {
     DANIEL_S: {
-        name: 'Daniel Simionescu',
+        name: 'Daniel M. Simionescu',
         pre: 'D',
         word: 'aniel',
         suffix: ' Simionescu',
@@ -98,3 +101,10 @@ export const DEVELOPER: DeveloperData = {
         url: ''
     }
 };
+
+export interface GamePic {
+    name?: string;
+    backgroundUrl: string;
+    backgroundPosition?: string;
+    backgroundSize?: string;
+}

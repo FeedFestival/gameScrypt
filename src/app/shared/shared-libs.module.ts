@@ -17,6 +17,7 @@ import {
     MatTabGroup,
     MatTabsModule
 } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { SocialLoginModule } from 'angularx-social-login';
 import { ColorPickerModule } from 'ngx-color-picker';
@@ -120,22 +121,27 @@ export const appIcons = [
     IconStar
 ];
 
+const customComponents = [
+    GamesPicturesComponent
+];
+
 @NgModule({
+    declarations: [
+        appIcons,
+        customComponents
+    ],
     imports: [
+        BrowserModule,
         matModules,
         primeNgModule,
         externalAngularLibraries
-    ],
-    declarations: [
-        appIcons,
-        GamesPicturesComponent
     ],
     exports: [
         matModules,
         primeNgModule,
         externalAngularLibraries,
         appIcons,
-        GamesPicturesComponent
+        customComponents
     ],
     providers: [
         {

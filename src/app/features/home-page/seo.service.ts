@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
-import { ESPORTS_ROUTE } from 'src/app/routes/esports/esports.seo';
-import { ABOUT_ROUTE, CONTACT_ROUTE, MAIN_ROUTE } from 'src/app/routes/main/main.seo';
 import { _isNilOrEmpty } from 'src/app/shared/lodash-utils';
 import { SEO_BANK } from './seo.bank';
 import { og, OgMetaTag, TwitterMetaTag } from './seo.constants';
@@ -24,7 +21,7 @@ export class SeoService {
     getMetaTags(page): any[] {
 
         const robots = 'index, follow, noarchive, notranslate';
-        const author = 'Daniel Simionescu';
+        const author = 'Daniel M. Simionescu';
         const applicationName = 'gameScrypt';
         const language = 'English';
         const revisitAfter = '5 days';
