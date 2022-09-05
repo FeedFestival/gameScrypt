@@ -12,6 +12,5 @@ export class ArticleFaqComponent extends ArticleComponent {
 
     goToLink(url: string) {
         console.log("url: " + url);
-
     }
 }

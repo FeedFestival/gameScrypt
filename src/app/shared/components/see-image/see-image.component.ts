@@ -18,7 +18,6 @@ export class SeeImageComponent {
         public dialogRef: MatDialogRef<SeeImageComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any
     ) {
-        console.log("data", data);
         this.index = data.index;
     }
 

@@ -170,8 +170,8 @@ function findRoutes(sourceCode: string, path: string) {
     node.getChildren().filter(node => ts.isClassDeclaration(node)).forEach((node: ts.Node) => {
       if (node.decorators) {
         node.forEachChild(node => node.forEachChild(decoratorNode => {
-          if (ts.isCallExpression(decoratorNode) && 
-          ts.isIdentifier(decoratorNode.expression) && 
+          if (ts.isCallExpression(decoratorNode) &&
+          ts.isIdentifier(decoratorNode.expression) &&
           decoratorNode.expression.escapedText === 'NgModule'
           ) {
             decoratorNode.arguments.forEach(node => {
@@ -190,7 +190,7 @@ function findRoutes(sourceCode: string, path: string) {
                       const argument = node.arguments[0];
                       let routes;
                       if (ts.isIdentifier(argument)) {
-                        // variable 
+                        // variable
                         const varName = argument.escapedText;
                         SourceCodeObj.forEachChild(node => {
                           if(ts.isVariableStatement(node) && (<ts.Identifier> node.declarationList.declarations[0].name).escapedText === varName)  {
@@ -203,10 +203,10 @@ function findRoutes(sourceCode: string, path: string) {
                         // array
                         routes = sourceCode.substring(node.arguments.pos, node.arguments.end);
                       }
-                      
+
                       routes = routes.replace(/(.*?:\s)([^'"`].*?[^'"`])((\s*?),|(\s*?)})/g, "$1'$2'$3");
                       eval('routes = ' + routes);
-                      // console.log(routes);
+                      console.log(routes);
                     }
                     node = (<ts.PropertyAccessExpression> node.expression).expression;
                   }

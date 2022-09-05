@@ -33,7 +33,6 @@ export class ArticleComponent implements OnInit {
 
         this.activatedRoute.data.subscribe(data => {
             this.article = AllArticles.getArticle(data.codeBase);
-            console.log("this.article: ", this.article);
             this.init();
         });
     }

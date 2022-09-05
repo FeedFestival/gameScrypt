@@ -39,6 +39,5 @@ export class CodeBlockComponent implements OnChanges {
             lineNr++;
             return lineObj;
         });
-        console.log('CodeBlockComponent -> setupCodeLines -> this.codeLines', this.codeLines);
     }
 }
