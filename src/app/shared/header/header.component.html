@@ -19,8 +19,11 @@
         <!-- <button mat-button class="nav-button float-right" (click)="goTo('esports')">
             <cool-text pre="E" word="SPORTS" ></cool-text>
         </button> -->
-        <button mat-button class="nav-button float-right" (click)="goTo('toolbox')">
+        <!-- <button mat-button class="nav-button float-right" (click)="goTo('toolbox')">
             <cool-text pre="T" word="OOLBOX" ></cool-text>
+        </button> -->
+        <button mat-button class="nav-button float-right" (click)="goTo('world-library')">
+            <cool-text pre="W" word="OLRD LIBRARY" ></cool-text>
         </button>
         <button mat-button class="nav-button float-right" (click)="goTo('blog')">
             <cool-text pre="B" word="LOG" ></cool-text>
@@ -58,10 +61,10 @@
                     </div>
                 </div>
 
-                <div *ngIf="loggedIn === false">
+                <!-- <div *ngIf="loggedIn === false">
                     <cool-text pre="L" word="ogin"></cool-text>
                     <icon-facebook></icon-facebook>
-                </div>
+                </div> -->
             </button>
         </div>
     </div>

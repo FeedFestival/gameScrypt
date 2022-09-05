@@ -1,0 +1,71 @@
+@import "../../theme/overrides/scss/variables";
+
+.game-competition {
+    padding: 0;
+    height: 180px;
+    background-color: $dark-transparent;
+    border-radius: 10px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    transition: all;
+
+    &:hover {
+        border: 1px solid $dark-grey;
+        -moz-border-image: -moz-linear-gradient(
+                left,
+                transparent,
+                #aacabb,
+                transparent
+            )
+            100% 1;
+        box-shadow: 0 4px 15px black;
+    }
+
+    .pic-competition {
+        padding: 10px;
+
+        > img {
+            width: 100%;
+        }
+    }
+
+    .title-competition {
+        margin-left: 10px;
+        margin-right: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 30px;
+        background-color: $dark-transparent;
+        z-index: 15;
+        position: absolute;
+        bottom: 7px;
+        left: 0;
+        width: calc(100% - 20px);
+        border-top: 2px solid $orange;
+    }
+}
+
+::ng-deep {
+    .rules {
+        float: left;
+        .rules-title {
+            color: $table-header-color;
+        }
+
+        .rule-circle {
+            float: left;
+
+            icon-circle {
+                color: $table-header-color;
+                > svg {
+                    color: $table-header-color;
+                }
+            }
+        }
+
+        p, li {
+            font-size: 0.7em;
+        }
+    }
+}

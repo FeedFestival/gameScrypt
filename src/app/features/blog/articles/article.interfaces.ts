@@ -1,6 +1,7 @@
-import { SafeHtml } from '@angular/platform-browser';
-import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
-import { UNITY_ROUTE } from 'src/app/routes/unity-workflow/unity.seo';
+import { SafeHtml } from "@angular/platform-browser";
+import { BLOG_ROUTE } from "src/app/routes/blog/blog.seo";
+import { UNITY_ROUTE } from "src/app/routes/unity-workflow/unity.seo";
+import { ARTICLE_TYPE } from ".";
 
 export interface TimelineMonth {
     month: string;
@@ -12,18 +13,25 @@ export interface TimelineMonth {
 
 export interface Article {
     base: string;
+    articleType: ARTICLE_TYPE;
     shortTitle: string;
     title: string;
     titleTimeline: string;
     shortDescription: string;
-    description?: SafeHtml | string;
+    description?: string;
     websiteTitle: string;
     keywords: string;
+    smallPic?: string;
     mainPic?: string;
     category: ArticleCategory;
     date: string;
     dateNr: number;
     parts?: any[];
+    links?: ArticleLink[];
+}
+
+export interface ArticleFaq extends Article {
+    questions: any;
 }
 
 export interface TimelineYear {
@@ -47,22 +55,28 @@ export const treeTransformer = (node: TimelineNode, levelNr: number) => {
         name: node.name,
         level: levelNr,
         base: node.base,
-        dateNr: node.dateNr
+        dateNr: node.dateNr,
     };
 };
 
 export const ARTICLE_CATEGORY = {
     BLOG: {
-        _: 'BLOG',
-        route: BLOG_ROUTE.base
+        _: "BLOG",
+        route: BLOG_ROUTE.base,
     },
     UNITY: {
-        _: 'UNITY DEVELOPMENT',
-        route: UNITY_ROUTE.base
+        _: "UNITY DEVELOPMENT",
+        route: UNITY_ROUTE.base,
     },
 };
 
 export interface ArticleCategory {
     _: string;
     route: string;
+}
+
+export interface ArticleLink {
+    icon: string;
+    label: string;
+    url: string;
 }

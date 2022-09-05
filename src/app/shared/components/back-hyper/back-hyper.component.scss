@@ -3,6 +3,7 @@
     height: 0;
     position: relative;
     top: -35px;
+    z-index: 9;
 
     svg {
         transform: rotate(180deg);

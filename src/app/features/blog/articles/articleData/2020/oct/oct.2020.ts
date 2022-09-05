@@ -1,7 +1,9 @@
 import { Article, ARTICLE_CATEGORY, TimelineMonth } from '../../../article.interfaces';
+import { ARTICLE_TYPE } from '../../article.constants';
 
 export const ARTICLE_SITE_IS_UP: Article = {
     base: 'site-is-up',
+    articleType: ARTICLE_TYPE.BASE,
     shortTitle: 'Site is Up',
     titleTimeline: `
 <span class="pre f-11">
@@ -30,6 +32,7 @@ ite is Up
 
 export const GAMESCRIPT_PLANS_ON_LAUNCHING: Article = {
     base: 'gamescrypt-plans-launch',
+    articleType: ARTICLE_TYPE.BASE,
     shortTitle: 'Launch Plans for gameScrypt',
     titleTimeline: `
 <span>

@@ -417,6 +417,7 @@ a.orange {
 a.hyperlink {
     transition: all 1s;
     color: white;
+    background: transparent !important;
     &:hover {
         color: $orange;
 
@@ -539,5 +540,25 @@ $grdColor2: $Smoke;
         height: 100vh !important;
         min-height: 100vh;
         overflow-x: clip;
+    }
+}
+
+.col-image {
+    background: #0a090947;
+    border-radius: 5px;
+    padding: 2px !important;
+
+    > img {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.types-services {
+    .active {
+        font-weight: 500;
+        font-size: 19px;
+        padding-bottom: 3px;
+        color: white;
     }
 }

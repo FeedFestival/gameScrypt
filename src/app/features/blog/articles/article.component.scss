@@ -12,3 +12,10 @@
         box-shadow: 0 4px 15px black !important;
     }
 }
+
+::ng-deep {
+    .small-text {
+        color: #c7c7c7b8;
+        font-size: 13px;
+    }
+}

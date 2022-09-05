@@ -1,7 +1,9 @@
 import { Article, ARTICLE_CATEGORY, TimelineMonth } from '../../../article.interfaces';
+import { ARTICLE_TYPE } from '../../article.constants';
 
 export const ARTICLE_BLENDER_ROCKS_GEOMETRY_NODES: Article = {
     base: 'blender-procedural-rocky',
+    articleType: ARTICLE_TYPE.BASE,
     shortTitle: 'Blender - Procedural Rocky Desert',
     titleTimeline: `
 <span class="pre f-11">
@@ -71,7 +73,7 @@ lender - Procedural Rocky Desert
     </div>
 </div>
             `
-        }  
+        }
     ]
 };
 

@@ -17,8 +17,7 @@
                     </div>
 
                     <div class="col-12 px-0 mb-3 article-pic">
-                        <img *ngIf="article.mainPic" [src]="article.mainPic" />
-                        <img *ngIf="!article.mainPic" src="assets/images/no-pic.jpg" />
+                        <img [src]="article.smallPic" />
                     </div>
 
                     <div class="col-12 article-description">

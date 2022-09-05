@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { Meta, Title } from '@angular/platform-browser';
 import { BLOG_ROUTE } from 'src/app/routes/blog/blog.seo';
-import { _orderBy } from 'src/app/shared/lodash-utils';
+import { _isNilOrEmpty, _orderBy } from 'src/app/shared/lodash-utils';
 import { AppEventManager } from 'src/app/shared/navigation/event-manager.service';
 import { EventContent } from 'src/app/shared/navigation/event-with-content.model';
 import { EVENT } from 'src/app/shared/navigation/events-manager.constants';
@@ -11,7 +11,6 @@ import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { __getMonthName } from 'src/app/shared/utils';
 import { SeoService } from '../home-page/seo.service';
 import { TimelineNode, treeTransformer } from './articles/article.interfaces';
-import { ArticleBank } from './articles/articleData/article.bank';
 import { AllArticles } from './articles/articleData/articles';
 
 @Component({
@@ -52,7 +51,8 @@ export class BlogComponent implements OnInit {
         this.metaService.addTags(this.seoService.getMetaTags(BLOG_ROUTE.base));
         this.onResizeService.emitScrollClassEvent('max');
 
-        this.latestArticles = _orderBy(ArticleBank.LatestArticles, (o) => {
+        this.latestArticles = _orderBy(AllArticles.search(), (o) => {
+            this.determinePic(o);
             return o.dateNr;
         }, ['desc']);
 
@@ -75,13 +75,13 @@ export class BlogComponent implements OnInit {
 
     private mapDataSource() {
         const dataSource = [];
-        AllArticles.getTimeline().forEach(a => {
+        AllArticles.getTimeline().forEach(year => {
             const data = {
-                name: a.year,
+                name: year.year,
                 children: [],
-                dateNr: a.dateNr
+                dateNr: year.dateNr
             };
-            a.months.forEach(m => {
+            year.months.forEach(m => {
                 const monthData = {
                     name: m.month,
                     children: [],
@@ -133,5 +133,17 @@ export class BlogComponent implements OnInit {
                 this.treeControl.expand(this.treeControl.dataNodes[monthIndex]);
             }
         }
+    }
+
+    private determinePic(o) {
+        let hasPic = _isNilOrEmpty(o.smallPic) == false;
+        if (hasPic) { return; }
+
+        hasPic = _isNilOrEmpty(o.mainPic) == false;
+        if (hasPic) {
+            o.smallPic = o.mainPic;
+            return;
+        }
+        o.smallPic = "assets/images/no-pic.jpg";
     }
 }

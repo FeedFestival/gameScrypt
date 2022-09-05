@@ -15,6 +15,7 @@ import { AdminComponent } from './auth/admin.component';
 import { AboutComponent } from './features/about/about.component';
 import { BackgroundComponent } from './features/about/background-cv/background-cv.component';
 import { ArticleComponent } from './features/blog/articles/article.component';
+import { ArticleFaqComponent } from './features/blog/articles/components/article-faq.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { PzComponent } from './features/esports/components/pz/pz.component';
@@ -37,6 +38,8 @@ import { ColorThiefComponent } from './features/toolbox/components/color-thief/c
 import { ToolboxComponent } from './features/toolbox/toolbox.component';
 import { CodeBlockComponent } from './features/unity-workflow/code-block-component/code-block.component';
 import { UnityWorkflowComponent } from './features/unity-workflow/unity-workflow.component';
+import { CharactersComponent } from './features/world-library/components/characters/characters.component';
+import { WorldLibraryComponent } from './features/world-library/world-library.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { ConfirmDialogComponent } from './shared/components/confirm/confirm-dialog.component';
 import { PageDialogComponent } from './shared/components/page-dialog/page-dialog.component';
@@ -110,8 +113,11 @@ export const components = [
     PzComponent,
     ToolboxComponent,
     ColorThiefComponent,
+    WorldLibraryComponent,
+    CharactersComponent,
     BlogComponent,
     ArticleComponent,
+    ArticleFaqComponent,
     GamesComponent,
     GameListComponent,
     GameComponent,

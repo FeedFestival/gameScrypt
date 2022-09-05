@@ -53,7 +53,7 @@ export class GameComponent implements OnInit {
             _isNilOrEmpty(this.game.extraInfo.gameUrl) === false;
     }
 
-    goToGameUrl(url: string) {
+    goToGameUrl() {
 
         if (!this.game._hasGameUrl) return;
 

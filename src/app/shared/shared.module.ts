@@ -11,6 +11,7 @@ import { TableHeaderComponent } from "./components/table-header/table-header.com
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { NavigationComponent } from "./navigation/navigation.component";
+import { SanitizeHtmlPipe } from "./pipes/html-sanitizer/html-sanitizer.pipe";
 import { SharedLibsModule } from "./shared-libs.module";
 
 export const sharedComponents = [
@@ -25,9 +26,10 @@ export const sharedComponents = [
 ];
 
 const entryComponents = [SeeImageComponent];
+const pipes = [SanitizeHtmlPipe];
 
 @NgModule({
-    declarations: [...sharedComponents, SeeImageComponent],
+    declarations: [...sharedComponents, entryComponents, pipes],
     imports: [
         AppRoutingModule,
         FormsModule,
@@ -40,10 +42,11 @@ const entryComponents = [SeeImageComponent];
         ReactiveFormsModule,
         SharedLibsModule,
         ...sharedComponents,
-        SeeImageComponent
+        entryComponents,
+        pipes
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [SeeImageComponent],
+    entryComponents: [entryComponents],
 })
 export class SharedModule {
     static forRoot() {
