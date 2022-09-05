@@ -6,7 +6,7 @@ import { _isNilOrEmpty } from 'src/app/shared/lodash-utils';
 import { OnResizeService } from 'src/app/shared/on-resize/on-resize.service';
 import { SeoService } from '../../home-page/seo.service';
 import { Article } from './article.interfaces';
-import { ARTICLES } from './articleData/articles';
+import { AllArticles } from './articleData/articles';
 
 @Component({
     selector: 'app-article',
@@ -33,7 +33,7 @@ export class ArticleComponent implements OnInit {
             });
 
         this.activatedRoute.data.subscribe(data => {
-            this.article = ARTICLES.getArticle(data.codeBase);
+            this.article = AllArticles.getArticle(data.codeBase);
             this.init();
         });
     }

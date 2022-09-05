@@ -19,7 +19,7 @@ const routes: Routes = [
     ...esportsRoutes,
     ...toolboxRoutes,
     //
-    ...blogRoutes,
+    ...blogRoutes(),
     //
     ...termsAndPrivacyRoutes,
     {

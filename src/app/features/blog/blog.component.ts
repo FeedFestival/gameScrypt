@@ -12,6 +12,7 @@ import { __getMonthName } from 'src/app/shared/utils';
 import { SeoService } from '../home-page/seo.service';
 import { TimelineNode, treeTransformer } from './articles/article.interfaces';
 import { ArticleBank } from './articles/articleData/article.bank';
+import { AllArticles } from './articles/articleData/articles';
 
 @Component({
     selector: 'app-blog',
@@ -74,7 +75,7 @@ export class BlogComponent implements OnInit {
 
     private mapDataSource() {
         const dataSource = [];
-        ArticleBank.TimeLine.forEach(a => {
+        AllArticles.getTimeline().forEach(a => {
             const data = {
                 name: a.year,
                 children: [],

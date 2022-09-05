@@ -1,4 +1,4 @@
-import { ARTICLES } from '../features/blog/articles/articleData/articles';
+import { AllArticles } from '../features/blog/articles/articleData/articles';
 import { BLOG_ROUTE } from './blog/blog.seo';
 import { ESPORTS_ROUTE, PZ_ROUTE, TFT_ROUTE } from './esports/esports.seo';
 import { BLOB_POP_ROUTE, GAMES_ROUTE } from './games/games.seo';
@@ -21,7 +21,7 @@ export const SEO_ROUTES = [
     COLOR_THIEF_ROUTE,
     //
     BLOG_ROUTE,
-    ...ARTICLES._,
+    ...AllArticles.search(),
     //
     ABOUT_ROUTE,
     CONTACT_ROUTE,
