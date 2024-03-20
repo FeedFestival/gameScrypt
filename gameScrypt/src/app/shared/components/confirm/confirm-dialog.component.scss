@@ -1,0 +1,23 @@
+@import '../../../theme/overrides/scss/variables';
+
+.confirm-dialog-question {
+    font-weight: 400;
+    text-align: left;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 15px;
+}
+
+.confirm-dialog-message {
+    text-align: left;
+}
+
+.textarea-comment {
+    margin-top: 30px;
+}
+
+.download-excel-link-disabled {
+    color: $orange !important;
+    font-weight: 550;
+    cursor: pointer;
+}

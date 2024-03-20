@@ -1,0 +1,18 @@
+<div *ngIf="inDialog" class="row container m-auto p-3">
+    <a class="hyperlink" href="#" routerLink="/about" (click)="matDialogRef.close()">
+        <cool-text pre="S" word="ee" suffix=" Page"></cool-text>
+    </a>
+</div>
+<div class="row no-gutters container m-auto page-min-height p-3">
+    <app-language *ngIf="languageLogic" [lang]="lang" (languageChanged)="onLanguageChosen($event)"></app-language>
+    <div class="col-12 pt-5 justify-content-center">
+
+        <div class="col-10 m-auto">
+            <h5>{{ ABOUT_POLICY.TITLE }}</h5>
+        </div>
+
+        <br />
+
+        <div class="col-10 m-auto" [innerHTML]="ABOUT_POLICY.WHAT_WEBSITE_DOES"> </div>
+    </div>
+</div>

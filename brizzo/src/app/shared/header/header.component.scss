@@ -1,0 +1,199 @@
+@import "../../../assets/scss/variables";
+
+body {
+	margin: 0;
+}
+
+h1 {
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+	letter-spacing: 2px;
+	font-size: 48px;
+}
+p {
+	font-family: "Lato", sans-serif;
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #333333;
+}
+
+.header {
+	position: relative;
+	text-align: center;
+	background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+	color: white;
+}
+.logo {
+	width: 50px;
+	fill: white;
+	padding-right: 15px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.inner-header {
+	height: $logo-height;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.flex {
+	/*Flexbox for containers*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.waves-container {
+	height: $waves-height;
+}
+
+.waves {
+	position: relative;
+	width: 100%;
+	height: 15vh;
+	margin-bottom: -7px; /*Fix for safari gap*/
+	min-height: 100px;
+	max-height: 150px;
+}
+
+.content {
+	position: relative;
+	height: 20vh;
+	text-align: center;
+	background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+	animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+	animation-delay: -2s;
+	animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+	animation-delay: -3s;
+	animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+	animation-delay: -4s;
+	animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+	animation-delay: -5s;
+	animation-duration: 20s;
+}
+@keyframes move-forever {
+	0% {
+		transform: translate3d(-90px, 0, 0);
+	}
+	100% {
+		transform: translate3d(85px, 0, 0);
+	}
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+	.waves {
+		height: $waves-height;
+		min-height: $waves-height;
+	}
+	.content {
+		height: 30vh;
+	}
+	h1 {
+		font-size: 24px;
+	}
+}
+
+.page-title {
+	height: 0;
+	text-align: right;
+	font-size: 20px;
+	top: -28px;
+	position: relative;
+	text-shadow: 1px 1px #5040b8;
+	font-family: graphikRegular;
+
+	.mat-icon {
+		top: 6px;
+		position: relative;
+		margin-right: 12px;
+		line-height: 0;
+	}
+
+	a {
+		color: white;
+	}
+}
+
+::ng-deep {
+	.hamburger-button {
+		position: fixed;
+		top: 3%;
+    	left: 5%;
+		z-index: 5;
+
+		button {
+			border-radius: 50%;
+			max-width: 50px;
+			min-width: 50px;
+			min-height: 50px;
+			max-height: 50px;
+			padding: 0;
+			background: #168dbe21;
+
+			.mat-button-wrapper {
+				mat-icon {
+					color: white;
+					font-size: 40px;
+					height: 40px;
+					width: 40px;
+				}
+			}
+		}
+	}
+}
+
+// Mobile . =================================================================
+@media (min-width: 1px) {
+	.logo-white {
+		width: 90vw;
+	}
+}
+
+// Mobile . =================================================================
+@media (min-width: $xs) {
+	.logo-white {
+		width: 80vw;
+	}
+}
+
+@media (min-width: $sm) {
+	.logo-white {
+		width: 70vw;
+	}
+}
+
+@media (min-width: $md) {
+	.logo-white {
+		width: 60vw;
+	}
+}
+
+// Desktop ^ =================================================================
+
+@media (min-width: $lg) {
+	.logo-white {
+		width: 45vw;
+	}
+}
+
+@media (min-width: $xl) {
+	.logo-white {
+		width: 40vw;
+	}
+}

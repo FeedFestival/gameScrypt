@@ -1,0 +1,41 @@
+<div class="row no-gutters container m-auto page-min-height p-3">
+    <app-language *ngIf="languageLogic" [lang]="lang"
+        (languageChanged)="onLanguageChosen($event)"></app-language>
+    <div class="container-fluid pt-5 justify-content-center">
+        <div class="col-12">
+            <h3> {{ PRIVACY_POLICY_TERMS.TITLE }} </h3>
+        </div>
+
+        <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.TERMS_OF_SERVICE_AGREEMENT"></div>
+
+        <div class="col-11 m-auto">
+            <h4> {{ PRIVACY_POLICY_TERMS.LIMITED_LICENSE_TITLE }} </h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.YOUR_RIGHTS"></div>
+
+        <div class="col-11 m-auto">
+            <h4> {{ PRIVACY_POLICY_TERMS.COPYRIGHT_AND_TRADEMARKS }} </h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.WEBSITE_PROPERTY"></div>
+
+        <div class="col-11 m-auto">
+            <h4> {{ PRIVACY_POLICY_TERMS.NO_WARRANTY_TITLE }} </h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.NO_WARRANTY_INDEMNIFICATION"></div>
+
+        <div class="col-11 m-auto">
+            <h4> {{ PRIVACY_POLICY_TERMS.DISCLAIMER_TITLE }} </h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.CONTENT_DISCLAIMER"></div>
+
+        <div class="col-11 m-auto">
+            <h4> {{ PRIVACY_POLICY_TERMS.INDEMNIFICATION_TITLE }} </h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_TERMS.INDEMNIFICATION"></div>
+    </div>
+</div>

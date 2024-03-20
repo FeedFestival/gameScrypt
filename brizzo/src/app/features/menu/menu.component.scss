@@ -1,0 +1,220 @@
+@import "../../../assets/scss/variables";
+
+.category-title {
+	&.first {
+		padding-top: 10vh !important;
+	}
+
+	text-align: center;
+	padding-top: 30px;
+	font-size: 24px;
+	color: $normal-text;
+	font-family: graphikRegular;
+	padding-bottom: 30px;
+}
+
+.category-break {
+	width: 44%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	height: 1px;
+	background-color: $semi-faded-text;
+}
+
+.menu-container {
+	margin: auto;
+
+	> * {
+		color: $normal-text;
+		font-family: graphikRegular;
+	}
+
+	.menu-item,
+	.menu-quantity,
+	.menu-price {
+		display: inline-block;
+		line-height: 22px;
+
+		> span {
+			display: inline-block;
+			height: 22px;
+			line-height: 22px;
+		}
+	}
+	.menu-item {
+		font-size: 18px;
+		text-shadow: 1px 1px $normal-text-shadow;
+
+		.alcohol {
+			font-size: 13px;
+			color: $alcohol-text;
+			text-shadow: 1px 1px $normal-text-shadow;
+			padding-left: 7px;
+			padding-right: 5px;
+		}
+	}
+	.menu-quantity {
+		color: $faded-text;
+		padding-left: 10px;
+		//
+		background: #ffffff9c;
+		border-radius: 5px;
+
+		.qtty {
+			font-size: 15px;
+			text-shadow: 1px 1px $normal-text-shadow;
+		}
+		.qtty-type {
+			font-size: 12px;
+			text-shadow: 1px 1px $normal-text-shadow;
+		}
+	}
+	.allergens {
+		display: inline-block;
+		height: 22px;
+		line-height: 22px;
+		span {
+			color: $allergens-text;
+		}
+	}
+	.menu-price {
+		text-align: right;
+		.price {
+			font-size: 20px;
+			text-shadow: 1px 1px $faded-text;
+			padding-right: 10px;
+		}
+		.currency {
+			font-size: 16px;
+			text-shadow: 1px 1px $normal-text-shadow;
+		}
+	}
+	.extra {
+		color: $semi-faded-text;
+		text-shadow: 1px 1px $normal-text-shadow;
+		font-size: 14px;
+		padding-left: 22px;
+		//
+		background: #ffffff70;
+		width: auto;
+		max-width: 85%;
+	}
+}
+
+.category {
+	border-radius: 50%;
+	overflow: hidden;
+	background-size: 100%;
+	// background-size: 144px;
+	// background-position-y: 133px;
+	// background-position-x: -12px;
+
+	.category-info {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		height: 88%;
+
+		.category-name {
+			width: 100%;
+			font-size: 13px;
+			font-weight: 500;
+			color: white;
+			letter-spacing: 0.6px;
+			font-family: graphikRegular !important;
+			text-shadow: 1px 1px black;
+			background: rgba(0, 0, 0, 0.66);
+
+			> div {
+				width: 66%;
+				display: inline-flex;
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.category-container {
+	> img {
+		border-radius: 50%;
+		width: 100%;
+	}
+
+	.category-name {
+		font-size: 14px;
+		font-weight: 500;
+		color: white;
+		letter-spacing: 0.6px;
+		font-family: graphikRegular !important;
+		text-shadow: 1px 1px black;
+	}
+}
+
+::ng-deep {
+	.menu-back-button {
+		position: fixed;
+		top: 77%;
+		right: 3%;
+		z-index: 5;
+
+		button {
+			border-radius: 50%;
+			max-width: 50px;
+			min-width: 50px;
+			min-height: 50px;
+			max-height: 50px;
+			padding: 0;
+			background: #2c70bc;
+
+			.mat-button-wrapper {
+				mat-icon {
+					color: white;
+					font-size: 40px;
+					height: 40px;
+					width: 40px;
+				}
+			}
+		}
+	}
+}
+
+.menu-header {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+// Mobile . =================================================================
+@media (min-width: $xs) {
+	.menu-container {
+		max-width: 90vw;
+	}
+}
+
+@media (min-width: $sm) {
+	.menu-container {
+		max-width: 80vw;
+	}
+}
+
+@media (min-width: $md) {
+	.menu-container {
+		max-width: 60vw;
+	}
+}
+
+// Desktop ^ =================================================================
+
+@media (min-width: $lg) {
+	.menu-container {
+		max-width: 50vw;
+	}
+}
+
+@media (min-width: $xl) {
+	.menu-container {
+		max-width: 44vw;
+	}
+}

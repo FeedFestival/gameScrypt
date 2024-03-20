@@ -1,0 +1,73 @@
+<div class="row menu-container z-indx2">
+
+	<div #categoryRef
+		class="col-12"
+		*ngFor="let category of categories;">
+
+		<div class="row pb-2"
+			[ngClass]="{ 'pb-3 pt-1': menuItem.extra, 'pb-4': menuItem._showEnglish }"
+			*ngFor="let menuItem of category.menuItems;" [style.display.none]="menuItem.active === 1">
+<!--
+[style.display.none]="menuItem.active"
+-->
+			<div class="col-12" *ngIf="menuItem._isFirstItem === true">
+				<div class="category-title" [ngClass]="{ 'first': category._isFirst === true }">
+					{{ category.name }}
+				</div>
+			</div>
+
+			<div class="col-9 pr-0">
+				<div class="menu-item">
+					<span>{{ menuItem.name }}</span>
+					<span *ngIf="menuItem._showAlcohol" class="alcohol">
+						{{ menuItem.alcohol }}
+						<icon-percent *ngIf="menuItem._showAlcoholIcon"></icon-percent>
+					</span>
+
+					<div class="menu-quantity">
+						<span class="qtty">
+							{{ menuItem.quantity }}
+						</span>
+						<span class="qtty-type">
+							{{ menuItem.qType }}
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3 pl-0 menu-price">
+				<span class="price">
+					{{ menuItem.price }}
+				</span>
+				<span class="currency">
+					{{ menuItem.currency }}
+				</span>
+			</div>
+
+			<div class="extra pb-1" *ngIf="menuItem.extra || menuItem._hasAllergens">
+				<icon-frozen *ngIf="menuItem.isFrozen"></icon-frozen>
+				<div class="allergens"
+					*ngIf="menuItem._hasAllergens">
+					<icon-allergens></icon-allergens>
+					<span style="padding-left: 28px; padding-right: 7px;">{{menuItem._alergens}}</span>
+				</div>
+				<span>{{ menuItem.extra }}</span>
+			</div>
+			<div class="extra w-100 pb-1"
+				[ngClass]="{ 'pt-1': menuItem.extra }"
+				*ngIf="menuItem._showEnglish">
+				{{ menuItem.extra_en }}
+			</div>
+		</div>
+	</div>
+
+	<div class="col-12 p-0">
+		<img class="w-100"
+			style="border: 1px solid black; border-radius: 5px;"
+			src="../../../assets/bon_fiscal.png"/>
+	</div>
+
+	<div class="col-12">
+		<app-allergens></app-allergens>
+	</div>
+</div>

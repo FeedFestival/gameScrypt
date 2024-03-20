@@ -1,0 +1,49 @@
+<div class="row no-gutters container m-auto page-min-height p-3">
+    <app-language *ngIf="languageLogic" [lang]="lang" (languageChanged)="onLanguageChosen($event)"></app-language>
+    <div class="container-fluid pt-5 justify-content-center">
+        <div class="col-12">
+
+            <div class="col-12 m-auto">
+                <h3>{{ PRIVACY_POLICY_GDPR.WHAT_ARE_COOKIES_TITLE }}</h3>
+            </div>
+
+            <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_GDPR.WHAT_ARE_COOKIES"></div>
+
+            <div class="col-11 m-auto">
+                <h4>{{ PRIVACY_POLICY_GDPR.HOW_COOKIES_TITLE }}</h4>
+            </div>
+
+            <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_GDPR.HOW_COOKIES"></div>
+
+            <div class="col-11 m-auto">
+                <h4>{{ PRIVACY_POLICY_GDPR.DISABLING_COOKIES_TITLE }}</h4>
+            </div>
+
+            <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_GDPR.DISABLING_COOKIES"></div>
+
+            <div class="col-11 m-auto">
+                <h4>{{ PRIVACY_POLICY_GDPR.THIRD_PARTIES_TITLE }}</h4>
+            </div>
+
+            <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_GDPR.THIRD_PARTIES"></div>
+
+        </div>
+    </div>
+</div>
+
+<app-cookies [languageLogic]="false" [lang]="lang"></app-cookies>
+
+<app-sns [languageLogic]="false" [lang]="lang"></app-sns>
+
+<div class="row no-gutters container m-auto page-min-height p-3">
+    <div class="container-fluid pt-5 justify-content-center">
+        <div class="col-12">
+
+            <div class="col-12 m-auto">
+                <h3>{{ PRIVACY_POLICY_GDPR.MORE_INFO_TITLE }}</h3>
+            </div>
+
+            <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_GDPR.MORE_INFO"></div>
+        </div>
+    </div>
+</div>

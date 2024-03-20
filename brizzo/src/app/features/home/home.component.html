@@ -1,0 +1,50 @@
+<div class="white-gradient-down"></div>
+<div class="row home-container z-indx2 mt-5">
+	<div class="col-12">
+		<div class="row">
+			<span>
+				Comenzile pot fi efectuate direct la numarul de telefon
+				<a #phoneActionLinkRef class="black-a" href="tel:{{foreignPhone}}">{{foreignPhone}}</a>
+			</span>
+			<!-- <span class="info-text">
+				*daca alegi aceasta metoda vei beneficia de o reducere de 15% din valoarea comenzii
+			</span> -->
+			<div class="align-center mt-4">
+
+				<button mat-raised-button class="call-btn" (click)="callBrizzo()">
+					<span class="c-white">
+						Comanda telefonic
+					</span>
+					<!-- <div class="sales-2-digits">
+						-15%
+					</div> -->
+				</button>
+
+				<!--
+					De Craciun!
+				<div class="snowman">
+					<img src="../../../assets/images/svgs/Snowman.svg">
+				</div>
+				-->
+			</div>
+			<span class="mt-4">
+				Sau prin intermediul platformelor
+			</span>
+			<div class="mt-4 d-flex justify-content-center">
+				<div class="m-auto cp" (click)="goToFoodPanda()">
+					<img class="delivery-images" src="../../../assets/foodpanda.png" />
+				</div>
+				<div class="m-auto cp" (click)="goToGlovo()">
+					<img class="delivery-images" src="../../../assets/glovo.jpg" />
+				</div>
+				<div class="m-auto cp mr-0" (click)="goToTakeAway()">
+					<img class="delivery-images" src="../../../assets/takeaway.png" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-12 mt-5">
+		<app-category-menu></app-category-menu>
+	</div>
+</div>

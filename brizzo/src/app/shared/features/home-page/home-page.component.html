@@ -1,0 +1,19 @@
+<div class="row no-gutters page-min-height pt-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span class="bp">
+        {{bp}}
+    </span>
+
+
+    <div class="col-12" *ngIf="showcaseCompetition">
+
+    </div>
+
+    <div class="col-12">
+        <div class="col-4 pl-0 news-content d-inline-block" *ngFor="let newsArticle of news, let i=index;"
+            [ngClass]="{ 'mt-5': i > 2 }">
+            <app-news [newsArticle]="newsArticle"></app-news>
+        </div>
+    </div>
+
+</div>

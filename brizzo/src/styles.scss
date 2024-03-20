@@ -1,0 +1,73 @@
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+/* You can add global styles to this file, and also import other style files */
+body {
+	min-height: 100vh;
+	max-width: 100vw;
+	margin: 0 !important;
+	display: block;
+	float: left;
+	height: 100%;
+	width: 100%;
+}
+
+.background {
+	background: url("./assets/background_food_o50_grey.png");
+	background-repeat: repeat;
+	background-size: 512px 512px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	float: left;
+	min-height: 100vh;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.z-indx2 {
+	position: relative;
+	z-index: 2;
+}
+
+.f-mirendo {
+	font-family: mirendoRegular;
+}
+
+.f-graphik {
+	font-family: graphikRegular;
+}
+
+.pl-0 {
+	padding-left: 0 !important;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.b-box {
+	box-sizing: border-box;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.c-white {
+	color: white;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.black-a {
+	color: rgba(0, 0, 0, 6);
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}

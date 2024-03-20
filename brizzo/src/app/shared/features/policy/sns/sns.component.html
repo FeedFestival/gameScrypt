@@ -1,0 +1,31 @@
+<div class="row no-gutters container m-auto page-min-height p-3">
+    <app-language *ngIf="languageLogic"
+        [lang]="lang" (languageChanged)="onLanguageChosen($event)"></app-language>
+    <div class="container-fluid pt-5 justify-content-center">
+        <div class="col-12">
+            <h3>{{ PRIVACY_POLICY_SNS.SOCIAL_NETWORKING_SERVICES_TITLE }}</h3>
+        </div>
+
+        <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_SNS.SOCIAL_NETWORKING_SERVICES"></div>
+
+        <div class="col-11 m-auto">
+            <h4>{{ PRIVACY_POLICY_SNS.WHAT_WE_COLLECT_TITLE }}</h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_SNS.WHAT_WE_COLLECT"></div>
+
+        <div class="col-11 m-auto">
+            <h4>{{ PRIVACY_POLICY_SNS.INFORMATION_OTHER_SOURCES_TITLE }}</h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_SNS.INFORMATION_OTHER_SOURCES"></div>
+
+        <div class="col-11 m-auto">
+            <h4>{{ PRIVACY_POLICY_SNS.SNS_RELATIONSHIP_TITLE }}</h4>
+        </div>
+
+        <div class="col-10 m-auto" [innerHTML]="PRIVACY_POLICY_SNS.SNS_RELATIONSHIP"></div>
+
+        <div class="col-11 m-auto" [innerHTML]="PRIVACY_POLICY_SNS.SNS_DISABLE_ANYTIME"></div>
+    </div>
+</div>

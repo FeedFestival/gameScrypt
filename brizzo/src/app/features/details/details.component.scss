@@ -1,0 +1,22 @@
+.nutritional-table {
+
+	color: #3e3e3e;
+    font-family: graphikRegular;
+
+	.header {
+		vertical-align: baseline;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	.table {
+		font-size: 11px;
+		line-height: 11px;
+		color: #5d5d5d;
+    	text-shadow: 1px 1px white;
+
+		tr:nth-child(odd) {
+			background: #0000000d;
+		}
+	}
+}

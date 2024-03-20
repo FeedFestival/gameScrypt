@@ -1,0 +1,36 @@
+@import "../../../theme/overrides/scss/variables";
+
+::ng-deep {
+    .pre {
+        color: $orange;
+        font-size: 18px;
+        margin-right: -3px;
+    }
+    .word {
+    }
+    .suffix {
+        color: #c5c5c5;
+    }
+
+    .s-h3,
+    .s-h3 > .pre {
+        font-size: 30px !important;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    /*
+    overrides
+    */
+
+    h2 {
+        span {
+            line-height: 40px;
+            .pre {
+                font-size: 40px !important;
+                margin-right: -10px !important;
+            }
+        }
+    }
+}

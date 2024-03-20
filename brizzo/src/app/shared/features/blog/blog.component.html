@@ -1,0 +1,74 @@
+<div class="row no-gutters page-min-height p-3 the-tool" [ngClass]="{ 'm-auto container': bp === 'lg' || bp === 'xl' }">
+
+    <span class="bp">
+        {{bp}}
+    </span>
+
+    <div class="col-12">
+
+        <div class="row">
+
+            <div class="col-8 pl-0">
+                <mat-card class="col-12 mb-3 pr-0 article-container"
+                    *ngFor="let article of latestArticles, let i=index;">
+
+                    <div class="col-12 px-0 mb-3 article-title">
+                        <span [innerHtml]="article.title"></span>
+                    </div>
+
+                    <div class="col-12 px-0 mb-3 article-pic">
+                        <img *ngIf="article.mainPic" [src]="article.mainPic" />
+                        <img *ngIf="!article.mainPic" src="assets/images/no-pic.jpg" />
+                    </div>
+
+                    <div class="col-12 article-description">
+                        {{article.shortDescription}}
+                    </div>
+
+                    <div class="col-12">
+                        <span class="more-button c-point float-right mt-n3" (click)="goToArticle(article.base)">
+                            <cool-text pre="r" word="ead" suffix="more"></cool-text>
+                            <icon-more></icon-more>
+                        </span>
+                    </div>
+                </mat-card>
+            </div>
+
+            <div class="col-4 px-0">
+                <mat-card class="col-12">
+
+                    <div class="col-12 p-0 article-timeline">
+                        <div class="col-12 p-0 mb-2">
+                            <cool-text pre="T" word="IMELINE"></cool-text>
+                        </div>
+                        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                            <!-- This is the tree node template for leaf nodes -->
+                            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding
+                                [ngClass]="{ 'node-sm-size': node.level >= 1 }">
+
+                                <div class="col-12 p-0 f-10 c-point timeline-article-name"
+                                    (click)="goToArticle(node.base)">
+                                    <icon-navigate></icon-navigate>
+                                    <span class="title-timeline" [innerHtml]="node.name"></span>
+                                </div>
+                            </mat-tree-node>
+
+                            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding
+                                [ngClass]="{ 'node-sm-size': node.level >= 1 }">
+                                <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+
+                                    <mat-icon class="mat-icon-rtl-mirror">
+                                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                                    </mat-icon>
+                                </button>
+                                {{node.name}}
+                            </mat-tree-node>
+                        </mat-tree>
+
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>

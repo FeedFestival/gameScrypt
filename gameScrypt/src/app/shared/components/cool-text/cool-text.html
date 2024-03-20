@@ -1,0 +1,33 @@
+<span *ngIf="hasPre" class="pre">
+    {{pre}}
+</span>
+<span *ngIf="hasWord" class="word">
+    {{word}}
+</span>
+<span *ngIf="hasSuffix" class="suffix">
+    {{suffix}}
+</span>
+
+<span *ngIf="isGamescrypt === true" [ngClass]="{ 's-h3': size === 'h3', 'f-roboto': fontForce === 'roboto' }">
+    <span *ngIf="hasFull" class="word mrn-5px">
+        {{fullPre}}
+    </span>
+    <span *ngIf="hasFull" class="pre mrn-5px">
+        {{fullWord}}
+    </span>
+    <span *ngIf="hasFull" class="word">
+        {{fullSuffix}}
+    </span>
+</span>
+
+<span *ngIf="isGamescrypt === false">
+    <span *ngIf="hasFull" class="word">
+        {{fullPre}}
+    </span>
+    <span *ngIf="hasFull" class="pre">
+        {{fullWord}}
+    </span>
+    <span *ngIf="hasFull" class="suffix">
+        {{fullSuffix}}
+    </span>
+</span>

@@ -1,0 +1,90 @@
+@import "../../../assets/scss/variables";
+
+.home-container {
+	margin: auto;
+
+	> * {
+		color: $normal-text;
+		font-family: graphikRegular;
+	}
+}
+
+.call-btn {
+	background: #3268bb;
+	.mat-button-wrapper {
+		color: white;
+	}
+}
+
+.sales-2-digits {
+	position: absolute;
+	right: -25px;
+	top: 15px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	background: #da2407;
+	border-radius: 50%;
+	font-size: 13px;
+	color: white;
+}
+
+.delivery-images {
+	max-width: 80px;
+	border-radius: 50%;
+	box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 34%), 0px 2px 2px 0px rgb(0 0 0 / 27%), 0px 1px 5px 0px rgb(0 0 0 / 24%);
+}
+
+.info-text {
+	font-size: 14px;
+	color: $faded-text;
+}
+
+.snowman {
+	height: 0;
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+
+	> img {
+		height: 85px;
+		position: absolute;
+		right: 0;
+		float: right;
+		top: -69px;
+	}
+}
+
+// Mobile . =================================================================
+@media (min-width: $xs) {
+	.home-container {
+		max-width: 90vw;
+	}
+}
+
+@media (min-width: $sm) {
+	.home-container {
+		max-width: 80vw;
+	}
+}
+
+@media (min-width: $md) {
+	.home-container {
+		max-width: 60vw;
+	}
+}
+
+// Desktop ^ =================================================================
+
+@media (min-width: $lg) {
+	.home-container {
+		max-width: 50vw;
+	}
+}
+
+@media (min-width: $xl) {
+	.home-container {
+		max-width: 44vw;
+	}
+}

@@ -1,0 +1,38 @@
+@import "../assets/scss/variables";
+
+::ng-deep {
+	.white-gradient-down {
+		z-index: 1;
+		position: absolute;
+		top: calc(#{$logo-height} + #{$waves-height});
+		left: 0;
+		width: 100%;
+		height: calc(100vh - #{$logo-height} - #{$waves-height});
+		background: linear-gradient(
+			360deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 1) 70%,
+			rgba(255, 255, 255, 1) 100%
+		);
+	}
+
+	.drawer-container {
+		mat-drawer {
+			width: 50%;
+			height: 100vh;
+			.mat-drawer-inner-container {
+				background: linear-gradient(60deg, rgba(0, 172, 193, 1) 0%, rgba(84, 58, 183, 1) 100%);
+			}
+		}
+	}
+
+	.navigation-menu {
+		button {
+			.mat-button-wrapper {
+				color: white;
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}

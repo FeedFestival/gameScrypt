@@ -1,0 +1,21 @@
+@import '../../../assets/scss/variables';
+
+::ng-deep {
+
+	.allergens-desc {
+
+		li {
+			padding-top: 7px;
+			padding-bottom: 7px;
+			line-height: 20px;
+		}
+
+		> ol {
+			> li::marker {
+				color: $allergens-text;
+				font-size: 24px;
+    			font-weight: bold;
+			}
+		}
+	}
+}
